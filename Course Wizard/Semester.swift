@@ -11,10 +11,16 @@ import Foundation
 
 class Semester {
     
-    var semesterName: String
+    var semesterType: String
+    var campus: String
+    var startDate: String
+    var endDate: String
     
-    init(name: String) {
-        semesterName = name
+    init(type: String, location: String, start: String, end: String) {
+        semesterType = type
+        campus = location
+        startDate = start
+        endDate = end
     }
     
 }

@@ -29,12 +29,12 @@ class CoursesViewController: UIViewController {
         }
         let addCourseAction: UIAlertAction = UIAlertAction(title: "Add Course", style: .Default, handler: nil)
         let addAssignmentAction: UIAlertAction = UIAlertAction(title: "Add Assignment", style: .Default, handler: nil)
-        let addCancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
         addInfoController.addAction(addSemesterAction)
         addInfoController.addAction(addCourseAction)
         addInfoController.addAction(addAssignmentAction)
-        addInfoController.addAction(addCancelAction)
+        addInfoController.addAction(cancelAction)
         self.presentViewController(addInfoController, animated: true, completion: nil)
     }
 

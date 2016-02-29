@@ -17,7 +17,6 @@ class SemesterDetailTableViewController: UITableViewController {
     var semesters: [Semester] = []
     
     weak var delegate: SemesterDelegate?
-    let semesterCellIdentifier = "chooseSemesterIdentifier"
     
 
     @IBOutlet weak var semesterTextField: UITextField!
@@ -32,14 +31,16 @@ class SemesterDetailTableViewController: UITableViewController {
     
     @IBAction func saveSemester(sender: UIBarButtonItem) {
         
-        let fall = Semester(name: semesterTextField.text!)
+        let fall = Semester(type: semesterTextField.text!, location: "", start: "", end: "")
         semesters.append(fall)
         
         for sem in semesters {
-            print(sem.semesterName)
+            print(sem.semesterType)
         }
         
     }
+    
+    
    
     
 }
