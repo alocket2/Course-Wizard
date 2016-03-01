@@ -12,13 +12,11 @@ import Foundation
 class Semester {
     
     var semesterType: String
-    var campus: String
     var startDate: String
     var endDate: String
     
-    init(type: String, location: String, start: String, end: String) {
+    init(type: String, start: String, end: String) {
         semesterType = type
-        campus = location
         startDate = start
         endDate = end
     }

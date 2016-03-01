@@ -18,9 +18,11 @@ class SemesterDetailTableViewController: UITableViewController {
     
     weak var delegate: SemesterDelegate?
     
-
-    @IBOutlet weak var semesterTextField: UITextField!
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "Add Semester"
+    }
     
     
     @IBAction func cancel(sender: UIBarButtonItem) {
@@ -31,12 +33,7 @@ class SemesterDetailTableViewController: UITableViewController {
     
     @IBAction func saveSemester(sender: UIBarButtonItem) {
         
-        let fall = Semester(type: semesterTextField.text!, location: "", start: "", end: "")
-        semesters.append(fall)
         
-        for sem in semesters {
-            print(sem.semesterType)
-        }
         
     }
     

@@ -16,8 +16,8 @@
 		924DFC2A1C7D47DB0097E9C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924DFC291C7D47DB0097E9C2 /* ViewController.swift */; };
 		924DFC2D1C7D47DB0097E9C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 924DFC2B1C7D47DB0097E9C2 /* Main.storyboard */; };
 		924DFC301C7D47DB0097E9C2 /* Course_Wizard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 924DFC2E1C7D47DB0097E9C2 /* Course_Wizard.xcdatamodeld */; };
-		924DFC321C7D47DB0097E9C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 924DFC311C7D47DB0097E9C2 /* Assets.xcassets */; };
 		924DFC351C7D47DB0097E9C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 924DFC331C7D47DB0097E9C2 /* LaunchScreen.storyboard */; };
+		927645C51C85318300D6FD8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 927645C41C85318300D6FD8C /* Assets.xcassets */; };
 		92AEECCD1C83E8FE00372550 /* Swift.gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 92AEECCC1C83E8FE00372550 /* Swift.gitignore */; };
 		92AEECD11C83F1F700372550 /* SemesterTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AEECD01C83F1F700372550 /* SemesterTypeTableViewController.swift */; };
 		92AEECD31C83F44A00372550 /* SemesterDatePicjer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AEECD21C83F44A00372550 /* SemesterDatePicjer.swift */; };
@@ -35,10 +35,10 @@
 		924DFC291C7D47DB0097E9C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		924DFC2C1C7D47DB0097E9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		924DFC2F1C7D47DB0097E9C2 /* Course_Wizard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Course_Wizard.xcdatamodel; sourceTree = "<group>"; };
-		924DFC311C7D47DB0097E9C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		924DFC341C7D47DB0097E9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		924DFC361C7D47DB0097E9C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		924DFC411C7D48C50097E9C2 /* Course Wizard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Course Wizard-Bridging-Header.h"; sourceTree = "<group>"; };
+		927645C41C85318300D6FD8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92AEECCC1C83E8FE00372550 /* Swift.gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Swift.gitignore; sourceTree = "<group>"; };
 		92AEECD01C83F1F700372550 /* SemesterTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterTypeTableViewController.swift; sourceTree = "<group>"; };
 		92AEECD21C83F44A00372550 /* SemesterDatePicjer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterDatePicjer.swift; sourceTree = "<group>"; };
@@ -109,18 +109,12 @@
 			isa = PBXGroup;
 			children = (
 				92AEECCE1C83F1B000372550 /* Controller */,
+				927645C81C853B6800D6FD8C /* Models */,
+				927645C91C853B8400D6FD8C /* Resources */,
 				9212A7141C838F69006421C6 /* Storyboards */,
 				924DFC3C1C7D47FE0097E9C2 /* 3rdParty */,
-				924DFC271C7D47DB0097E9C2 /* AppDelegate.swift */,
-				92DAB6A91C83B02700EDE76E /* Semester.swift */,
-				9212A70E1C837B39006421C6 /* MapViewController.swift */,
 				924DFC291C7D47DB0097E9C2 /* ViewController.swift */,
-				9212A70C1C837633006421C6 /* CoursesViewController.swift */,
-				924DFC311C7D47DB0097E9C2 /* Assets.xcassets */,
-				924DFC361C7D47DB0097E9C2 /* Info.plist */,
-				924DFC2E1C7D47DB0097E9C2 /* Course_Wizard.xcdatamodeld */,
-				924DFC411C7D48C50097E9C2 /* Course Wizard-Bridging-Header.h */,
-				92AEECCC1C83E8FE00372550 /* Swift.gitignore */,
+				927645C41C85318300D6FD8C /* Assets.xcassets */,
 			);
 			path = "Course Wizard";
 			sourceTree = "<group>";
@@ -133,9 +127,47 @@
 			name = 3rdParty;
 			sourceTree = "<group>";
 		};
+		927645C61C853B0800D6FD8C /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				9212A70E1C837B39006421C6 /* MapViewController.swift */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		927645C71C853B1400D6FD8C /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				9212A70C1C837633006421C6 /* CoursesViewController.swift */,
+			);
+			name = Courses;
+			sourceTree = "<group>";
+		};
+		927645C81C853B6800D6FD8C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				92DAB6A91C83B02700EDE76E /* Semester.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		927645C91C853B8400D6FD8C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				924DFC271C7D47DB0097E9C2 /* AppDelegate.swift */,
+				924DFC361C7D47DB0097E9C2 /* Info.plist */,
+				924DFC411C7D48C50097E9C2 /* Course Wizard-Bridging-Header.h */,
+				92AEECCC1C83E8FE00372550 /* Swift.gitignore */,
+				924DFC2E1C7D47DB0097E9C2 /* Course_Wizard.xcdatamodeld */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		92AEECCE1C83F1B000372550 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				927645C71C853B1400D6FD8C /* Courses */,
+				927645C61C853B0800D6FD8C /* Map */,
 				92AEECCF1C83F1B900372550 /* Semester */,
 			);
 			name = Controller;
@@ -216,8 +248,8 @@
 				92AEECCD1C83E8FE00372550 /* Swift.gitignore in Resources */,
 				9212A7111C837EBF006421C6 /* Settings.bundle in Resources */,
 				924DFC351C7D47DB0097E9C2 /* LaunchScreen.storyboard in Resources */,
-				924DFC321C7D47DB0097E9C2 /* Assets.xcassets in Resources */,
 				924DFC2D1C7D47DB0097E9C2 /* Main.storyboard in Resources */,
+				927645C51C85318300D6FD8C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

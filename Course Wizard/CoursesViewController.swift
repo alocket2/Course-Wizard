@@ -13,7 +13,7 @@ class CoursesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        title = "Courses"
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,13 +23,13 @@ class CoursesViewController: UIViewController {
     
     @IBAction func addInfo(sender: AnyObject) {
         
-        let addInfoController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-        let addSemesterAction: UIAlertAction = UIAlertAction(title: "Add Semester", style: .Default) { (UIAlertAction) -> Void in
+        let addInfoController =   UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let addSemesterAction =   UIAlertAction(title: "Add Semester", style: .Default) { (UIAlertAction) -> Void in
             self.performSegueWithIdentifier("addSemesterSegue", sender: self)
         }
-        let addCourseAction: UIAlertAction = UIAlertAction(title: "Add Course", style: .Default, handler: nil)
-        let addAssignmentAction: UIAlertAction = UIAlertAction(title: "Add Assignment", style: .Default, handler: nil)
-        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let addCourseAction =     UIAlertAction(title: "Add Course", style: .Default, handler: nil)
+        let addAssignmentAction = UIAlertAction(title: "Add Assignment", style: .Default, handler: nil)
+        let cancelAction =        UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
         addInfoController.addAction(addSemesterAction)
         addInfoController.addAction(addCourseAction)
