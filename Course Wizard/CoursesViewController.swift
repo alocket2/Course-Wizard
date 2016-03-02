@@ -2,13 +2,21 @@
 //  CoursesViewController.swift
 //  Course Wizard
 //
-//  Created by Anthony Lockett on 2/28/16.
-//  Copyright © 2016 Anthony Lockett. All rights reserved.
-//
+//  Created by Anthony Lockett
+//             Daisy McCoy
+//             Daniel Marquez
+//             Khalil Millwood
+//             Evan Liebovitz
+//             Giselle Mohammed
+//             Freguens Mildort on 2/28/16.
+//  Copyright © 2016 Anthony Lockett & Team. All rights reserved.
 
 import UIKit
+import CoreData
 
 class CoursesViewController: UIViewController {
+    
+    var coreDataStack: CoreDataStack!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +50,7 @@ class CoursesViewController: UIViewController {
         if segue.identifier == "addSemesterSegue" {
             let navigationController = segue.destinationViewController as! UINavigationController
             let controller = navigationController.topViewController as! SemesterDetailTableViewController
+            controller.coreDataStack = coreDataStack
             controller.delegate = self
         }
     }

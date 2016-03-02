@@ -18,9 +18,12 @@
 		924DFC301C7D47DB0097E9C2 /* Course_Wizard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 924DFC2E1C7D47DB0097E9C2 /* Course_Wizard.xcdatamodeld */; };
 		924DFC351C7D47DB0097E9C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 924DFC331C7D47DB0097E9C2 /* LaunchScreen.storyboard */; };
 		927645C51C85318300D6FD8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 927645C41C85318300D6FD8C /* Assets.xcassets */; };
+		928C60291C879E2700147BD2 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C60281C879E2700147BD2 /* CoreDataStack.swift */; };
+		928C602C1C87A7FF00147BD2 /* Semester+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C602A1C87A7FF00147BD2 /* Semester+CoreDataProperties.swift */; };
+		928C602D1C87A7FF00147BD2 /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C602B1C87A7FF00147BD2 /* Semester.swift */; };
 		92AEECCD1C83E8FE00372550 /* Swift.gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 92AEECCC1C83E8FE00372550 /* Swift.gitignore */; };
 		92AEECD11C83F1F700372550 /* SemesterTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AEECD01C83F1F700372550 /* SemesterTypeTableViewController.swift */; };
-		92AEECD31C83F44A00372550 /* SemesterDatePicjer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AEECD21C83F44A00372550 /* SemesterDatePicjer.swift */; };
+		92AEECD31C83F44A00372550 /* SemesterDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AEECD21C83F44A00372550 /* SemesterDatePicker.swift */; };
 		92AEECD51C83F49F00372550 /* SemesterCampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AEECD41C83F49F00372550 /* SemesterCampusTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,9 +41,12 @@
 		924DFC361C7D47DB0097E9C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		924DFC411C7D48C50097E9C2 /* Course Wizard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Course Wizard-Bridging-Header.h"; sourceTree = "<group>"; };
 		927645C41C85318300D6FD8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		928C60281C879E2700147BD2 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		928C602A1C87A7FF00147BD2 /* Semester+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Semester+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		928C602B1C87A7FF00147BD2 /* Semester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semester.swift; sourceTree = "<group>"; };
 		92AEECCC1C83E8FE00372550 /* Swift.gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Swift.gitignore; sourceTree = "<group>"; };
 		92AEECD01C83F1F700372550 /* SemesterTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterTypeTableViewController.swift; sourceTree = "<group>"; };
-		92AEECD21C83F44A00372550 /* SemesterDatePicjer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterDatePicjer.swift; sourceTree = "<group>"; };
+		92AEECD21C83F44A00372550 /* SemesterDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterDatePicker.swift; sourceTree = "<group>"; };
 		92AEECD41C83F49F00372550 /* SemesterCampusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterCampusTableViewController.swift; sourceTree = "<group>"; };
 		9B4AFFB680C0C6C6E21CB79E /* Pods-Course Wizard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Course Wizard.release.xcconfig"; path = "Pods/Target Support Files/Pods-Course Wizard/Pods-Course Wizard.release.xcconfig"; sourceTree = "<group>"; };
 		A7EDE33F705FC99F984FDA2D /* Pods_Course_Wizard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Course_Wizard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +162,7 @@
 				924DFC411C7D48C50097E9C2 /* Course Wizard-Bridging-Header.h */,
 				92AEECCC1C83E8FE00372550 /* Swift.gitignore */,
 				924DFC2E1C7D47DB0097E9C2 /* Course_Wizard.xcdatamodeld */,
+				928C60281C879E2700147BD2 /* CoreDataStack.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -173,9 +180,11 @@
 		92AEECCF1C83F1B900372550 /* Semester */ = {
 			isa = PBXGroup;
 			children = (
+				928C602A1C87A7FF00147BD2 /* Semester+CoreDataProperties.swift */,
+				928C602B1C87A7FF00147BD2 /* Semester.swift */,
 				9212A71E1C83982C006421C6 /* SemesterDetailTableViewController.swift */,
 				92AEECD01C83F1F700372550 /* SemesterTypeTableViewController.swift */,
-				92AEECD21C83F44A00372550 /* SemesterDatePicjer.swift */,
+				92AEECD21C83F44A00372550 /* SemesterDatePicker.swift */,
 				92AEECD41C83F49F00372550 /* SemesterCampusTableViewController.swift */,
 			);
 			name = Semester;
@@ -306,10 +315,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				924DFC2A1C7D47DB0097E9C2 /* ViewController.swift in Sources */,
+				928C602D1C87A7FF00147BD2 /* Semester.swift in Sources */,
 				92AEECD11C83F1F700372550 /* SemesterTypeTableViewController.swift in Sources */,
-				92AEECD31C83F44A00372550 /* SemesterDatePicjer.swift in Sources */,
+				92AEECD31C83F44A00372550 /* SemesterDatePicker.swift in Sources */,
 				9212A70F1C837B39006421C6 /* MapViewController.swift in Sources */,
 				9212A71F1C83982C006421C6 /* SemesterDetailTableViewController.swift in Sources */,
+				928C60291C879E2700147BD2 /* CoreDataStack.swift in Sources */,
+				928C602C1C87A7FF00147BD2 /* Semester+CoreDataProperties.swift in Sources */,
 				92AEECD51C83F49F00372550 /* SemesterCampusTableViewController.swift in Sources */,
 				924DFC281C7D47DB0097E9C2 /* AppDelegate.swift in Sources */,
 				9212A70D1C837633006421C6 /* CoursesViewController.swift in Sources */,

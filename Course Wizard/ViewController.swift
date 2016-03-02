@@ -2,9 +2,14 @@
 //  ViewController.swift
 //  Course Wizard
 //
-//  Created by Anthony Lockett on 2/23/16.
-//  Copyright © 2016 Anthony Lockett. All rights reserved.
-//
+//  Created by Anthony Lockett
+//             Daisy McCoy
+//             Daniel Marquez
+//             Khalil Millwood
+//             Evan Liebovitz
+//             Giselle Mohammed
+//             Freguens Mildort on 2/28/16.
+//  Copyright © 2016 Anthony Lockett & Team. All rights reserved.
 
 import UIKit
 

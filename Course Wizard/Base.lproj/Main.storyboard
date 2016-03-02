@@ -152,7 +152,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="c3h-pe-V5s" kind="show" identifier="chooseStartSegue" id="jjx-DN-hOE"/>
+                                            <segue destination="FLg-yn-ezD" kind="show" identifier="chooseStartDateSegue" id="jjx-DN-hOE"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="gm8-rd-s5p" style="IBUITableViewCellStyleDefault" id="mlY-OA-8BB">
@@ -172,7 +172,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="c3h-pe-V5s" kind="show" identifier="chooseEndSegue" id="foc-z8-CIy"/>
+                                            <segue destination="FLg-yn-ezD" kind="show" identifier="chooseEndDateSegue" id="foc-z8-CIy"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -196,17 +196,19 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="endDateLabel" destination="gm8-rd-s5p" id="hvQ-oT-84g"/>
                         <outlet property="semesterType" destination="C9R-E0-UjK" id="Sd2-BN-tuM"/>
+                        <outlet property="startDateLabel" destination="skn-gH-XPu" id="f0b-Ex-QcH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jpo-Vz-3YM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3590" y="217"/>
         </scene>
-        <!--Semester Date Picker-->
+        <!--Semester Date Picker Controller-->
         <scene sceneID="YQ3-4a-vBw">
             <objects>
-                <viewController id="c3h-pe-V5s" customClass="SemesterDatePicker" customModule="Course_Wizard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="c3h-pe-V5s" customClass="SemesterDatePickerController" customModule="Course_Wizard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6xm-dn-IpC"/>
                         <viewControllerLayoutGuide type="bottom" id="Mwn-vJ-o25"/>
@@ -216,7 +218,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="XKn-BN-Rc6">
-                                <rect key="frame" x="0.0" y="64" width="600" height="159"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="179"/>
                                 <date key="date" timeIntervalSinceReferenceDate="478493177.661919">
                                     <!--2016-03-01 02:46:17 +0000-->
                                 </date>
@@ -226,14 +228,31 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="XKn-BN-Rc6" secondAttribute="trailing" constant="-20" id="Lou-DI-mmA"/>
                             <constraint firstItem="XKn-BN-Rc6" firstAttribute="leading" secondItem="ZZ7-ls-hwO" secondAttribute="leadingMargin" constant="-20" id="LsM-Cy-gz2"/>
-                            <constraint firstItem="XKn-BN-Rc6" firstAttribute="top" secondItem="6xm-dn-IpC" secondAttribute="bottom" id="jWh-am-aQO"/>
-                            <constraint firstItem="Mwn-vJ-o25" firstAttribute="top" secondItem="XKn-BN-Rc6" secondAttribute="bottom" constant="328" id="m2t-0d-x2p"/>
+                            <constraint firstItem="XKn-BN-Rc6" firstAttribute="top" secondItem="6xm-dn-IpC" secondAttribute="bottom" constant="-20" id="jWh-am-aQO"/>
+                            <constraint firstItem="Mwn-vJ-o25" firstAttribute="top" secondItem="XKn-BN-Rc6" secondAttribute="bottom" constant="333" id="m2t-0d-x2p"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="rkY-6T-xQB">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="FhD-7b-XSh">
+                            <connections>
+                                <action selector="cancelDateSelection:" destination="c3h-pe-V5s" id="1zO-sC-qv6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="hFe-CY-VQC">
+                            <connections>
+                                <action selector="saveDateSelection:" destination="c3h-pe-V5s" id="PFk-0n-XbB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="datePicker" destination="XKn-BN-Rc6" id="r44-qW-5qO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRW-qH-Lky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4288" y="217"/>
+            <point key="canvasLocation" x="5100" y="217"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ZDO-yb-VTS">
@@ -349,6 +368,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNa-HD-XzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1377" y="217"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Z9D-46-Tpr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FLg-yn-ezD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OuF-KM-L18">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="c3h-pe-V5s" kind="relationship" relationship="rootViewController" id="yPb-Fz-Epf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oqp-GV-V6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4288" y="217"/>
         </scene>
     </scenes>
     <resources>
