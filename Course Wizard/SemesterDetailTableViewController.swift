@@ -49,7 +49,6 @@ class SemesterDetailTableViewController: UITableViewController {
             semesterType.text = "Semester"
         } else {
             guard chosenSemester != nil else {
-                print("No data")
                 return
             }
             
@@ -60,7 +59,6 @@ class SemesterDetailTableViewController: UITableViewController {
             startDateLabel.text = "Start Date"
         } else {
             guard startDate != nil else {
-                print("No Start Date")
                 return
             }
             
@@ -72,7 +70,6 @@ class SemesterDetailTableViewController: UITableViewController {
             endDateLabel.text = "End Date"
         } else {
             guard endDate != nil else {
-                print("No End Date")
                 return
             }
             
@@ -105,7 +102,7 @@ class SemesterDetailTableViewController: UITableViewController {
             print("Could not save...")
         }
         
-        
+        dismissViewControllerAnimated(true, completion: nil)
         printTestData()
         
     }
