@@ -34,16 +34,13 @@ class SemestersTableViewController: UITableViewController {
         let fetchRequest = NSFetchRequest(entityName: "Semester")
         fetchRequest.predicate = predicate
         
-        
         do {
             if let results = try coreDataStack.managedObjectContext.executeFetchRequest(fetchRequest) as? [Semester] {
                 semesters = results
-                
             }
         } catch {
             return
         }
-        
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,10 +51,10 @@ class SemestersTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
         
-        let semYearIndex = semesters[indexPath.row].startDate.endIndex.advancedBy(-2)
+        let semYearIndex = semesters[indexPath.row].startDate.endIndex.advancedBy(-4)
         let semYear = semesters[indexPath.row].startDate.substringFromIndex(semYearIndex)
         
-        cell.textLabel?.text = semesters[indexPath.row].type + " " + "20" + semYear
+        cell.textLabel?.text = semesters[indexPath.row].type + " " + semYear
         
         return cell
     }

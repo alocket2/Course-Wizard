@@ -45,8 +45,9 @@ class SemesterDatePickerController: UIViewController {
     
     @IBAction func saveDateSelection(sender: UIBarButtonItem) {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = .ShortStyle
+        dateFormatter.dateStyle = .LongStyle
         let date = dateFormatter.stringFromDate(datePicker.date)
+        
         if self.typeOfSegue == "StartDateSegue" {
             delegate?.SemesterDatePicker(didFinishSelectingStartDate: date)
         } else {
