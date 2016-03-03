@@ -18,8 +18,6 @@ class SemestersTableViewController: UITableViewController {
     var numberOfRowsPerSection = [Int]()
     
     let cellIdentifier = "semesterCell"
-    let yearOfSemester: String = ""
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
