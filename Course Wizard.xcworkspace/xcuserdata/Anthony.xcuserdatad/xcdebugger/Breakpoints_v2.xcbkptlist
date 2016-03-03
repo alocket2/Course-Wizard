@@ -29,5 +29,178 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Course Wizard/SemestersTableViewController.swift"
+            timestampString = "478719286.335176"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "SemestersTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Course_Wizard.SemestersTableViewController.coreDataStack.getter : Swift.ImplicitlyUnwrappedOptional&lt;Course_Wizard.CoreDataStack&gt;"
+                  moduleName = "Course Wizard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Anthony/Developer/Swift%20Apps/Course%20Wizard/Course%20Wizard/SemestersTableViewController.swift"
+                  timestampString = "478724095.142356"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Course_Wizard.SemestersTableViewController.coreDataStack.materializeForSet : Swift.ImplicitlyUnwrappedOptional&lt;Course_Wizard.CoreDataStack&gt;"
+                  moduleName = "Course Wizard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Anthony/Developer/Swift%20Apps/Course%20Wizard/Course%20Wizard/SemestersTableViewController.swift"
+                  timestampString = "478724095.143017"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Course_Wizard.SemestersTableViewController.init (Course_Wizard.SemestersTableViewController.Type)(style : __C.UITableViewStyle) -&gt; Course_Wizard.SemestersTableViewController"
+                  moduleName = "Course Wizard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Anthony/Developer/Swift%20Apps/Course%20Wizard/Course%20Wizard/SemestersTableViewController.swift"
+                  timestampString = "478724095.143213"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Course_Wizard.SemestersTableViewController.init (Course_Wizard.SemestersTableViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; Course_Wizard.SemestersTableViewController"
+                  moduleName = "Course Wizard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Anthony/Developer/Swift%20Apps/Course%20Wizard/Course%20Wizard/SemestersTableViewController.swift"
+                  timestampString = "478724095.143574"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Course_Wizard.SemestersTableViewController.init (Course_Wizard.SemestersTableViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Course_Wizard.SemestersTableViewController&gt;"
+                  moduleName = "Course Wizard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Anthony/Developer/Swift%20Apps/Course%20Wizard/Course%20Wizard/SemestersTableViewController.swift"
+                  timestampString = "478724095.143791"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Course Wizard/SemestersTableViewController.swift"
+            timestampString = "478719337.77037"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "reloadData(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Course_Wizard.SemestersTableViewController.(reloadData (Course_Wizard.SemestersTableViewController) -&gt; (Swift.Optional&lt;__ObjC.NSPredicate&gt;) -&gt; ()).(default argument 0)"
+                  moduleName = "Course Wizard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Anthony/Developer/Swift%20Apps/Course%20Wizard/Course%20Wizard/SemestersTableViewController.swift"
+                  timestampString = "478724095.146102"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Course_Wizard.SemestersTableViewController.reloadData (Course_Wizard.SemestersTableViewController)(Swift.Optional&lt;__ObjC.NSPredicate&gt;) -&gt; ()"
+                  moduleName = "Course Wizard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Anthony/Developer/Swift%20Apps/Course%20Wizard/Course%20Wizard/SemestersTableViewController.swift"
+                  timestampString = "478724095.146263"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Course Wizard/SemesterDetailTableViewController.swift"
+            timestampString = "478722587.142157"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "printTestData()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Course Wizard/SemestersTableViewController.swift"
+            timestampString = "478722616.11884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "reloadData(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

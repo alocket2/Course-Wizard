@@ -63,8 +63,15 @@ class MoreTableViewController: UITableViewController {
                 let campusEntity = Campus(entity: entity, insertIntoManagedObjectContext: coreDataStack.managedObjectContext)
                 campusEntity.location = currentCampus
                 
+                do {
+                    try coreDataStack.managedObjectContext.save()
+                } catch {
+                    print("Could not save...")
+                }
+                
             } else {
                 //There is a campus so check if it is the same
+                
             }
             
         } catch {
