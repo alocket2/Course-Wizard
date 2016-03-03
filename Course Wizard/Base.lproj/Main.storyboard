@@ -32,7 +32,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98P-sg-XEM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3001" y="217"/>
+            <point key="canvasLocation" x="3813" y="217"/>
         </scene>
         <!--Map-->
         <scene sceneID="Zyr-u7-T8h">
@@ -98,7 +98,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tDs-Sh-upK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4288" y="-448"/>
+            <point key="canvasLocation" x="5100" y="-448"/>
         </scene>
         <!--Semester Detail Table View Controller-->
         <scene sceneID="TWH-Ge-akZ">
@@ -203,7 +203,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jpo-Vz-3YM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4402" y="217"/>
+            <point key="canvasLocation" x="5214" y="217"/>
         </scene>
         <!--Semester Date Picker Controller-->
         <scene sceneID="YQ3-4a-vBw">
@@ -252,7 +252,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRW-qH-Lky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5912" y="217"/>
+            <point key="canvasLocation" x="6724" y="217"/>
+        </scene>
+        <!--Campus Table View Controller-->
+        <scene sceneID="Rdq-qI-9u2">
+            <objects>
+                <tableViewController id="gy3-mb-0gf" customClass="CampusTableViewController" customModule="Course_Wizard" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5AM-QD-Tkh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="campusCell" id="o3S-Z1-jPJ">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o3S-Z1-jPJ" id="J1F-z7-kfl">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="gy3-mb-0gf" id="Cc0-x7-sGA"/>
+                            <outlet property="delegate" destination="gy3-mb-0gf" id="b4a-i2-eNA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="vfT-jd-uQd"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sin-xH-o51" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="788" y="44"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ZDO-yb-VTS">
@@ -272,7 +302,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6YW-IC-aFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1416" y="217"/>
+            <point key="canvasLocation" x="2228" y="217"/>
         </scene>
         <!--More Table View Controller-->
         <scene sceneID="rzI-l1-XRE">
@@ -285,15 +315,15 @@
                         <sections>
                             <tableViewSection id="hcK-G3-eWw">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="moreItemsIdentifier" textLabel="zB6-WJ-EQD" style="IBUITableViewCellStyleDefault" id="fIM-Dn-71d">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="moreItemsIdentifier" textLabel="zB6-WJ-EQD" style="IBUITableViewCellStyleDefault" id="fIM-Dn-71d">
                                         <rect key="frame" x="0.0" y="99" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fIM-Dn-71d" id="74I-cx-ipL">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Semesters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zB6-WJ-EQD">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="550" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -307,6 +337,30 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="3tP-Wb-ZcD">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="moreItemsIdentifier" textLabel="KoU-Ev-V5f" style="IBUITableViewCellStyleDefault" id="bBW-9m-gsg">
+                                        <rect key="frame" x="0.0" y="179" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bBW-9m-gsg" id="cKN-ju-hQ6">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Campus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KoU-Ev-V5f">
+                                                    <rect key="frame" x="15" y="0.0" width="550" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="gy3-mb-0gf" kind="show" identifier="selectCampusSegue" id="k8p-Pm-1ie"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="2kh-GB-iOq" id="6Xk-RV-Gem"/>
@@ -314,6 +368,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="c2T-rv-ZSF"/>
+                    <connections>
+                        <outlet property="currentCampusLabel" destination="KoU-Ev-V5f" id="ITs-oo-oWu"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wS1-M5-O2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -392,7 +449,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J1M-3X-86H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3712" y="217"/>
+            <point key="canvasLocation" x="4524" y="217"/>
         </scene>
         <!--Courses-->
         <scene sceneID="X81-qM-qFX">
@@ -411,7 +468,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNa-HD-XzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2189" y="217"/>
+            <point key="canvasLocation" x="3001" y="217"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z9D-46-Tpr">
@@ -429,7 +486,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oqp-GV-V6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5100" y="217"/>
+            <point key="canvasLocation" x="5912" y="217"/>
         </scene>
         <!--More-->
         <scene sceneID="dcS-Ea-3Bu">
