@@ -14,6 +14,8 @@ class SemestersTableViewController: UITableViewController {
     
     var coreDataStack: CoreDataStack!
     var semesters = [Semester]()
+    var sections = [String]()
+    var numberOfRowsPerSection = [Int]()
     
     let cellIdentifier = "semesterCell"
     let yearOfSemester: String = ""
@@ -26,7 +28,10 @@ class SemestersTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        
         reloadData()
+        checkForNewAndCreateSections()
+        setupNumberOfRowsPerSection()
     }
     
     func reloadData(predicate: NSPredicate? = nil) {
@@ -43,18 +48,71 @@ class SemestersTableViewController: UITableViewController {
         }
     }
     
+    func checkForNewAndCreateSections() {
+        
+        for semester in semesters {
+            let semYearIndex = semester.startDate.endIndex.advancedBy(-4)
+            let semYear = semester.startDate.substringFromIndex(semYearIndex)
+            if let _ = sections.indexOf(semYear){
+                continue
+            } else {
+                sections.append(semYear)
+            }
+        }
+    }
+    
+    func setupNumberOfRowsPerSection() {
+        
+        var rows: Int = 0
+        var currentSection: String?
+        
+        for section in sections {
+            
+            if currentSection != section && currentSection != nil {
+                numberOfRowsPerSection.append(rows)
+                rows = 0
+            }
+            
+            currentSection = section
+            
+            for semester in semesters {
+                let semYearIndex = semester.startDate.endIndex.advancedBy(-4)
+                let semYear = semester.startDate.substringFromIndex(semYearIndex)
+                
+                if semYear == section {
+                    rows += 1
+                    
+                }
+            }
+        }
+        
+        numberOfRowsPerSection.append(rows)
+        
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section]
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return semesters.count
+        var rows: Int = 0
+        
+        if section < numberOfRowsPerSection.count {
+            rows = numberOfRowsPerSection[section]
+        }
+        
+        return rows
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
         
-        let semYearIndex = semesters[indexPath.row].startDate.endIndex.advancedBy(-4)
-        let semYear = semesters[indexPath.row].startDate.substringFromIndex(semYearIndex)
-        
-        cell.textLabel?.text = semesters[indexPath.row].type + " " + semYear
+        cell.textLabel?.text = semesters[indexPath.row].type
         
         return cell
     }
