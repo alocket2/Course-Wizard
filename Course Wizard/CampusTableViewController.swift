@@ -8,6 +8,14 @@
 
 import UIKit
 
+/*
+    
+    Lets talk about protocols. We use protocols to pass data back from another controller.
+    See structure of a protocol below.
+    the class means that only classes can implement the protocol.
+
+*/
+
 protocol CampusDelegate: class {
     func userDidCancelSelectingCampus(controller: CampusTableViewController)
     func campusDelegate(userDidSelectCampus campus: String)
@@ -15,10 +23,14 @@ protocol CampusDelegate: class {
 
 class CampusTableViewController: UITableViewController {
     
+    //We need a connection to that protocol
+    
     weak var delegate: CampusDelegate?
 
     let campus = ["Boca Raton", "Dania Beach (Sea Tech)", "Davie", "Fort Lauderdale", "Harbor Branch", "Jupiter"]
     let cellIdentifier = "campusCell"
+    
+    
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -35,6 +47,8 @@ class CampusTableViewController: UITableViewController {
         
         return cell
     }
+    
+    //Here we use that delegate we made earlier to access the protocol methods.
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         delegate?.campusDelegate(userDidSelectCampus: campus[indexPath.row])
