@@ -87,7 +87,10 @@ class SemesterDetailTableViewController: UITableViewController {
     
     @IBAction func saveSemester(sender: UIBarButtonItem) {
         
-        let semesterExists = checkIfSemesterExists()
+        let yearIndex = startDateLabel.text?.endIndex.advancedBy(-4)
+        let year = startDateLabel.text?.substringFromIndex(yearIndex!)
+        
+        let semesterExists = checkIfSemesterExistsForYear(year!)
         
         // Save to core data
         guard let entity = NSEntityDescription.entityForName("Semester", inManagedObjectContext: coreDataStack.managedObjectContext) else {
@@ -136,7 +139,7 @@ class SemesterDetailTableViewController: UITableViewController {
         }
     }
     
-      func checkIfSemesterExists() -> Bool {
+    func checkIfSemesterExistsForYear(year: String) -> Bool {
         
         let checkFetchRequest = NSFetchRequest(entityName: "Semester")
         
@@ -145,8 +148,8 @@ class SemesterDetailTableViewController: UITableViewController {
             let results = try coreDataStack.managedObjectContext.executeFetchRequest(checkFetchRequest) as! [Semester]
             
             for result in results {
-                if let typeOfSemester = result.valueForKey("type") as? String {
-                    if typeOfSemester == chosenSemester {
+                if let typeOfSemester = result.valueForKey("type") as? String, yearOfSemester = result.valueForKey("startDate") as? String {
+                    if typeOfSemester == chosenSemester && yearOfSemester == year  {
                         return true
                     } 
                 }

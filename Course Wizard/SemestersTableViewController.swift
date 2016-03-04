@@ -17,12 +17,16 @@ class SemestersTableViewController: UITableViewController {
     var sections = [String]()
     var numberOfRowsPerSection = [Int]()
     
+    let semesterTypes = ["Spring", "Summer", "Fall"]
     let cellIdentifier = "semesterCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Semesters"
+        
+        sections.sortInPlace()
+        tableView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -30,6 +34,8 @@ class SemestersTableViewController: UITableViewController {
         reloadData()
         checkForNewAndCreateSections()
         setupNumberOfRowsPerSection()
+        sections.sortInPlace()
+        tableView.reloadData()
     }
     
     func reloadData(predicate: NSPredicate? = nil) {
@@ -93,6 +99,7 @@ class SemestersTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        sections.sortInPlace()
         return sections[section]
     }
     
@@ -109,8 +116,18 @@ class SemestersTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
-        
-        cell.textLabel?.text = semesters[indexPath.row].type
+
+        for semester in semesters {
+            let semYearIndex = semester.startDate.endIndex.advancedBy(-4)
+            let semYear = semester.startDate.substringFromIndex(semYearIndex)
+            let currentIndexPathRowIndex = semesters[indexPath.row].startDate.endIndex.advancedBy(-4)
+            let currentIndexPathYear = semesters[indexPath.row].startDate.substringFromIndex(currentIndexPathRowIndex)
+            if currentIndexPathYear == semYear {
+                cell.textLabel?.text = semesters[indexPath.row].type
+            } else {
+                cell.textLabel?.text = semesters[indexPath.section].type
+            }
+        }
         
         return cell
     }
@@ -121,6 +138,10 @@ class SemestersTableViewController: UITableViewController {
         if editingStyle == UITableViewCellEditingStyle.Delete {
             //Delete the semester from core data here.
         }
+        
+    }
+    
+    func getCurrentSemesterIndex() {
         
     }
     
