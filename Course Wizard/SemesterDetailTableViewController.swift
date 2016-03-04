@@ -148,9 +148,7 @@ class SemesterDetailTableViewController: UITableViewController {
                 if let typeOfSemester = result.valueForKey("type") as? String {
                     if typeOfSemester == chosenSemester {
                         return true
-                    } else {
-                        
-                    }
+                    } 
                 }
             }
             
