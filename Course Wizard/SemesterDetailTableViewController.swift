@@ -86,25 +86,37 @@ class SemesterDetailTableViewController: UITableViewController {
     }
     
     @IBAction func saveSemester(sender: UIBarButtonItem) {
+        
+        let semesterExists = checkIfSemesterExists()
+        
         // Save to core data
         guard let entity = NSEntityDescription.entityForName("Semester", inManagedObjectContext: coreDataStack.managedObjectContext) else {
             fatalError("Could not find entity descriptions!")
         }
         
-        let semesterEntity = Semester(entity: entity, insertIntoManagedObjectContext: coreDataStack.managedObjectContext)
-        semesterEntity.type = chosenSemester!
-        semesterEntity.startDate = startDate!
-        semesterEntity.endDate = endDate!
+        if !semesterExists {
         
-        do {
-            try coreDataStack.managedObjectContext.save()
-        } catch {
-            print("Could not save...")
+            let semesterEntity = Semester(entity: entity, insertIntoManagedObjectContext: coreDataStack.managedObjectContext)
+            semesterEntity.type = chosenSemester!
+            semesterEntity.startDate = startDate!
+            semesterEntity.endDate = endDate!
+            
+            do {
+                try coreDataStack.managedObjectContext.save()
+            } catch {
+                print("Could not save...")
+            }
+            
+            dismissViewControllerAnimated(true, completion: nil)
+            
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Sorry, that semester already exists for the specified year. Either add a different semester or delete the original", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertAction = UIAlertAction(title: "Okay", style: .Default, handler: { (UIAlertAction) -> Void in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            })
+            alert.addAction(alertAction)
+            self.presentViewController(alert, animated: true, completion: nil)
         }
-        
-        dismissViewControllerAnimated(true, completion: nil)
-        printTestData()
-        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -124,22 +136,28 @@ class SemesterDetailTableViewController: UITableViewController {
         }
     }
     
-    func printTestData() {
+      func checkIfSemesterExists() -> Bool {
         
-        let fetchRequest = NSFetchRequest(entityName: "Semester")
+        let checkFetchRequest = NSFetchRequest(entityName: "Semester")
         
         do {
-            let results = try coreDataStack.managedObjectContext.executeFetchRequest(fetchRequest)
+            
+            let results = try coreDataStack.managedObjectContext.executeFetchRequest(checkFetchRequest) as! [Semester]
             
             for result in results {
-                if let semesterOfType = result.valueForKey("type") as? String, startSemesterDate = result.valueForKey("startDate") as? String, endSemesterDate = result.valueForKey("endDate") as? String {
-                    print("Starting semester \(semesterOfType) beginning \(startSemesterDate), ending \(endSemesterDate)")
+                if let typeOfSemester = result.valueForKey("type") as? String {
+                    if typeOfSemester == chosenSemester {
+                        return true
+                    } else {
+                        
+                    }
                 }
             }
             
         } catch {
-            fatalError("Didnt get fetch")
+            fatalError("Could not execute request")
         }
+        return false
     }
     
 }
