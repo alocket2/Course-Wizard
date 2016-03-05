@@ -149,7 +149,9 @@ class SemesterDetailTableViewController: UITableViewController {
             
             for result in results {
                 if let typeOfSemester = result.valueForKey("type") as? String, yearOfSemester = result.valueForKey("startDate") as? String {
-                    if typeOfSemester == chosenSemester && yearOfSemester == year  {
+                    let yearIndex = yearOfSemester.endIndex.advancedBy(-4)
+                    let yearCheck = yearOfSemester.substringFromIndex(yearIndex)
+                    if typeOfSemester == chosenSemester && yearCheck == year  {
                         return true
                     } 
                 }

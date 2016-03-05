@@ -180,6 +180,7 @@
 		928C602E1C87AEB600147BD2 /* More */ = {
 			isa = PBXGroup;
 			children = (
+				928C60311C87CE8400147BD2 /* SemestersTableViewController.swift */,
 				928C60351C889DD400147BD2 /* Campus+CoreDataProperties.swift */,
 				928C60361C889DD400147BD2 /* Campus.swift */,
 				928C602F1C87AED500147BD2 /* MoreTableViewController.swift */,
@@ -208,7 +209,6 @@
 				92AEECD01C83F1F700372550 /* SemesterTypeTableViewController.swift */,
 				92AEECD21C83F44A00372550 /* SemesterDatePicker.swift */,
 				92AEECD41C83F49F00372550 /* SemesterCampusTableViewController.swift */,
-				928C60311C87CE8400147BD2 /* SemestersTableViewController.swift */,
 			);
 			name = Semester;
 			sourceTree = "<group>";
