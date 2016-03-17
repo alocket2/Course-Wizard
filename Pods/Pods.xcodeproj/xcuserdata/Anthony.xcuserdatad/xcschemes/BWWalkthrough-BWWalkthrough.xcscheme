@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D5D29A022F06D5DB0068705E'
-               BlueprintName = 'Pods-Course Wizard'
+               BlueprintIdentifier = '57A3E017BDF308365D25637C'
+               BlueprintName = 'BWWalkthrough-BWWalkthrough'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods_Course_Wizard.framework'>
+               BuildableName = 'BWWalkthrough.bundle'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

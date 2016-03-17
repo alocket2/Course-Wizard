@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>BWWalkthrough-BWWalkthrough.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>BWWalkthrough.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Mapbox-iOS-SDK-Mapbox.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>17664F8F0232329D875EC690EB653867</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2DB59219DEF5D393F19F0753F2D9C161</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FBE2A731DF8DE3F3F4960CDB24D58D2A</key>
+		<key>A371D9F716AF507FF01A593DD0D9DFDF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AAF30E08B3DAFD4A95AAB07C639D6C83</key>
 		<dict>
 			<key>primary</key>
 			<true/>

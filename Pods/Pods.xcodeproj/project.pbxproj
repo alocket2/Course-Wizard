@@ -7,63 +7,95 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		003AF3C120288E037C48576B2243E471 /* Compass@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F12485AFB0314C9BCC9525F021118B8 /* Compass@3x.png */; };
-		0CAC0CC4DCAC675916FCBCA05B638C9F /* default_marker@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 822781AABA775815CB4472DF1FF1D80C /* default_marker@3x.png */; };
-		15E004EFDE620509948A19D4AC55B5AC /* Pods-Course Wizard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 809DC135639167B4D2C148349AA82C1F /* Pods-Course Wizard-dummy.m */; };
-		196AB93D6F91BD3B8A662E3BABF3D5AE /* mapbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C54871DEC66CEA5507EF887F56827EDA /* mapbox@2x.png */; };
-		22A156810076F6D1A7E3B62042878526 /* mapbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FC05076F102E2BA96DAC987CABA0079 /* mapbox.png */; };
-		2F3EF98D44B18A5738B996EB7851B102 /* Compass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18269BEA827C823922B4752833ED9866 /* Compass@2x.png */; };
-		4105F60998DB316B7E205F0F58E8C621 /* api_mapbox_com-digicert.der in Resources */ = {isa = PBXBuildFile; fileRef = 1A69A17198422636710E04EACFA6366A /* api_mapbox_com-digicert.der */; };
-		45627E38A4C02F4306763B7180CA5707 /* star_tilestream_net.der in Resources */ = {isa = PBXBuildFile; fileRef = 8FAD5ACD15E386DA8E790AC3F955C152 /* star_tilestream_net.der */; };
-		4E86E4895AED1D572EF89E302F6172FB /* default_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1DAC5539460535299707881D35CFB4 /* default_marker.png */; };
-		5D896DFB8B4FAA92F11E7346A0330E3B /* mapbox@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DA3DB749096E5E3E46FA63BECDA56A /* mapbox@3x.png */; };
-		89CD532FBF48416A5AEB3725C68AA5F6 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 57849D09B305301816221A0BBB2EA9F1 /* README */; };
-		8BC6C182AC595289B59FACD63C86218B /* api_mapbox_com-geotrust.der in Resources */ = {isa = PBXBuildFile; fileRef = B736DA688950332236670883FF665DEC /* api_mapbox_com-geotrust.der */; };
-		A1C0DC366F36DA278187B54336AB6182 /* default_marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCF14577398656AC7BE7F93E7613325D /* default_marker@2x.png */; };
-		B43BD2816013609E80E66FEEB585FF96 /* Compass.png in Resources */ = {isa = PBXBuildFile; fileRef = D96FABAEFE8CDB30F630F5BD80AAFC7A /* Compass.png */; };
-		E172F0822261DAAEC0B1F954D197CD45 /* Pods-Course Wizard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B6F19B74612F37256EE81C2ED9145303 /* Pods-Course Wizard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9EDFDEAADF2D85CBBD482CC71A899B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		003AF3C120288E037C48576B2243E471 /* Compass@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3863034DEBA39435F71E0C2E2F9E353F /* Compass@3x.png */; };
+		0CAC0CC4DCAC675916FCBCA05B638C9F /* default_marker@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72DEAC8B771236458CA2AD046F998686 /* default_marker@3x.png */; };
+		196AB93D6F91BD3B8A662E3BABF3D5AE /* mapbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B104ADEF976177534CEC078B809A33B /* mapbox@2x.png */; };
+		22A156810076F6D1A7E3B62042878526 /* mapbox.png in Resources */ = {isa = PBXBuildFile; fileRef = BDD2BEA3EB1FCDDB67B17831EC8EA2A0 /* mapbox.png */; };
+		2F3EF98D44B18A5738B996EB7851B102 /* Compass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 037DCFAE3BFE19E990FCC80861F2D674 /* Compass@2x.png */; };
+		40C827ABDB3F3436BBC0671B2519F025 /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006417DD3750708BA33B4E1CCD079F9F /* BWWalkthroughViewController.swift */; };
+		4105F60998DB316B7E205F0F58E8C621 /* api_mapbox_com-digicert.der in Resources */ = {isa = PBXBuildFile; fileRef = 0B73C09EF48E2A9AE0456ABFC72F7BA2 /* api_mapbox_com-digicert.der */; };
+		45627E38A4C02F4306763B7180CA5707 /* star_tilestream_net.der in Resources */ = {isa = PBXBuildFile; fileRef = ACA1D6303B4B311601A0E6A8822C34C8 /* star_tilestream_net.der */; };
+		4E86E4895AED1D572EF89E302F6172FB /* default_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C75DA39158C265FF4EB241872AB730 /* default_marker.png */; };
+		5D896DFB8B4FAA92F11E7346A0330E3B /* mapbox@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FB6BC3ADF3E24FCA683249ECFE5B1E3 /* mapbox@3x.png */; };
+		60DE1DC10FA19191683913D542A25437 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		839018BC778AC75188472A5FC5BEAAEB /* Pods-Course Wizard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B6F19B74612F37256EE81C2ED9145303 /* Pods-Course Wizard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89CD532FBF48416A5AEB3725C68AA5F6 /* README in Resources */ = {isa = PBXBuildFile; fileRef = DA9531C81E41B2CA65D0ED4C1FE376F2 /* README */; };
+		8BC6C182AC595289B59FACD63C86218B /* api_mapbox_com-geotrust.der in Resources */ = {isa = PBXBuildFile; fileRef = BEC6E9245BA9353580FC502755257BD7 /* api_mapbox_com-geotrust.der */; };
+		994EEB76829CAF89430CEBC248C0D94B /* BWWalkthrough-BWWalkthrough-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = E4801FB9006C407EAB7B3436EF7EB84C /* BWWalkthrough-BWWalkthrough-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C0D48DB3AE3B827183BBACDB01E79DD /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8522C5DE2B4B024A43AC689078D8B9 /* BWWalkthroughPageViewController.swift */; };
+		A1C0DC366F36DA278187B54336AB6182 /* default_marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 192668276B25934D18C23B2CEC96E5C8 /* default_marker@2x.png */; };
+		A9C6156D8316F299E9412F2DF914D658 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		B43BD2816013609E80E66FEEB585FF96 /* Compass.png in Resources */ = {isa = PBXBuildFile; fileRef = BA144A3657FD272E6C967AC2042A19A4 /* Compass.png */; };
+		DAC50B65F67BCAB66B22ACB0BE163C32 /* Pods-Course Wizard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 809DC135639167B4D2C148349AA82C1F /* Pods-Course Wizard-dummy.m */; };
+		DEDFC7B3F6D3C2BAA090F9F02786BCD2 /* BWWalkthrough.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 89CD8F4EBCDDDD4ACE178C819ED6A56A /* BWWalkthrough.bundle */; };
+		E3ABF6A7E1F3BD40EA89029B9583CE36 /* BWWalkthrough-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 54AB46CD54BD45A451D196A423DEBBE4 /* BWWalkthrough-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E66BCF0D70A62711A521E9E4C7BE9728 /* BWWalkthrough-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7907BB1800AFB4161E5EBC8708E4CD39 /* BWWalkthrough-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CED3283AFD3865A5F2BE8C3A1F09AE0A /* PBXContainerItemProxy */ = {
+		CADC63AC3073D6C741B22A96D34AA490 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A371D9F716AF507FF01A593DD0D9DFDF;
+			remoteInfo = "BWWalkthrough-BWWalkthrough";
+		};
+		CDB29F81BD122BEF2B6DF1221EB1E07D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2DB59219DEF5D393F19F0753F2D9C161;
 			remoteInfo = "Mapbox-iOS-SDK-Mapbox";
 		};
+		DB6E7CE36FA5C69C4D6CACD7FEADB791 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17664F8F0232329D875EC690EB653867;
+			remoteInfo = BWWalkthrough;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		006417DD3750708BA33B4E1CCD079F9F /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BWWalkthroughViewController.swift; path = Pod/Classes/BWWalkthroughViewController.swift; sourceTree = "<group>"; };
+		037DCFAE3BFE19E990FCC80861F2D674 /* Compass@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Compass@2x.png"; path = "Mapbox.framework/Mapbox.bundle/Compass@2x.png"; sourceTree = "<group>"; };
+		065989BC0B995ACAC00B85E9C7303795 /* Pods_Course_Wizard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Course_Wizard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		08FBA3E1C4154E0F17D7302228E810CE /* Mapbox.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Mapbox.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B73C09EF48E2A9AE0456ABFC72F7BA2 /* api_mapbox_com-digicert.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "api_mapbox_com-digicert.der"; path = "Mapbox.framework/Mapbox.bundle/api_mapbox_com-digicert.der"; sourceTree = "<group>"; };
 		121CF8645E209D33916F2C3375F1217F /* Pods-Course Wizard-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Course Wizard-frameworks.sh"; sourceTree = "<group>"; };
-		18269BEA827C823922B4752833ED9866 /* Compass@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Compass@2x.png"; path = "Mapbox.framework/Mapbox.bundle/Compass@2x.png"; sourceTree = "<group>"; };
-		1A69A17198422636710E04EACFA6366A /* api_mapbox_com-digicert.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "api_mapbox_com-digicert.der"; path = "Mapbox.framework/Mapbox.bundle/api_mapbox_com-digicert.der"; sourceTree = "<group>"; };
+		192668276B25934D18C23B2CEC96E5C8 /* default_marker@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "default_marker@2x.png"; path = "Mapbox.framework/Mapbox.bundle/default_marker@2x.png"; sourceTree = "<group>"; };
+		1B104ADEF976177534CEC078B809A33B /* mapbox@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mapbox@2x.png"; path = "Mapbox.framework/Mapbox.bundle/mapbox@2x.png"; sourceTree = "<group>"; };
 		20CBCA3514D421D992EF162CEEFF7C26 /* Pods-Course Wizard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Course Wizard.debug.xcconfig"; sourceTree = "<group>"; };
+		3863034DEBA39435F71E0C2E2F9E353F /* Compass@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Compass@3x.png"; path = "Mapbox.framework/Mapbox.bundle/Compass@3x.png"; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3F12485AFB0314C9BCC9525F021118B8 /* Compass@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Compass@3x.png"; path = "Mapbox.framework/Mapbox.bundle/Compass@3x.png"; sourceTree = "<group>"; };
-		3FC05076F102E2BA96DAC987CABA0079 /* mapbox.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = mapbox.png; path = Mapbox.framework/Mapbox.bundle/mapbox.png; sourceTree = "<group>"; };
-		471F22E758A706FCF248609ABB016301 /* Pods_Course_Wizard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Course_Wizard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		57849D09B305301816221A0BBB2EA9F1 /* README */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = README; path = Mapbox.framework/Mapbox.bundle/README; sourceTree = "<group>"; };
-		73DA3DB749096E5E3E46FA63BECDA56A /* mapbox@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mapbox@3x.png"; path = "Mapbox.framework/Mapbox.bundle/mapbox@3x.png"; sourceTree = "<group>"; };
+		3ED9BD372AF32139313B89DE60E6FE37 /* BWWalkthrough.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = BWWalkthrough.modulemap; sourceTree = "<group>"; };
+		4FB6BC3ADF3E24FCA683249ECFE5B1E3 /* mapbox@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mapbox@3x.png"; path = "Mapbox.framework/Mapbox.bundle/mapbox@3x.png"; sourceTree = "<group>"; };
+		54AB46CD54BD45A451D196A423DEBBE4 /* BWWalkthrough-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BWWalkthrough-umbrella.h"; sourceTree = "<group>"; };
+		72B729102B08DC8F3A6845D3BF4C9D6C /* BWWalkthrough-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BWWalkthrough-prefix.pch"; sourceTree = "<group>"; };
+		72DEAC8B771236458CA2AD046F998686 /* default_marker@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "default_marker@3x.png"; path = "Mapbox.framework/Mapbox.bundle/default_marker@3x.png"; sourceTree = "<group>"; };
+		7907BB1800AFB4161E5EBC8708E4CD39 /* BWWalkthrough-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BWWalkthrough-dummy.m"; sourceTree = "<group>"; };
 		809DC135639167B4D2C148349AA82C1F /* Pods-Course Wizard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Course Wizard-dummy.m"; sourceTree = "<group>"; };
-		822781AABA775815CB4472DF1FF1D80C /* default_marker@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "default_marker@3x.png"; path = "Mapbox.framework/Mapbox.bundle/default_marker@3x.png"; sourceTree = "<group>"; };
 		83CD7E5CD31417AA358E45AF70CBA5CE /* Pods-Course Wizard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Course Wizard.modulemap"; sourceTree = "<group>"; };
-		8FAD5ACD15E386DA8E790AC3F955C152 /* star_tilestream_net.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = star_tilestream_net.der; path = Mapbox.framework/Mapbox.bundle/star_tilestream_net.der; sourceTree = "<group>"; };
-		98059D4711ABF7A80FC7427D999EDB09 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
-		9C1DAC5539460535299707881D35CFB4 /* default_marker.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = default_marker.png; path = Mapbox.framework/Mapbox.bundle/default_marker.png; sourceTree = "<group>"; };
+		89CD8F4EBCDDDD4ACE178C819ED6A56A /* BWWalkthrough.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BWWalkthrough.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B146943EA3B120C67FD7D6B95FA4534 /* BWWalkthrough.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BWWalkthrough.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D8522C5DE2B4B024A43AC689078D8B9 /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BWWalkthroughPageViewController.swift; path = Pod/Classes/BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		8D9552EB167D6CC4C6B11814B9D04966 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 		A497496246445AA304E192BE9ABB1744 /* Pods-Course Wizard-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Course Wizard-resources.sh"; sourceTree = "<group>"; };
+		A4B4AADB9D81381EBB70EB4301577C97 /* BWWalkthrough.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BWWalkthrough.xcconfig; sourceTree = "<group>"; };
 		A67CA6159FE13338B5A7E16543212222 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6D15177DFF425DAFDED1075487DC289 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9C75DA39158C265FF4EB241872AB730 /* default_marker.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = default_marker.png; path = Mapbox.framework/Mapbox.bundle/default_marker.png; sourceTree = "<group>"; };
 		AB2367C9F1F71861B0C0A242FF723D94 /* Pods-Course Wizard-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Course Wizard-acknowledgements.markdown"; sourceTree = "<group>"; };
+		ACA1D6303B4B311601A0E6A8822C34C8 /* star_tilestream_net.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = star_tilestream_net.der; path = Mapbox.framework/Mapbox.bundle/star_tilestream_net.der; sourceTree = "<group>"; };
 		B6F19B74612F37256EE81C2ED9145303 /* Pods-Course Wizard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Course Wizard-umbrella.h"; sourceTree = "<group>"; };
-		B736DA688950332236670883FF665DEC /* api_mapbox_com-geotrust.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "api_mapbox_com-geotrust.der"; path = "Mapbox.framework/Mapbox.bundle/api_mapbox_com-geotrust.der"; sourceTree = "<group>"; };
+		BA144A3657FD272E6C967AC2042A19A4 /* Compass.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Compass.png; path = Mapbox.framework/Mapbox.bundle/Compass.png; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C54871DEC66CEA5507EF887F56827EDA /* mapbox@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mapbox@2x.png"; path = "Mapbox.framework/Mapbox.bundle/mapbox@2x.png"; sourceTree = "<group>"; };
+		BDD2BEA3EB1FCDDB67B17831EC8EA2A0 /* mapbox.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = mapbox.png; path = Mapbox.framework/Mapbox.bundle/mapbox.png; sourceTree = "<group>"; };
+		BEC6E9245BA9353580FC502755257BD7 /* api_mapbox_com-geotrust.der */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "api_mapbox_com-geotrust.der"; path = "Mapbox.framework/Mapbox.bundle/api_mapbox_com-geotrust.der"; sourceTree = "<group>"; };
 		C9CED13FBC4462B1826F59E3E7C55943 /* Pods-Course Wizard-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Course Wizard-acknowledgements.plist"; sourceTree = "<group>"; };
-		CCF14577398656AC7BE7F93E7613325D /* default_marker@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "default_marker@2x.png"; path = "Mapbox.framework/Mapbox.bundle/default_marker@2x.png"; sourceTree = "<group>"; };
 		D77D15C560F82E9A4FE05669BAE62CF3 /* Pods-Course Wizard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Course Wizard.release.xcconfig"; sourceTree = "<group>"; };
-		D96FABAEFE8CDB30F630F5BD80AAFC7A /* Compass.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Compass.png; path = Mapbox.framework/Mapbox.bundle/Compass.png; sourceTree = "<group>"; };
-		E5207BBAFEAC931603D05E79A38ECFE0 /* Mapbox.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Mapbox.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA9531C81E41B2CA65D0ED4C1FE376F2 /* README */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = README; path = Mapbox.framework/Mapbox.bundle/README; sourceTree = "<group>"; };
+		E4801FB9006C407EAB7B3436EF7EB84C /* BWWalkthrough-BWWalkthrough-Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BWWalkthrough-BWWalkthrough-Bridging-Header.h"; path = "Pod/Classes/BWWalkthrough-BWWalkthrough-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,32 +106,61 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		08F3279FE535E023A4612EB0602230F8 /* Frameworks */ = {
+		0B2ABB4E56F5ADFFEBE4F3C6018AB16E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9EDFDEAADF2D85CBBD482CC71A899B4 /* Foundation.framework in Frameworks */,
+				A9C6156D8316F299E9412F2DF914D658 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F2DA83DF387250AE6297F7FE08B1038 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60DE1DC10FA19191683913D542A25437 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9E16A6CE53F5C4E400769AFDB64471C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0823DC853F08EF9D09A5BC72FAF4FDF5 /* Frameworks */ = {
+		0A222A35F8D388795386148DDB2DD8D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				98059D4711ABF7A80FC7427D999EDB09 /* Mapbox.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		63C3BEDE10A5024C0C5E4A7871DA1C2D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E5207BBAFEAC931603D05E79A38ECFE0 /* Mapbox.bundle */,
-				471F22E758A706FCF248609ABB016301 /* Pods_Course_Wizard.framework */,
+				89CD8F4EBCDDDD4ACE178C819ED6A56A /* BWWalkthrough.bundle */,
+				8B146943EA3B120C67FD7D6B95FA4534 /* BWWalkthrough.framework */,
+				08FBA3E1C4154E0F17D7302228E810CE /* Mapbox.bundle */,
+				065989BC0B995ACAC00B85E9C7303795 /* Pods_Course_Wizard.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		261A4C239E3169C59ACEECEB580650FE /* BWWalkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				E4801FB9006C407EAB7B3436EF7EB84C /* BWWalkthrough-BWWalkthrough-Bridging-Header.h */,
+				8D8522C5DE2B4B024A43AC689078D8B9 /* BWWalkthroughPageViewController.swift */,
+				006417DD3750708BA33B4E1CCD079F9F /* BWWalkthroughViewController.swift */,
+				9D2F6345A8B7153369A2A6D3333C2CEE /* Support Files */,
+			);
+			path = BWWalkthrough;
+			sourceTree = "<group>";
+		};
+		584A627A849E113A7C022F332826C9E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				261A4C239E3169C59ACEECEB580650FE /* BWWalkthrough */,
+				B0A32CCEAB23CE457A6D81499060531D /* Mapbox-iOS-SDK */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -107,18 +168,41 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				9963E4E4BA265FC10C35A16EFF5FF680 /* Pods */,
-				63C3BEDE10A5024C0C5E4A7871DA1C2D /* Products */,
+				584A627A849E113A7C022F332826C9E0 /* Pods */,
+				0A222A35F8D388795386148DDB2DD8D7 /* Products */,
 				E1FF77DF623E00628856F89053E44017 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		9963E4E4BA265FC10C35A16EFF5FF680 /* Pods */ = {
+		9D2F6345A8B7153369A2A6D3333C2CEE /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CD5715B752E85E61B2C84CDD104170D3 /* Mapbox-iOS-SDK */,
+				3ED9BD372AF32139313B89DE60E6FE37 /* BWWalkthrough.modulemap */,
+				A4B4AADB9D81381EBB70EB4301577C97 /* BWWalkthrough.xcconfig */,
+				7907BB1800AFB4161E5EBC8708E4CD39 /* BWWalkthrough-dummy.m */,
+				72B729102B08DC8F3A6845D3BF4C9D6C /* BWWalkthrough-prefix.pch */,
+				54AB46CD54BD45A451D196A423DEBBE4 /* BWWalkthrough-umbrella.h */,
+				A6D15177DFF425DAFDED1075487DC289 /* Info.plist */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/BWWalkthrough";
+			sourceTree = "<group>";
+		};
+		AFA2FC2673DB3E8761A550FC18E385D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D9552EB167D6CC4C6B11814B9D04966 /* Mapbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B0A32CCEAB23CE457A6D81499060531D /* Mapbox-iOS-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				AFA2FC2673DB3E8761A550FC18E385D3 /* Frameworks */,
+				E205DEAB378F076FB127912EB8CC3572 /* Resources */,
+			);
+			path = "Mapbox-iOS-SDK";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -135,15 +219,6 @@
 				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		CD5715B752E85E61B2C84CDD104170D3 /* Mapbox-iOS-SDK */ = {
-			isa = PBXGroup;
-			children = (
-				0823DC853F08EF9D09A5BC72FAF4FDF5 /* Frameworks */,
-				E08FE7EB126315BFD47887B2DEAAAFC9 /* Resources */,
-			);
-			path = "Mapbox-iOS-SDK";
 			sourceTree = "<group>";
 		};
 		DFB4C1F00DED78CED9C4161DC492BCF5 /* Pods-Course Wizard */ = {
@@ -164,26 +239,6 @@
 			path = "Target Support Files/Pods-Course Wizard";
 			sourceTree = "<group>";
 		};
-		E08FE7EB126315BFD47887B2DEAAAFC9 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				1A69A17198422636710E04EACFA6366A /* api_mapbox_com-digicert.der */,
-				B736DA688950332236670883FF665DEC /* api_mapbox_com-geotrust.der */,
-				D96FABAEFE8CDB30F630F5BD80AAFC7A /* Compass.png */,
-				18269BEA827C823922B4752833ED9866 /* Compass@2x.png */,
-				3F12485AFB0314C9BCC9525F021118B8 /* Compass@3x.png */,
-				9C1DAC5539460535299707881D35CFB4 /* default_marker.png */,
-				CCF14577398656AC7BE7F93E7613325D /* default_marker@2x.png */,
-				822781AABA775815CB4472DF1FF1D80C /* default_marker@3x.png */,
-				3FC05076F102E2BA96DAC987CABA0079 /* mapbox.png */,
-				C54871DEC66CEA5507EF887F56827EDA /* mapbox@2x.png */,
-				73DA3DB749096E5E3E46FA63BECDA56A /* mapbox@3x.png */,
-				57849D09B305301816221A0BBB2EA9F1 /* README */,
-				8FAD5ACD15E386DA8E790AC3F955C152 /* star_tilestream_net.der */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		E1FF77DF623E00628856F89053E44017 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,20 +247,68 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		E205DEAB378F076FB127912EB8CC3572 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0B73C09EF48E2A9AE0456ABFC72F7BA2 /* api_mapbox_com-digicert.der */,
+				BEC6E9245BA9353580FC502755257BD7 /* api_mapbox_com-geotrust.der */,
+				BA144A3657FD272E6C967AC2042A19A4 /* Compass.png */,
+				037DCFAE3BFE19E990FCC80861F2D674 /* Compass@2x.png */,
+				3863034DEBA39435F71E0C2E2F9E353F /* Compass@3x.png */,
+				A9C75DA39158C265FF4EB241872AB730 /* default_marker.png */,
+				192668276B25934D18C23B2CEC96E5C8 /* default_marker@2x.png */,
+				72DEAC8B771236458CA2AD046F998686 /* default_marker@3x.png */,
+				BDD2BEA3EB1FCDDB67B17831EC8EA2A0 /* mapbox.png */,
+				1B104ADEF976177534CEC078B809A33B /* mapbox@2x.png */,
+				4FB6BC3ADF3E24FCA683249ECFE5B1E3 /* mapbox@3x.png */,
+				DA9531C81E41B2CA65D0ED4C1FE376F2 /* README */,
+				ACA1D6303B4B311601A0E6A8822C34C8 /* star_tilestream_net.der */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		516EAE5D3B1A903554797FD712F1F600 /* Headers */ = {
+		8290FDD6D0FEA82852BA958309165EE2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E172F0822261DAAEC0B1F954D197CD45 /* Pods-Course Wizard-umbrella.h in Headers */,
+				839018BC778AC75188472A5FC5BEAAEB /* Pods-Course Wizard-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2C765142395124F2093D8B94C253794 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				994EEB76829CAF89430CEBC248C0D94B /* BWWalkthrough-BWWalkthrough-Bridging-Header.h in Headers */,
+				E3ABF6A7E1F3BD40EA89029B9583CE36 /* BWWalkthrough-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		17664F8F0232329D875EC690EB653867 /* BWWalkthrough */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A639503FAD904A4C0560BFD21A4AC533 /* Build configuration list for PBXNativeTarget "BWWalkthrough" */;
+			buildPhases = (
+				FD5F0ECA9C77D6296EDA013360EF40F6 /* Sources */,
+				1F2DA83DF387250AE6297F7FE08B1038 /* Frameworks */,
+				1C94656C2686843D9CB039F0A4AA4DFE /* Resources */,
+				F2C765142395124F2093D8B94C253794 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63600B2DD48DB00968374FB919F9FB4E /* PBXTargetDependency */,
+			);
+			name = BWWalkthrough;
+			productName = BWWalkthrough;
+			productReference = 8B146943EA3B120C67FD7D6B95FA4534 /* BWWalkthrough.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		2DB59219DEF5D393F19F0753F2D9C161 /* Mapbox-iOS-SDK-Mapbox */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18350CA88BA46CBE4A1796F0A918615E /* Build configuration list for PBXNativeTarget "Mapbox-iOS-SDK-Mapbox" */;
@@ -220,25 +323,43 @@
 			);
 			name = "Mapbox-iOS-SDK-Mapbox";
 			productName = "Mapbox-iOS-SDK-Mapbox";
-			productReference = E5207BBAFEAC931603D05E79A38ECFE0 /* Mapbox.bundle */;
+			productReference = 08FBA3E1C4154E0F17D7302228E810CE /* Mapbox.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		FBE2A731DF8DE3F3F4960CDB24D58D2A /* Pods-Course Wizard */ = {
+		A371D9F716AF507FF01A593DD0D9DFDF /* BWWalkthrough-BWWalkthrough */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A96107A060E9F0594DAE3D205E92B47C /* Build configuration list for PBXNativeTarget "Pods-Course Wizard" */;
+			buildConfigurationList = B07D9626E86B5AD00B8666EAC0256D73 /* Build configuration list for PBXNativeTarget "BWWalkthrough-BWWalkthrough" */;
 			buildPhases = (
-				EAF5F936BCEEF359F5C621AB04873B46 /* Sources */,
-				08F3279FE535E023A4612EB0602230F8 /* Frameworks */,
-				516EAE5D3B1A903554797FD712F1F600 /* Headers */,
+				54EA438B6EE7DA675F154065FA3B8F0C /* Sources */,
+				E9E16A6CE53F5C4E400769AFDB64471C /* Frameworks */,
+				CD580337CCBD015067CC162342EA52E9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				ED5DD879F79658CB7F3A26BFBEC9044E /* PBXTargetDependency */,
+			);
+			name = "BWWalkthrough-BWWalkthrough";
+			productName = "BWWalkthrough-BWWalkthrough";
+			productReference = 89CD8F4EBCDDDD4ACE178C819ED6A56A /* BWWalkthrough.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		AAF30E08B3DAFD4A95AAB07C639D6C83 /* Pods-Course Wizard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF7DDBAF5C7C2BED13B14005159C65DA /* Build configuration list for PBXNativeTarget "Pods-Course Wizard" */;
+			buildPhases = (
+				B52F08C020F8216582920E1D840D2201 /* Sources */,
+				0B2ABB4E56F5ADFFEBE4F3C6018AB16E /* Frameworks */,
+				8290FDD6D0FEA82852BA958309165EE2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				75401DF8AC5DDE2D219C0D246D208733 /* PBXTargetDependency */,
+				99AD8F628321076183F40E056E982527 /* PBXTargetDependency */,
 			);
 			name = "Pods-Course Wizard";
 			productName = "Pods-Course Wizard";
-			productReference = 471F22E758A706FCF248609ABB016301 /* Pods_Course_Wizard.framework */;
+			productReference = 065989BC0B995ACAC00B85E9C7303795 /* Pods_Course_Wizard.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -258,17 +379,34 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 63C3BEDE10A5024C0C5E4A7871DA1C2D /* Products */;
+			productRefGroup = 0A222A35F8D388795386148DDB2DD8D7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				17664F8F0232329D875EC690EB653867 /* BWWalkthrough */,
+				A371D9F716AF507FF01A593DD0D9DFDF /* BWWalkthrough-BWWalkthrough */,
 				2DB59219DEF5D393F19F0753F2D9C161 /* Mapbox-iOS-SDK-Mapbox */,
-				FBE2A731DF8DE3F3F4960CDB24D58D2A /* Pods-Course Wizard */,
+				AAF30E08B3DAFD4A95AAB07C639D6C83 /* Pods-Course Wizard */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1C94656C2686843D9CB039F0A4AA4DFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEDFC7B3F6D3C2BAA090F9F02786BCD2 /* BWWalkthrough.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD580337CCBD015067CC162342EA52E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DE0920D1A0C39516A66B89971588F960 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,6 +430,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		54EA438B6EE7DA675F154065FA3B8F0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B52F08C020F8216582920E1D840D2201 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAC50B65F67BCAB66B22ACB0BE163C32 /* Pods-Course Wizard-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9A0CDF4EB9708160409881E16AACD2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -299,22 +452,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EAF5F936BCEEF359F5C621AB04873B46 /* Sources */ = {
+		FD5F0ECA9C77D6296EDA013360EF40F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15E004EFDE620509948A19D4AC55B5AC /* Pods-Course Wizard-dummy.m in Sources */,
+				E66BCF0D70A62711A521E9E4C7BE9728 /* BWWalkthrough-dummy.m in Sources */,
+				9C0D48DB3AE3B827183BBACDB01E79DD /* BWWalkthroughPageViewController.swift in Sources */,
+				40C827ABDB3F3436BBC0671B2519F025 /* BWWalkthroughViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		ED5DD879F79658CB7F3A26BFBEC9044E /* PBXTargetDependency */ = {
+		63600B2DD48DB00968374FB919F9FB4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "BWWalkthrough-BWWalkthrough";
+			target = A371D9F716AF507FF01A593DD0D9DFDF /* BWWalkthrough-BWWalkthrough */;
+			targetProxy = CADC63AC3073D6C741B22A96D34AA490 /* PBXContainerItemProxy */;
+		};
+		75401DF8AC5DDE2D219C0D246D208733 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BWWalkthrough;
+			target = 17664F8F0232329D875EC690EB653867 /* BWWalkthrough */;
+			targetProxy = DB6E7CE36FA5C69C4D6CACD7FEADB791 /* PBXContainerItemProxy */;
+		};
+		99AD8F628321076183F40E056E982527 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Mapbox-iOS-SDK-Mapbox";
 			target = 2DB59219DEF5D393F19F0753F2D9C161 /* Mapbox-iOS-SDK-Mapbox */;
-			targetProxy = CED3283AFD3865A5F2BE8C3A1F09AE0A /* PBXContainerItemProxy */;
+			targetProxy = CDB29F81BD122BEF2B6DF1221EB1E07D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -330,9 +497,9 @@
 			};
 			name = Release;
 		};
-		0F9B6DC2A8337FA3D8240DCF6AAFE13F /* Release */ = {
+		675CFA9A41925F36B027D4A4B4A01C22 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D77D15C560F82E9A4FE05669BAE62CF3 /* Pods-Course Wizard.release.xcconfig */;
+			baseConfigurationReference = A4B4AADB9D81381EBB70EB4301577C97 /* BWWalkthrough.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -341,17 +508,14 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Course Wizard/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/BWWalkthrough/BWWalkthrough-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BWWalkthrough/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Course Wizard/Pods-Course Wizard.modulemap";
+				MODULEMAP_FILE = "Target Support Files/BWWalkthrough/BWWalkthrough.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_Course_Wizard;
+				PRODUCT_NAME = BWWalkthrough;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -360,9 +524,21 @@
 			};
 			name = Release;
 		};
-		75A8FD738EC137B23DCBFDB6074C9AAE /* Debug */ = {
+		7C2EA931668FF829F85FE43A4C96DB02 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20CBCA3514D421D992EF162CEEFF7C26 /* Pods-Course Wizard.debug.xcconfig */;
+			baseConfigurationReference = A4B4AADB9D81381EBB70EB4301577C97 /* BWWalkthrough.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = BWWalkthrough;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		8DC5EF8C093B0ED7D3BFE28AF3E6E3BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4B4AADB9D81381EBB70EB4301577C97 /* BWWalkthrough.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -371,19 +547,17 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Course Wizard/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/BWWalkthrough/BWWalkthrough-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BWWalkthrough/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Course Wizard/Pods-Course Wizard.modulemap";
+				MODULEMAP_FILE = "Target Support Files/BWWalkthrough/BWWalkthrough.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_Course_Wizard;
+				PRODUCT_NAME = BWWalkthrough;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -429,6 +603,18 @@
 			};
 			name = Debug;
 		};
+		C35698CA4CDDBF52681A7D254DC1C44A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4B4AADB9D81381EBB70EB4301577C97 /* BWWalkthrough.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = BWWalkthrough;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		C4A2199EF0363F38958A1B4A108EF9B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -439,6 +625,67 @@
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
+		};
+		CD41050191306AAA9DC6AAABC455CA42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20CBCA3514D421D992EF162CEEFF7C26 /* Pods-Course Wizard.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Course Wizard/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Course Wizard/Pods-Course Wizard.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Course_Wizard;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FA4F0A31A46AE4AEA241FB986CF20B7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D77D15C560F82E9A4FE05669BAE62CF3 /* Pods-Course Wizard.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Course Wizard/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Course Wizard/Pods-Course Wizard.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Course_Wizard;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -495,11 +742,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A96107A060E9F0594DAE3D205E92B47C /* Build configuration list for PBXNativeTarget "Pods-Course Wizard" */ = {
+		A639503FAD904A4C0560BFD21A4AC533 /* Build configuration list for PBXNativeTarget "BWWalkthrough" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				75A8FD738EC137B23DCBFDB6074C9AAE /* Debug */,
-				0F9B6DC2A8337FA3D8240DCF6AAFE13F /* Release */,
+				8DC5EF8C093B0ED7D3BFE28AF3E6E3BD /* Debug */,
+				675CFA9A41925F36B027D4A4B4A01C22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B07D9626E86B5AD00B8666EAC0256D73 /* Build configuration list for PBXNativeTarget "BWWalkthrough-BWWalkthrough" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C35698CA4CDDBF52681A7D254DC1C44A /* Debug */,
+				7C2EA931668FF829F85FE43A4C96DB02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF7DDBAF5C7C2BED13B14005159C65DA /* Build configuration list for PBXNativeTarget "Pods-Course Wizard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD41050191306AAA9DC6AAABC455CA42 /* Debug */,
+				FA4F0A31A46AE4AEA241FB986CF20B7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

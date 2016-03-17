@@ -1,5 +1,5 @@
 //
-//  UIImage+.swift
+//  Cw+UIImage.swift
 //  Course Wizard
 //
 //  Created by Anthony Lockett on 3/16/16.
