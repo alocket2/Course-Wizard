@@ -6,42 +6,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Walkthrough Page View Controller-->
-        <scene sceneID="tyV-Ww-vbj">
-            <objects>
-                <viewController storyboardIdentifier="page2" id="LZq-a8-m0r" customClass="BWWalkthroughPageViewController" customModule="Course_Wizard" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="akf-DG-KvI"/>
-                        <viewControllerLayoutGuide type="bottom" id="A3v-qs-fTW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Lxg-4F-xH4">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cuu-eq-Gww" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3498" y="-542"/>
-        </scene>
-        <!--Walkthrough Page View Controller-->
-        <scene sceneID="txJ-7l-NoX">
-            <objects>
-                <viewController storyboardIdentifier="page3" id="UE5-y1-qTB" customClass="BWWalkthroughPageViewController" customModule="Course_Wizard" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lrF-Ax-iuM"/>
-                        <viewControllerLayoutGuide type="bottom" id="y0e-lR-qEd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zAF-mc-i0C">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qch-kg-rwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4123" y="-547"/>
-        </scene>
         <!--Courses View Controller-->
         <scene sceneID="lJA-ln-ait">
             <objects>
@@ -99,6 +63,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYk-K1-rOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2189" y="936"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="WvE-h5-J82">
+            <objects>
+                <viewController storyboardIdentifier="page3" id="uqi-Lj-bk6" customClass="BWWalkthroughPageViewController" customModule="Course_Wizard" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HDB-o4-cA3"/>
+                        <viewControllerLayoutGuide type="bottom" id="vhY-y1-geF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mdW-JY-5PU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View you classes on the campus map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9af-yp-4ex">
+                                <rect key="frame" x="185" y="292" width="231" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7je-xD-dZ7">
+                                <rect key="frame" x="260" y="402" width="80" height="30"/>
+                                <state key="normal" title="Get Started"/>
+                                <connections>
+                                    <action selector="getStarted:" destination="uqi-Lj-bk6" eventType="touchUpInside" id="JEP-ln-6Xo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9af-yp-4ex" firstAttribute="centerX" secondItem="mdW-JY-5PU" secondAttribute="centerX" id="Cmn-2I-ytL"/>
+                            <constraint firstItem="7je-xD-dZ7" firstAttribute="centerX" secondItem="mdW-JY-5PU" secondAttribute="centerX" id="Qyq-nq-7Yb"/>
+                            <constraint firstItem="7je-xD-dZ7" firstAttribute="centerY" secondItem="mdW-JY-5PU" secondAttribute="centerY" constant="117" id="SOh-68-87W"/>
+                            <constraint firstItem="9af-yp-4ex" firstAttribute="centerY" secondItem="mdW-JY-5PU" secondAttribute="centerY" id="YUq-iq-Rf3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PeY-qA-RcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4233" y="-563"/>
         </scene>
         <!--Semester Type Table View Controller-->
         <scene sceneID="BFG-TV-4dS">
@@ -303,7 +306,7 @@
                     <view key="view" contentMode="scaleToFill" id="wFf-KH-v8v">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.98070549240000005" green="0.98070549240000005" blue="0.98070549240000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lyo-8M-a5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -321,12 +324,58 @@
                     <view key="view" contentMode="scaleToFill" id="Pd4-hN-qmH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track your semesters, classes and assignments" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzF-Hq-fcp">
+                                <rect key="frame" x="154" y="260" width="293" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="293" id="cko-YA-9ni"/>
+                                    <constraint firstAttribute="height" constant="80" id="fXy-A6-VP8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99215686270000003" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="HzF-Hq-fcp" firstAttribute="centerX" secondItem="Pd4-hN-qmH" secondAttribute="centerX" id="ezr-Mf-UQ5"/>
+                            <constraint firstItem="HzF-Hq-fcp" firstAttribute="centerY" secondItem="Pd4-hN-qmH" secondAttribute="centerY" id="mwS-KN-be8"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MNs-jc-Ie0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2853" y="-542"/>
+            <point key="canvasLocation" x="2937" y="-563"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="O9H-Rs-pRo">
+            <objects>
+                <viewController storyboardIdentifier="page2" id="w9p-nx-qHg" customClass="BWWalkthroughPageViewController" customModule="Course_Wizard" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wcf-cb-JSa"/>
+                        <viewControllerLayoutGuide type="bottom" id="mVx-Yi-aao"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FNL-Pl-Wdl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track your gpa and grades" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xb4-Lk-kHM">
+                                <rect key="frame" x="217" y="292" width="166" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xb4-Lk-kHM" firstAttribute="centerY" secondItem="FNL-Pl-Wdl" secondAttribute="centerY" id="VcU-pi-tAr"/>
+                            <constraint firstItem="xb4-Lk-kHM" firstAttribute="centerX" secondItem="FNL-Pl-Wdl" secondAttribute="centerX" id="fls-ts-tFp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EI8-vA-PwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3581" y="-563"/>
         </scene>
         <!--Tab BarUI-->
         <scene sceneID="ZDO-yb-VTS">
