@@ -15,7 +15,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, BWWalkthroughViewControllerDelegate {
 
     var window: UIWindow?
     lazy var coreDataStack = CoreDataStack()
@@ -32,7 +32,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if defaults.integerForKey("viewedWalkthrough") == 0 {
             
-            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("Walkthrough") 
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("Walkthrough") as! BWWalkthroughViewController
+            let page_one = storyboard.instantiateViewControllerWithIdentifier("page1") as UIViewController
+            let page_two = storyboard.instantiateViewControllerWithIdentifier("page2") as UIViewController
+            let page_three = storyboard.instantiateViewControllerWithIdentifier("page3") as UIViewController
+            
+            initialViewController.delegate = self
+            
+            initialViewController.addViewController(page_one)
+            initialViewController.addViewController(page_two)
+            initialViewController.addViewController(page_three)
+            
             
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
