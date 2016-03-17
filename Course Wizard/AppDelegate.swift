@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Course Wizard
+//  Course Wi\zard
 //
 //  Created by Anthony Lockett
 //             Daisy McCoy

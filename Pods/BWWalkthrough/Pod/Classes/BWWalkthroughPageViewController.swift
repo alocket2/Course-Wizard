@@ -170,4 +170,8 @@ public class BWWalkthroughPageViewController: UIViewController, BWWalkthroughPag
         }
     }
     
+    @IBAction func getStarted(sender: UIButton) {
+    }
+
+
 }

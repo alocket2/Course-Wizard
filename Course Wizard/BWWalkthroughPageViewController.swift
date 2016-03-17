@@ -170,4 +170,17 @@ public class BWWalkthroughPageViewController: UIViewController, BWWalkthroughPag
         }
     }
     
+    @IBAction func getStarted(sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Previous GPA", message: "Do you have a previous GPA you would like to add?", preferredStyle: UIAlertControllerStyle.Alert)
+        let action = UIAlertAction(title: "Yes", style: .Default) { (UIAlertAction) -> Void in
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setInteger(1, forKey: "viewedWalkthrough")
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("Overview")
+            self.view.window?.rootViewController?.presentViewController(vc!, animated: true, completion: nil)
+        }
+
+        alert.addAction(action)
+        self.view.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+    }
 }
