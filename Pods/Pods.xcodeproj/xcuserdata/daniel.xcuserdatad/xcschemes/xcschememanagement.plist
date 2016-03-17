@@ -4,25 +4,35 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Mapbox-iOS-SDK-Mapbox.xcscheme</key>
+		<key>BWWalkthrough-BWWalkthrough.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>BWWalkthrough.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-Course Wizard.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2DB59219DEF5D393F19F0753F2D9C161</key>
+		<key>17664F8F0232329D875EC690EB653867</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FBE2A731DF8DE3F3F4960CDB24D58D2A</key>
+		<key>69D540ED6B5F982941EC7669FD54C72C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A371D9F716AF507FF01A593DD0D9DFDF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

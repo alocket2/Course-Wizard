@@ -1,6 +1,6 @@
 PODS:
   - BWWalkthrough (1.0.1)
-  - Mapbox-iOS-SDK (3.0.1)
+  - Mapbox-iOS-SDK (3.1.2)
 
 DEPENDENCIES:
   - BWWalkthrough
@@ -8,6 +8,6 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   BWWalkthrough: 760b70d2a1b3f970a520806b771aa3f787fdc4cf
-  Mapbox-iOS-SDK: 61e79f3dd8432617bd1a66b2d7273ab5ce923ca9
+  Mapbox-iOS-SDK: 0a910c2cce1aa8cff5b9ec2a990e7a32332a776a
 
 COCOAPODS: 0.39.0

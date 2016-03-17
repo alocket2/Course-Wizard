@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		62E918B2ED1DBFD82A89A287 /* Pods_Course_Wizard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EDE33F705FC99F984FDA2D /* Pods_Course_Wizard.framework */; };
-		65D237BF1C9A48C300DAAF47 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D237BE1C9A48C300DAAF47 /* test.swift */; };
 		9212A70D1C837633006421C6 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9212A70C1C837633006421C6 /* CoursesViewController.swift */; };
 		9212A70F1C837B39006421C6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9212A70E1C837B39006421C6 /* MapViewController.swift */; };
 		9212A7111C837EBF006421C6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9212A7101C837EBF006421C6 /* Settings.bundle */; };
@@ -38,7 +37,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		65D237BE1C9A48C300DAAF47 /* test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		9212A70C1C837633006421C6 /* CoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
 		9212A70E1C837B39006421C6 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9212A7101C837EBF006421C6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				9212A70C1C837633006421C6 /* CoursesViewController.swift */,
-				65D237BE1C9A48C300DAAF47 /* test.swift */,
 			);
 			name = Courses;
 			sourceTree = "<group>";
@@ -384,7 +381,6 @@
 				92AEECD51C83F49F00372550 /* SemesterCampusTableViewController.swift in Sources */,
 				924DFC281C7D47DB0097E9C2 /* AppDelegate.swift in Sources */,
 				9212A70D1C837633006421C6 /* CoursesViewController.swift in Sources */,
-				65D237BF1C9A48C300DAAF47 /* test.swift in Sources */,
 				924DFC301C7D47DB0097E9C2 /* Course_Wizard.xcdatamodeld in Sources */,
 				928C60371C889DD400147BD2 /* Campus+CoreDataProperties.swift in Sources */,
 				92E26AEF1C9A67B100D54ED1 /* SettingTableViewController.swift in Sources */,
