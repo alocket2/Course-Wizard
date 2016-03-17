@@ -22,8 +22,7 @@ class CoursesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Making the title of the view
-        title = "Courses"
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,3 +90,4 @@ extension CoursesViewController: SemesterDelegate {
     }
     
 }
+

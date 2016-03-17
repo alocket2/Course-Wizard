@@ -34,7 +34,7 @@
             </objects>
             <point key="canvasLocation" x="3813" y="217"/>
         </scene>
-        <!--Map-->
+        <!--Map View Controller-->
         <scene sceneID="Zyr-u7-T8h">
             <objects>
                 <viewController id="daK-nI-BRK" customClass="MapViewController" customModule="Course_Wizard" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,7 +56,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="KxN-ki-9xP" secondAttribute="trailing" constant="10" id="vsB-Fe-lqb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="map_route" id="WpY-hG-V7f"/>
+                    <tabBarItem key="tabBarItem" title="" image="map_route" id="WpY-hG-V7f">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYk-K1-rOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -254,40 +256,28 @@
             </objects>
             <point key="canvasLocation" x="6724" y="217"/>
         </scene>
-        <!--Campus Table View Controller-->
-        <scene sceneID="Rdq-qI-9u2">
+        <!--View Controller-->
+        <scene sceneID="Evu-1g-TvP">
             <objects>
-                <tableViewController id="gy3-mb-0gf" customClass="CampusTableViewController" customModule="Course_Wizard" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5AM-QD-Tkh">
+                <viewController storyboardIdentifier="Walkthrough" id="On5-hM-ICP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="163-S9-Xvh"/>
+                        <viewControllerLayoutGuide type="bottom" id="WlN-QG-Fwv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wFf-KH-v8v">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="campusCell" id="o3S-Z1-jPJ">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o3S-Z1-jPJ" id="J1F-z7-kfl">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="gy3-mb-0gf" id="Cc0-x7-sGA"/>
-                            <outlet property="delegate" destination="gy3-mb-0gf" id="b4a-i2-eNA"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="vfT-jd-uQd"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sin-xH-o51" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lyo-8M-a5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="44"/>
+            <point key="canvasLocation" x="2230" y="-543"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab BarUI-->
         <scene sceneID="ZDO-yb-VTS">
             <objects>
-                <tabBarController id="mHq-Ai-cc6" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Overview" id="mHq-Ai-cc6" customClass="TabBarUI" customModule="Course_Wizard" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="XHL-05-xrG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -304,10 +294,10 @@
             </objects>
             <point key="canvasLocation" x="2228" y="217"/>
         </scene>
-        <!--More Table View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="rzI-l1-XRE">
             <objects>
-                <tableViewController id="2kh-GB-iOq" customClass="MoreTableViewController" customModule="Course_Wizard" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="2kh-GB-iOq" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="O51-O9-VpK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -346,7 +336,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Campus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KoU-Ev-V5f">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Flight Plan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KoU-Ev-V5f">
                                                     <rect key="frame" x="15" y="0.0" width="550" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -355,9 +345,23 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="gy3-mb-0gf" kind="show" identifier="selectCampusSegue" id="k8p-Pm-1ie"/>
-                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="moreItemsIdentifier" textLabel="DzP-0T-T3g" style="IBUITableViewCellStyleDefault" id="9mN-BH-bTC">
+                                        <rect key="frame" x="0.0" y="223" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9mN-BH-bTC" id="KBs-RV-519">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Degree" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DzP-0T-T3g">
+                                                    <rect key="frame" x="15" y="0.0" width="550" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -368,9 +372,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="c2T-rv-ZSF"/>
-                    <connections>
-                        <outlet property="currentCampusLabel" destination="KoU-Ev-V5f" id="ITs-oo-oWu"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wS1-M5-O2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -420,7 +421,7 @@
             </objects>
             <point key="canvasLocation" x="788" y="1423"/>
         </scene>
-        <!--Calendar-->
+        <!--Table View Controller-->
         <scene sceneID="QjJ-MG-mM4">
             <objects>
                 <tableViewController id="lfA-vE-7eh" sceneMemberID="viewController">
@@ -443,7 +444,9 @@
                             <outlet property="delegate" destination="lfA-vE-7eh" id="rQ7-Af-WxK"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar_edit" id="37j-tX-63S"/>
+                    <tabBarItem key="tabBarItem" title="" image="calendar_edit" id="37j-tX-63S">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ve5-zo-mPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -467,11 +470,14 @@
             </objects>
             <point key="canvasLocation" x="4524" y="217"/>
         </scene>
-        <!--Courses-->
+        <!--Navigation Controller-->
         <scene sceneID="X81-qM-qFX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1EF-Nz-oJa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Courses" image="notebook" id="szo-cp-wUe"/>
+                    <tabBarItem key="tabBarItem" title="" image="albums" id="szo-cp-wUe">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="7" vertical="-7"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ddr-wz-vvw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -504,11 +510,13 @@
             </objects>
             <point key="canvasLocation" x="5912" y="217"/>
         </scene>
-        <!--More-->
+        <!--Navigation Controller-->
         <scene sceneID="dcS-Ea-3Bu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P71-kM-kVO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="More" image="more" id="UUp-y2-QAK"/>
+                    <tabBarItem key="tabBarItem" title="" image="cog" id="UUp-y2-QAK">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LuD-fn-uE8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -525,13 +533,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="albums" width="32" height="32"/>
         <image name="calendar_edit" width="32" height="32"/>
+        <image name="cog" width="32" height="32"/>
         <image name="map_route" width="32" height="32"/>
-        <image name="more" width="32" height="32"/>
-        <image name="notebook" width="32" height="32"/>
         <image name="signposts" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="foc-z8-CIy"/>
+        <segue reference="jjx-DN-hOE"/>
     </inferredMetricsTieBreakers>
 </document>
