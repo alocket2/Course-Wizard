@@ -78,17 +78,6 @@ class SemesterDetailTableViewController: UITableViewController {
             endDateLabel.text = "Start Date: \(endDate!)"
             
         }
-        
-        if campusLabel.text == nil {
-            campusLabel.text = "Campus"
-        } else {
-            guard campus != nil else {
-                return
-            }
-            
-            campusLabel.text = "Campus: \(campus!)"
-        }
-        
     }
     
     @IBAction func cancel(sender: UIBarButtonItem) {

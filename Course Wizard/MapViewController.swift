@@ -120,6 +120,47 @@ class MapViewController: UIViewController {
         }
         
     }
+    
+    
+    @IBAction func changeCampus(sender: UIBarButtonItem) {
+        
+        let controller = UIAlertController(title: "Campuses", message: nil, preferredStyle: .ActionSheet)
+        let bocaAciton = UIAlertAction(title: "Boca Raton", style: .Default) { (UIAlertAction) -> Void in
+            self.currentCampus = "Boca Raton"
+            self.setMapLocation()
+        }
+        let daniaAction = UIAlertAction(title: "Dania Beach (Sea Tech)", style: .Default) { (UIAlertAction) -> Void in
+            self.currentCampus = "Dania Beach (Sea Tech)"
+            self.setMapLocation()
+        }
+        let davieAction = UIAlertAction(title: "Davie", style: .Default) { (UIAlertAction) -> Void in
+            self.currentCampus = "Davie"
+            self.setMapLocation()
+        }
+        let fortLaudAction = UIAlertAction(title: "Fort Lauderdale", style: .Default) { (UIAlertAction) -> Void in
+            self.currentCampus = "Fort Lauderdale"
+            self.setMapLocation()
+        }
+        let harborAction = UIAlertAction(title: "Harbor Branch", style: .Default) { (UIAlertAction) -> Void in
+            self.currentCampus = "Harbor Branch"
+            self.setMapLocation()
+        }
+        let jupiterAction = UIAlertAction(title: "Jupiter", style: .Default) { (UIAlertAction) -> Void in
+            self.currentCampus = "Jupiter"
+            self.setMapLocation()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        controller.addAction(bocaAciton)
+        controller.addAction(daniaAction)
+        controller.addAction(davieAction)
+        controller.addAction(fortLaudAction)
+        controller.addAction(harborAction)
+        controller.addAction(jupiterAction)
+        controller.addAction(cancelAction)
+        
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
 
 
 }
