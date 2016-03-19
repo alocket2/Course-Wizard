@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		62E918B2ED1DBFD82A89A287 /* Pods_Course_Wizard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EDE33F705FC99F984FDA2D /* Pods_Course_Wizard.framework */; };
+		65D237BF1C9A48C300DAAF47 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D237BE1C9A48C300DAAF47 /* test.swift */; };
 		9212A70D1C837633006421C6 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9212A70C1C837633006421C6 /* CoursesViewController.swift */; };
 		9212A70F1C837B39006421C6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9212A70E1C837B39006421C6 /* MapViewController.swift */; };
 		9212A7111C837EBF006421C6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9212A7101C837EBF006421C6 /* Settings.bundle */; };
@@ -17,22 +18,28 @@
 		924DFC2D1C7D47DB0097E9C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 924DFC2B1C7D47DB0097E9C2 /* Main.storyboard */; };
 		924DFC301C7D47DB0097E9C2 /* Course_Wizard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 924DFC2E1C7D47DB0097E9C2 /* Course_Wizard.xcdatamodeld */; };
 		924DFC351C7D47DB0097E9C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 924DFC331C7D47DB0097E9C2 /* LaunchScreen.storyboard */; };
+		926A48DF1C9A7A1D002F8507 /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926A48DD1C9A7A1D002F8507 /* BWWalkthroughPageViewController.swift */; };
+		926A48E01C9A7A1D002F8507 /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926A48DE1C9A7A1D002F8507 /* BWWalkthroughViewController.swift */; };
 		927645C51C85318300D6FD8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 927645C41C85318300D6FD8C /* Assets.xcassets */; };
 		928C60291C879E2700147BD2 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C60281C879E2700147BD2 /* CoreDataStack.swift */; };
 		928C602C1C87A7FF00147BD2 /* Semester+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C602A1C87A7FF00147BD2 /* Semester+CoreDataProperties.swift */; };
 		928C602D1C87A7FF00147BD2 /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C602B1C87A7FF00147BD2 /* Semester.swift */; };
-		928C60301C87AED500147BD2 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C602F1C87AED500147BD2 /* MoreTableViewController.swift */; };
 		928C60321C87CE8400147BD2 /* SemestersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C60311C87CE8400147BD2 /* SemestersTableViewController.swift */; };
-		928C60341C8892E700147BD2 /* CampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C60331C8892E700147BD2 /* CampusTableViewController.swift */; };
 		928C60371C889DD400147BD2 /* Campus+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C60351C889DD400147BD2 /* Campus+CoreDataProperties.swift */; };
 		928C60381C889DD400147BD2 /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C60361C889DD400147BD2 /* Campus.swift */; };
 		92AEECCD1C83E8FE00372550 /* Swift.gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 92AEECCC1C83E8FE00372550 /* Swift.gitignore */; };
 		92AEECD11C83F1F700372550 /* SemesterTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AEECD01C83F1F700372550 /* SemesterTypeTableViewController.swift */; };
 		92AEECD31C83F44A00372550 /* SemesterDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AEECD21C83F44A00372550 /* SemesterDatePicker.swift */; };
 		92AEECD51C83F49F00372550 /* SemesterCampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AEECD41C83F49F00372550 /* SemesterCampusTableViewController.swift */; };
+		92BF4EDF1C9A3EF500537E59 /* TabBarUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BF4EDE1C9A3EF500537E59 /* TabBarUI.swift */; };
+		92BF4EE11C9A3F2200537E59 /* CW+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BF4EE01C9A3F2200537E59 /* CW+UIImage.swift */; };
+		92E26AEF1C9A67B100D54ED1 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E26AEE1C9A67B100D54ED1 /* SettingTableViewController.swift */; };
+		92F97F661C9B99860079F084 /* ColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F97F651C9B99860079F084 /* ColorGenerator.swift */; };
+		92F97F681C9C97C80079F084 /* CampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F97F671C9C97C80079F084 /* CampusTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65D237BE1C9A48C300DAAF47 /* test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		9212A70C1C837633006421C6 /* CoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
 		9212A70E1C837B39006421C6 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9212A7101C837EBF006421C6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -45,19 +52,24 @@
 		924DFC341C7D47DB0097E9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		924DFC361C7D47DB0097E9C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		924DFC411C7D48C50097E9C2 /* Course Wizard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Course Wizard-Bridging-Header.h"; sourceTree = "<group>"; };
+		926A48DD1C9A7A1D002F8507 /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		926A48DE1C9A7A1D002F8507 /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
 		927645C41C85318300D6FD8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		928C60281C879E2700147BD2 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		928C602A1C87A7FF00147BD2 /* Semester+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Semester+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		928C602B1C87A7FF00147BD2 /* Semester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semester.swift; sourceTree = "<group>"; };
-		928C602F1C87AED500147BD2 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		928C60311C87CE8400147BD2 /* SemestersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemestersTableViewController.swift; sourceTree = "<group>"; };
-		928C60331C8892E700147BD2 /* CampusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusTableViewController.swift; sourceTree = "<group>"; };
 		928C60351C889DD400147BD2 /* Campus+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Campus+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		928C60361C889DD400147BD2 /* Campus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
 		92AEECCC1C83E8FE00372550 /* Swift.gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Swift.gitignore; sourceTree = "<group>"; };
 		92AEECD01C83F1F700372550 /* SemesterTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterTypeTableViewController.swift; sourceTree = "<group>"; };
 		92AEECD21C83F44A00372550 /* SemesterDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterDatePicker.swift; sourceTree = "<group>"; };
 		92AEECD41C83F49F00372550 /* SemesterCampusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterCampusTableViewController.swift; sourceTree = "<group>"; };
+		92BF4EDE1C9A3EF500537E59 /* TabBarUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarUI.swift; sourceTree = "<group>"; };
+		92BF4EE01C9A3F2200537E59 /* CW+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CW+UIImage.swift"; sourceTree = "<group>"; };
+		92E26AEE1C9A67B100D54ED1 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		92F97F651C9B99860079F084 /* ColorGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGenerator.swift; sourceTree = "<group>"; };
+		92F97F671C9C97C80079F084 /* CampusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusTableViewController.swift; sourceTree = "<group>"; };
 		9B4AFFB680C0C6C6E21CB79E /* Pods-Course Wizard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Course Wizard.release.xcconfig"; path = "Pods/Target Support Files/Pods-Course Wizard/Pods-Course Wizard.release.xcconfig"; sourceTree = "<group>"; };
 		A7EDE33F705FC99F984FDA2D /* Pods_Course_Wizard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Course_Wizard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E975ABAEB98C3F55F0CDED04 /* Pods-Course Wizard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Course Wizard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Course Wizard/Pods-Course Wizard.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +134,8 @@
 		924DFC261C7D47DB0097E9C2 /* Course Wizard */ = {
 			isa = PBXGroup;
 			children = (
+				92BF4EE21C9A421C00537E59 /* Walkthrough */,
+				92BF4EDB1C9A3C5800537E59 /* UI Extensions */,
 				92AEECCE1C83F1B000372550 /* Controller */,
 				927645C81C853B6800D6FD8C /* Models */,
 				927645C91C853B8400D6FD8C /* Resources */,
@@ -153,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				9212A70C1C837633006421C6 /* CoursesViewController.swift */,
+				65D237BE1C9A48C300DAAF47 /* test.swift */,
 			);
 			name = Courses;
 			sourceTree = "<group>";
@@ -167,6 +182,8 @@
 		927645C91C853B8400D6FD8C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				926A48DD1C9A7A1D002F8507 /* BWWalkthroughPageViewController.swift */,
+				926A48DE1C9A7A1D002F8507 /* BWWalkthroughViewController.swift */,
 				924DFC271C7D47DB0097E9C2 /* AppDelegate.swift */,
 				924DFC361C7D47DB0097E9C2 /* Info.plist */,
 				924DFC411C7D48C50097E9C2 /* Course Wizard-Bridging-Header.h */,
@@ -177,16 +194,15 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		928C602E1C87AEB600147BD2 /* More */ = {
+		928C602E1C87AEB600147BD2 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				928C60311C87CE8400147BD2 /* SemestersTableViewController.swift */,
 				928C60351C889DD400147BD2 /* Campus+CoreDataProperties.swift */,
 				928C60361C889DD400147BD2 /* Campus.swift */,
-				928C602F1C87AED500147BD2 /* MoreTableViewController.swift */,
-				928C60331C8892E700147BD2 /* CampusTableViewController.swift */,
+				92E26AEE1C9A67B100D54ED1 /* SettingTableViewController.swift */,
 			);
-			name = More;
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		92AEECCE1C83F1B000372550 /* Controller */ = {
@@ -194,7 +210,7 @@
 			children = (
 				927645C71C853B1400D6FD8C /* Courses */,
 				927645C61C853B0800D6FD8C /* Map */,
-				928C602E1C87AEB600147BD2 /* More */,
+				928C602E1C87AEB600147BD2 /* Settings */,
 				92AEECCF1C83F1B900372550 /* Semester */,
 			);
 			name = Controller;
@@ -209,8 +225,26 @@
 				92AEECD01C83F1F700372550 /* SemesterTypeTableViewController.swift */,
 				92AEECD21C83F44A00372550 /* SemesterDatePicker.swift */,
 				92AEECD41C83F49F00372550 /* SemesterCampusTableViewController.swift */,
+				92F97F671C9C97C80079F084 /* CampusTableViewController.swift */,
 			);
 			name = Semester;
+			sourceTree = "<group>";
+		};
+		92BF4EDB1C9A3C5800537E59 /* UI Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				92BF4EDE1C9A3EF500537E59 /* TabBarUI.swift */,
+				92BF4EE01C9A3F2200537E59 /* CW+UIImage.swift */,
+				92F97F651C9B99860079F084 /* ColorGenerator.swift */,
+			);
+			name = "UI Extensions";
+			sourceTree = "<group>";
+		};
+		92BF4EE21C9A421C00537E59 /* Walkthrough */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Walkthrough;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,21 +373,27 @@
 			files = (
 				924DFC2A1C7D47DB0097E9C2 /* ViewController.swift in Sources */,
 				928C602D1C87A7FF00147BD2 /* Semester.swift in Sources */,
+				92F97F661C9B99860079F084 /* ColorGenerator.swift in Sources */,
 				92AEECD11C83F1F700372550 /* SemesterTypeTableViewController.swift in Sources */,
 				92AEECD31C83F44A00372550 /* SemesterDatePicker.swift in Sources */,
 				9212A70F1C837B39006421C6 /* MapViewController.swift in Sources */,
+				926A48E01C9A7A1D002F8507 /* BWWalkthroughViewController.swift in Sources */,
 				9212A71F1C83982C006421C6 /* SemesterDetailTableViewController.swift in Sources */,
+				92F97F681C9C97C80079F084 /* CampusTableViewController.swift in Sources */,
 				928C60291C879E2700147BD2 /* CoreDataStack.swift in Sources */,
 				928C60381C889DD400147BD2 /* Campus.swift in Sources */,
 				928C602C1C87A7FF00147BD2 /* Semester+CoreDataProperties.swift in Sources */,
+				926A48DF1C9A7A1D002F8507 /* BWWalkthroughPageViewController.swift in Sources */,
+				92BF4EDF1C9A3EF500537E59 /* TabBarUI.swift in Sources */,
 				92AEECD51C83F49F00372550 /* SemesterCampusTableViewController.swift in Sources */,
-				928C60341C8892E700147BD2 /* CampusTableViewController.swift in Sources */,
 				924DFC281C7D47DB0097E9C2 /* AppDelegate.swift in Sources */,
 				9212A70D1C837633006421C6 /* CoursesViewController.swift in Sources */,
-				928C60301C87AED500147BD2 /* MoreTableViewController.swift in Sources */,
+				65D237BF1C9A48C300DAAF47 /* test.swift in Sources */,
 				924DFC301C7D47DB0097E9C2 /* Course_Wizard.xcdatamodeld in Sources */,
 				928C60371C889DD400147BD2 /* Campus+CoreDataProperties.swift in Sources */,
+				92E26AEF1C9A67B100D54ED1 /* SettingTableViewController.swift in Sources */,
 				928C60321C87CE8400147BD2 /* SemestersTableViewController.swift in Sources */,
+				92BF4EE11C9A3F2200537E59 /* CW+UIImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +526,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anthonylockett.Course-Wizard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Course Wizard/Course Wizard-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Release;
 		};

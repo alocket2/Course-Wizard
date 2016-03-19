@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Course Wizard
+//  Course Wi\zard
 //
 //  Created by Anthony Lockett
 //             Daisy McCoy
@@ -15,7 +15,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, BWWalkthroughViewControllerDelegate {
 
     var window: UIWindow?
     lazy var coreDataStack = CoreDataStack()
@@ -23,6 +23,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if defaults.integerForKey("viewedWalkthrough") == 0 {
+            
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("Walkthrough") as! BWWalkthroughViewController
+            let page_one = storyboard.instantiateViewControllerWithIdentifier("page1") as UIViewController
+            let page_two = storyboard.instantiateViewControllerWithIdentifier("page2") as UIViewController
+            let page_three = storyboard.instantiateViewControllerWithIdentifier("page3") as UIViewController
+            
+            initialViewController.delegate = self
+            
+            initialViewController.addViewController(page_one)
+            initialViewController.addViewController(page_two)
+            initialViewController.addViewController(page_three)
+            
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            
+            defaults.setInteger(1, forKey: "viewedWalkthrough")
+            
+        } else {
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("Overview") as UIViewController!
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
+        
+        UITabBar.appearance().barTintColor = UIColor(red: 27.0/255.0, green: 27.0/255.0, blue: 30.0/255.0, alpha: 1.0)
+        UITabBar.appearance().tintColor = UIColor(red: 88.0/255.0, green: 164.0/255.0, blue: 176.0/255.0, alpha: 1.0)
+        UITabBar.appearance().shadowImage = UIImage()
         
         let barAppearace = UIBarButtonItem.appearance()
         barAppearace.setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), forBarMetrics:UIBarMetrics.Default)

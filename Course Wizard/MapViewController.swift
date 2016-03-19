@@ -20,11 +20,13 @@ import Mapbox
 class MapViewController: UIViewController {
 
     var mapView: MGLMapView!
-    
-    var currentCampus: String = "Jupiter"
+    var coreDataStack = CoreDataStack()
+    var currentCampus: String = "`"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getCampusFromCoreData()
         
         let styleURL = NSURL(string: "mapbox://styles/alockettjr/cik7nnuaw00emnyko48ysfg9c")
         mapView = MGLMapView(frame: view.bounds, styleURL: styleURL)
@@ -44,34 +46,51 @@ class MapViewController: UIViewController {
         Harbor Branch - latitude: 27.535612, longitude: -80.359711
         
        */
+        setMapLocation()
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        getCampusFromCoreData()
+        setMapLocation()
+    }
+    
+    
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func setMapLocation() {
         switch currentCampus {
-            case "Boca Raton":
+        case "Boca Raton":
             mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.370038,
                 longitude: -80.102316),
                 zoomLevel: 13, animated: false)
-            case "Dania Beach (Sea Tech)":
-                mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.055044,
-                    longitude: -80.113076),
-                    zoomLevel: 13, animated: false)
-            case "Davie":
-                mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.082184,
-                    longitude: -80.234852),
-                    zoomLevel: 13, animated: false)
-            case "Fort Lauderdale":
-                mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.119693,
-                    longitude: -80.141193),
-                    zoomLevel: 13, animated: false)
-            case "Harbor Branch":
-                mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 27.535612,
-                    longitude: -80.359711),
-                    zoomLevel: 13, animated: false)
-            case "Jupiter":
-                mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.887515,
-                    longitude: -80.116710),
-                    zoomLevel: 13, animated: false)
-            default:
-                print("Thats not a campus")
+        case "Dania Beach (Sea Tech)":
+            mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.055044,
+                longitude: -80.113076),
+                zoomLevel: 13, animated: false)
+        case "Davie":
+            mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.082184,
+                longitude: -80.234852),
+                zoomLevel: 13, animated: false)
+        case "Fort Lauderdale":
+            mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.119693,
+                longitude: -80.141193),
+                zoomLevel: 13, animated: false)
+        case "Harbor Branch":
+            mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 27.535612,
+                longitude: -80.359711),
+                zoomLevel: 13, animated: false)
+        case "Jupiter":
+            mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.887515,
+                longitude: -80.116710),
+                zoomLevel: 13, animated: false)
+        default:
+            print("Thats not a campus")
         }
         
         
@@ -80,14 +99,27 @@ class MapViewController: UIViewController {
         mapView.zoomLevel = 17
         
         view.addSubview(mapView)
+    }
+    
+    
+    func getCampusFromCoreData() {
+        
+        let campusRequest = NSFetchRequest(entityName: "Campus")
+        
+        do {
+            let results = try coreDataStack.managedObjectContext.executeFetchRequest(campusRequest)
+            
+            for result in results {
+                if let campusRetrieved = result.valueForKey("location") as? String {
+                    currentCampus = campusRetrieved
+                }
+            }
+            
+        } catch {
+            print("Could not fetch the semester entity")
+        }
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-   
 
 
 }
