@@ -78,6 +78,8 @@ class SemesterDetailTableViewController: UITableViewController {
             endDateLabel.text = "Start Date: \(endDate!)"
             
         }
+        
+        
     }
     
     @IBAction func cancel(sender: UIBarButtonItem) {
@@ -149,6 +151,7 @@ class SemesterDetailTableViewController: UITableViewController {
         
         do {
             
+            //App crashing here on first time trying to add a semester for some reason
             let results = try coreDataStack.managedObjectContext.executeFetchRequest(checkFetchRequest) as! [Semester]
             
             for result in results {

@@ -12,7 +12,7 @@ import CoreData
 class SemestersTableViewController: UITableViewController {
 
     
-    var coreDataStack: CoreDataStack!
+    var coreDataStack = CoreDataStack()
     var semesters = [Semester]()
     
 
@@ -25,12 +25,29 @@ class SemestersTableViewController: UITableViewController {
         
         reloadData()
         tableView.reloadData()
+        
+        if tableView.numberOfRowsInSection(0) == 0 {
+            self.navigationController?.navigationBarHidden = true
+        } else {
+            reloadData()
+            tableView.reloadData()
+            self.navigationController?.navigationBarHidden = false
+        }
+        
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.tableFooterView = UIView()
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         
         reloadData()
         tableView.reloadData()
+        
+        if tableView.numberOfRowsInSection(0) != 0 {
+            self.navigationController?.navigationBarHidden = false
+        }
     }
     
     func reloadData(predicate: NSPredicate? = nil) {
@@ -77,9 +94,30 @@ class SemestersTableViewController: UITableViewController {
         }
         
     }
+
+}
+
+extension SemestersTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
-    func getCurrentSemesterIndex() {
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Semesters"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
         
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "No semesters have been added, please add some!"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
+        
+        return NSAttributedString(string: str, attributes: attrs)
     }
     
 }
+
+    
+
+
+
+
+

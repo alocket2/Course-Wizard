@@ -36,7 +36,6 @@ class SettingTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showSemestersSegue" {
             let controller = segue.destinationViewController as! SemestersTableViewController
-            controller.coreDataStack = coreDataStack
         } else if segue.identifier == "showCampuses" {
             let controller = segue.destinationViewController as! CampusTableViewController
             controller.delegate = self
