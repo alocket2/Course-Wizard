@@ -11,7 +11,6 @@ import CoreData
 
 class SemestersTableViewController: UITableViewController {
 
-    
     var coreDataStack = CoreDataStack()
     var semesters = [Semester]()
     

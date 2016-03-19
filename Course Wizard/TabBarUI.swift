@@ -13,7 +13,7 @@ class TabBarUI: UITabBarController {
     override func viewDidLoad() {
         for item in self.tabBar.items! as [UITabBarItem] {
             if let image = item.image {
-                item.image = image.imageWithColor(UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 241.0/255.0, alpha: 1.0)).imageWithRenderingMode(.AlwaysOriginal)
+                item.image = image.imageWithColor(UIColor(red: 169.0/255.0, green: 188.0/255.0, blue: 208.0/255.0, alpha: 1.0)).imageWithRenderingMode(.AlwaysOriginal)
             }
         }
     }

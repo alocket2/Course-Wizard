@@ -79,15 +79,7 @@ class CoursesViewController: UIViewController {
 
 }
 
-/*
-    Extensions: Its always a good idea ot use extensions when adding new functionality like implementing a protocol. This condenses the code and keeps it manageable and easier to maintain.
-*/
-
 extension CoursesViewController: SemesterDelegate {
-    
-    /*
-        Implementing a protocol: This can get quiet confusing, when to, where to. I dont know how to explain it without examples, give it a shot. If anything call me and we can go over it.
-    */
     
     func SemesterDetailDidCancel(controller: SemesterDetailTableViewController) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -105,24 +97,13 @@ extension CoursesViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource 
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let str = "No courses have been added, please add some!"
+        let str = "No courses have been added, please add one above."
         let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
         
         return NSAttributedString(string: str, attributes: attrs)
     }
     
-    func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
-        let str = "Add Course"
-        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleCallout)]
-        
-        return NSAttributedString(string: str, attributes: attrs)
-    }
     
-    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
-        let ac = UIAlertController(title: "We will add courses!", message: nil, preferredStyle: .Alert)
-        ac.addAction(UIAlertAction(title: "Hurray", style: .Default, handler: nil))
-        presentViewController(ac, animated: true, completion: nil)
-    }
     
 }
 
