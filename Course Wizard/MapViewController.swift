@@ -18,19 +18,37 @@ import Mapbox
 
 
 class MapViewController: UIViewController {
+    
+    
+    @IBOutlet weak var tableView: UITableView!
 
     var mapView: MGLMapView!
+    var currentCampus: String = ""
+    
     var coreDataStack = CoreDataStack()
-    var currentCampus: String = "`"
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getCampusFromCoreData()
-        
         let styleURL = NSURL(string: "mapbox://styles/alockettjr/cik7nnuaw00emnyko48ysfg9c")
         mapView = MGLMapView(frame: view.bounds, styleURL: styleURL)
         mapView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        
+        if currentCampus != "" {
+            tableView.hidden = true
+            setMapLocation()
+            getCampusFromCoreData()
+            
+            
+        } else {
+            tableView.hidden = false
+            tableView.emptyDataSetSource = self
+            tableView.emptyDataSetDelegate = self
+            tableView.tableFooterView = UIView()
+        }
+        
+        
        //Check campus location in an switch statement then set coordinate appropriately
         
         
@@ -46,13 +64,19 @@ class MapViewController: UIViewController {
         Harbor Branch - latitude: 27.535612, longitude: -80.359711
         
        */
-        setMapLocation()
         
     }
     
     override func viewDidAppear(animated: Bool) {
-        getCampusFromCoreData()
-        setMapLocation()
+        
+        if currentCampus != "" {
+            tableView.hidden = true
+            getCampusFromCoreData()
+            setMapLocation()
+        } else {
+            return
+        }
+        
     }
     
     
@@ -163,4 +187,22 @@ class MapViewController: UIViewController {
     }
 
 
+}
+
+extension MapViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "No campus has been selected"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+        
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Please select your campus above or in the settings"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
+        
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
 }
