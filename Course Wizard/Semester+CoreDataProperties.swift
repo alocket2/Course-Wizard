@@ -2,7 +2,7 @@
 //  Semester+CoreDataProperties.swift
 //  Course Wizard
 //
-//  Created by Anthony Lockett on 3/2/16.
+//  Created by Anthony Lockett on 3/18/16.
 //  Copyright © 2016 Anthony Lockett. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -17,5 +17,6 @@ extension Semester {
     @NSManaged var endDate: String
     @NSManaged var startDate: String
     @NSManaged var type: String
+    @NSManaged var campus: String?
 
 }

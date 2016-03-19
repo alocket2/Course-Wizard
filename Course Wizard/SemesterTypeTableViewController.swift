@@ -21,6 +21,7 @@ class SemesterTypeTableViewController: UITableViewController {
     
     weak var delegate: SemesterTypeDelegate?
     
+    
     let semesterTypes = ["Spring", "Summer", "Fall"]
     let cellIdentifier = "semesterTypeCell"
     

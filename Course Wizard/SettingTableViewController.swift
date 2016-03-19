@@ -11,23 +11,35 @@ import CoreData
 
 class SettingTableViewController: UITableViewController {
     
-    var coreDataStack: CoreDataStack!
+    @IBOutlet weak var campusLabel: UILabel!
     
+    var coreDataStack: CoreDataStack!
     var currentCampus: String?
     
     override func viewDidLoad() {
-        title = "Features"
         
     }
     
     override func viewWillAppear(animated: Bool) {
-        
+        if campusLabel.text == nil {
+            campusLabel.text = "Campus"
+        } else {
+            guard currentCampus != nil else {
+                return
+            }
+            
+            campusLabel.text = "Campus: \(currentCampus!)"
+            saveCampusToCoreData()
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showSemestersSegue" {
             let controller = segue.destinationViewController as! SemestersTableViewController
             controller.coreDataStack = coreDataStack
+        } else if segue.identifier == "showCampuses" {
+            let controller = segue.destinationViewController as! CampusTableViewController
+            controller.delegate = self
         }
     }
     
@@ -64,39 +76,28 @@ class SettingTableViewController: UITableViewController {
     */
     
     func saveCampusToCoreData() {
-        
         // Check to see if there is currently a campus
-        let campusFetchRequest = NSFetchRequest(entityName: "Campus")
-        
-        do {
-            
-            let results = try coreDataStack.managedObjectContext.executeFetchRequest(campusFetchRequest) as? [String]
-            
-            if results!.count == 0 {
-                //There is no campus so set one
-                guard let entity = NSEntityDescription.entityForName("Campus", inManagedObjectContext: coreDataStack.managedObjectContext) else {
-                    fatalError("Could not find entity descriptions!")
-                }
-                let campusEntity = Campus(entity: entity, insertIntoManagedObjectContext: coreDataStack.managedObjectContext)
-                campusEntity.location = currentCampus
-                
-                do {
-                    try coreDataStack.managedObjectContext.save()
-                } catch {
-                    print("Could not save...")
-                }
-                
-            } else {
-                //There is a campus so check if it is the same
-                //Anthony needs to figure out how to implement this!!!!!!
-            }
-            
-        } catch {
-            fatalError("Could not set campus")
+        guard let entity = NSEntityDescription.entityForName("Campus", inManagedObjectContext: coreDataStack.managedObjectContext) else {
+            fatalError("Could not find entity descriptions!")
         }
         
+        let campusEntity = Campus(entity: entity, insertIntoManagedObjectContext: coreDataStack.managedObjectContext)
+        campusEntity.location = currentCampus!
+        
+        do {
+            try coreDataStack.managedObjectContext.save()
+        } catch {
+            print("Could not save location...")
+        }
     }
     
+}
+
+
+extension SettingTableViewController: CampusDelegate {
+    func didSelectCampus(campus: String) {
+        currentCampus = campus
+    }
 }
 
 

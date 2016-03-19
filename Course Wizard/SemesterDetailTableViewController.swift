@@ -24,10 +24,12 @@ class SemesterDetailTableViewController: UITableViewController {
     @IBOutlet weak var semesterType: UILabel!
     @IBOutlet weak var startDateLabel: UILabel!
     @IBOutlet weak var endDateLabel: UILabel!
+    @IBOutlet weak var campusLabel: UILabel!
     
     var chosenSemester: String?
     var startDate: String?
     var endDate: String?
+    var campus: String?
     
     weak var delegate: SemesterDelegate!
     var coreDataStack: CoreDataStack!
@@ -75,6 +77,16 @@ class SemesterDetailTableViewController: UITableViewController {
             
             endDateLabel.text = "Start Date: \(endDate!)"
             
+        }
+        
+        if campusLabel.text == nil {
+            campusLabel.text = "Campus"
+        } else {
+            guard campus != nil else {
+                return
+            }
+            
+            campusLabel.text = "Campus: \(campus!)"
         }
         
     }
@@ -136,6 +148,9 @@ class SemesterDetailTableViewController: UITableViewController {
             let controller = navigationController.topViewController as! SemesterDatePickerController
             controller.typeOfSegue = "EndDateSegue"
             controller.delegate = self
+        } else if segue.identifier == "selectCampusSegue" {
+            let controller = segue.destinationViewController as! CampusTableViewController
+            controller.delegate = self
         }
     }
     
@@ -187,6 +202,14 @@ extension SemesterDetailTableViewController: SemesterDatePickerDelegate {
     
     func SemesterDatePicker(didFinishSelectingEndDate date: String) {
         endDate = date
+    }
+    
+}
+
+extension SemesterDetailTableViewController: CampusDelegate {
+    
+    func didSelectCampus(campus: String) {
+        self.campus = campus
     }
     
 }

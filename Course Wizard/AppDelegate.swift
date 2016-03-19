@@ -55,9 +55,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BWWalkthroughViewControll
             self.window?.makeKeyAndVisible()
         }
         
-        UITabBar.appearance().barTintColor = UIColor(red: 86.0/255.0, green: 100.0/255.0, blue: 145.0/255.0, alpha: 1.0)
-        UITabBar.appearance().tintColor = UIColor.whiteColor()
-        
+        UITabBar.appearance().barTintColor = UIColor(red: 27.0/255.0, green: 27.0/255.0, blue: 30.0/255.0, alpha: 1.0)
+        UITabBar.appearance().tintColor = UIColor(red: 88.0/255.0, green: 164.0/255.0, blue: 176.0/255.0, alpha: 1.0)
+        UITabBar.appearance().shadowImage = UIImage()
         
         let barAppearace = UIBarButtonItem.appearance()
         barAppearace.setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), forBarMetrics:UIBarMetrics.Default)
