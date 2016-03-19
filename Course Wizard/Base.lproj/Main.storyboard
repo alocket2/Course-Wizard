@@ -58,7 +58,19 @@
                     <view key="view" contentMode="scaleToFill" id="MOi-1H-A3P">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mj1-UT-Usu">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="mj1-UT-Usu" secondAttribute="trailing" constant="-20" id="AA6-Mi-nHY"/>
+                            <constraint firstItem="mj1-UT-Usu" firstAttribute="leading" secondItem="MOi-1H-A3P" secondAttribute="leadingMargin" constant="-20" id="vCi-XH-y5f"/>
+                            <constraint firstItem="do8-ek-2ib" firstAttribute="top" secondItem="mj1-UT-Usu" secondAttribute="bottom" id="voZ-pa-LL3"/>
+                            <constraint firstItem="mj1-UT-Usu" firstAttribute="top" secondItem="s2x-dq-5d4" secondAttribute="bottom" id="zDU-yr-Ohz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Npx-eG-hmv">
                         <barButtonItem key="leftBarButtonItem" title="Campus" id="OAf-Ng-kFQ">
@@ -68,6 +80,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Buildings" id="Ww0-hY-f56"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="mj1-UT-Usu" id="6SY-yV-Uds"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYk-K1-rOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
