@@ -28,10 +28,6 @@ class CoursesViewController: UIViewController {
         tableView.emptyDataSetDelegate = self
         tableView.tableFooterView = UIView()
         
-        if tableView.numberOfRowsInSection(0) == 0 {
-            self.navigationController?.navigationBarHidden = true
-        }
-        
     }
 
     override func didReceiveMemoryWarning() {

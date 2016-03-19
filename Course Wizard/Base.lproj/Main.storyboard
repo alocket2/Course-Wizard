@@ -668,7 +668,7 @@
         <!--Navigation Controller-->
         <scene sceneID="39u-04-R9T">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1nE-6g-ffO" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="addSemester" automaticallyAdjustsScrollViewInsets="NO" id="1nE-6g-ffO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wjQ-zm-tkm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
