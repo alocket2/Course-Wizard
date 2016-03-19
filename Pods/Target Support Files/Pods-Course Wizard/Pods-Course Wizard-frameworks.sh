@@ -82,19 +82,3 @@ strip_invalid_archs() {
   fi
 }
 
-
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-<<<<<<< HEAD
-  install_framework "Pods-Course Wizard/GradientView.framework"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-Course Wizard/GradientView.framework"
-=======
-  install_framework "Pods-Course Wizard/BWWalkthrough.framework"
-  install_framework "${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-Course Wizard/BWWalkthrough.framework"
-  install_framework "${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework"
->>>>>>> f5ea0e7d2427852fe0592f39c4fde0fc34abea28
-fi

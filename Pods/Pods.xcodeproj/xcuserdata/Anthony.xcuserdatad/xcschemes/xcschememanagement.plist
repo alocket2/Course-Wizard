@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>GradientView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Mapbox-iOS-SDK-Mapbox.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,22 +27,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>67D5583DD95197E0A702118F28D9C002</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>80F9E3CE2BC1604B06BE23C672CF5E0E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D714037593A1D0448AF01C98C0203714</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FBE2A731DF8DE3F3F4960CDB24D58D2A</key>
+		<key>A92882C919F7B0134E8B21CAA3B19A6F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

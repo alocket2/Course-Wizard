@@ -57,7 +57,6 @@ install_resource()
       ;;
   esac
 }
-<<<<<<< HEAD
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${BUILT_PRODUCTS_DIR}/BWWalkthrough.bundle"
   install_resource "${BUILT_PRODUCTS_DIR}/Mapbox.bundle"
@@ -66,8 +65,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${BUILT_PRODUCTS_DIR}/BWWalkthrough.bundle"
   install_resource "${BUILT_PRODUCTS_DIR}/Mapbox.bundle"
 fi
-=======
->>>>>>> f5ea0e7d2427852fe0592f39c4fde0fc34abea28
 
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
