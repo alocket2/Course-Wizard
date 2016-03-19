@@ -17,7 +17,19 @@
                     <view key="view" contentMode="scaleToFill" id="Qqx-5G-rlp">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C7e-vM-4D8">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="C7e-vM-4D8" secondAttribute="trailing" constant="-20" id="5L8-VJ-7dG"/>
+                            <constraint firstItem="C7e-vM-4D8" firstAttribute="leading" secondItem="Qqx-5G-rlp" secondAttribute="leadingMargin" constant="-20" id="FCp-9W-wlH"/>
+                            <constraint firstItem="C7e-vM-4D8" firstAttribute="top" secondItem="bgN-Vg-1x1" secondAttribute="bottom" id="NaP-5q-kqJ"/>
+                            <constraint firstItem="8lx-2d-dMT" firstAttribute="top" secondItem="C7e-vM-4D8" secondAttribute="bottom" id="zbs-oU-5R9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EmL-1l-EAy">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="vsM-lq-Uqt">
@@ -27,6 +39,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="C7e-vM-4D8" id="FyT-GU-3Dm"/>
                         <segue destination="1nE-6g-ffO" kind="show" identifier="addSemesterSegue" id="Bkj-ga-eIj"/>
                     </connections>
                 </viewController>
@@ -45,16 +58,7 @@
                     <view key="view" contentMode="scaleToFill" id="MOi-1H-A3P">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="signposts" translatesAutoresizingMaskIntoConstraints="NO" id="KxN-ki-9xP">
-                                <rect key="frame" x="548" y="28" width="22" height="22"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="KxN-ki-9xP" firstAttribute="top" secondItem="s2x-dq-5d4" secondAttribute="bottom" constant="8" id="0bE-QI-vb3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KxN-ki-9xP" secondAttribute="trailing" constant="10" id="vsB-Fe-lqb"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Npx-eG-hmv">
                         <barButtonItem key="leftBarButtonItem" title="Campus" id="OAf-Ng-kFQ">
@@ -768,7 +772,6 @@
         <image name="cog" width="32" height="32"/>
         <image name="map_route" width="32" height="32"/>
         <image name="school" width="128" height="128"/>
-        <image name="signposts" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jjx-DN-hOE"/>

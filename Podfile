@@ -7,6 +7,7 @@ target 'Course Wizard' do
 
 pod 'Mapbox-iOS-SDK'
 pod 'BWWalkthrough'
+pod 'DZNEmptyDataSet'
 
 end
 

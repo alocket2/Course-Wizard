@@ -18,10 +18,19 @@ class CoursesViewController: UIViewController {
     
     //Access to the core data stack
     var coreDataStack: CoreDataStack!
+    
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.tableFooterView = UIView()
+        
+        if tableView.numberOfRowsInSection(0) == 0 {
+            self.navigationController?.navigationBarHidden = true
+        }
         
     }
 
@@ -29,7 +38,6 @@ class CoursesViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     //Alert controller that shows when a + button is selected
     @IBAction func addInfo(sender: AnyObject) {
@@ -87,6 +95,37 @@ extension CoursesViewController: SemesterDelegate {
     
     func SemesterDetailDidCancel(controller: SemesterDetailTableViewController) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+}
+
+extension CoursesViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Courses"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+        
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "No courses have been added, please add some!"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
+        
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
+        let str = "Add Course"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleCallout)]
+        
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
+        let ac = UIAlertController(title: "We will add courses!", message: nil, preferredStyle: .Alert)
+        ac.addAction(UIAlertAction(title: "Hurray", style: .Default, handler: nil))
+        presentViewController(ac, animated: true, completion: nil)
     }
     
 }
