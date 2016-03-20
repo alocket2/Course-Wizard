@@ -25,14 +25,6 @@ class SemestersTableViewController: UITableViewController {
         reloadData()
         tableView.reloadData()
         
-        if tableView.numberOfRowsInSection(0) == 0 {
-            self.navigationController?.navigationBarHidden = true
-        } else {
-            reloadData()
-            tableView.reloadData()
-            self.navigationController?.navigationBarHidden = false
-        }
-        
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
         tableView.tableFooterView = UIView()
@@ -44,9 +36,6 @@ class SemestersTableViewController: UITableViewController {
         reloadData()
         tableView.reloadData()
         
-        if tableView.numberOfRowsInSection(0) != 0 {
-            self.navigationController?.navigationBarHidden = false
-        }
     }
     
     func reloadData(predicate: NSPredicate? = nil) {
@@ -110,6 +99,14 @@ extension SemestersTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDe
         let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
         
         return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "ruler_pencil")
+    }
+    
+    func imageTintColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
+        return UIColor(red: 153.0/255.0, green: 153.0/255.0, blue: 153.0/255.0, alpha: 1.0)
     }
     
 }

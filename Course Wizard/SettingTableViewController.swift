@@ -13,24 +13,46 @@ class SettingTableViewController: UITableViewController {
     
     @IBOutlet weak var campusLabel: UILabel!
     
-    var coreDataStack: CoreDataStack!
+    var coreDataStack = CoreDataStack()
     var currentCampus: String?
     
     override func viewDidLoad() {
+        getCampusFromCoreData()
         
+        if currentCampus != nil {
+            campusLabel.text = "Campus: \(currentCampus!)"
+        } else {
+            campusLabel.text = "Campus"
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
-        if campusLabel.text == nil {
+        getCampusFromCoreData()
+        if currentCampus == nil {
             campusLabel.text = "Campus"
         } else {
-            guard currentCampus != nil else {
-                return
-            }
-            
             campusLabel.text = "Campus: \(currentCampus!)"
             saveCampusToCoreData()
         }
+    }
+    
+    func getCampusFromCoreData() {
+        
+        let campusRequest = NSFetchRequest(entityName: "Campus")
+        
+        do {
+            let results = try coreDataStack.managedObjectContext.executeFetchRequest(campusRequest)
+            
+            for result in results {
+                if let campusRetrieved = result.valueForKey("location") as? String {
+                    currentCampus = campusRetrieved
+                }
+            }
+            
+        } catch {
+            print("Could not fetch the semester entity")
+        }
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
