@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Courses View Controller-->
+        <!--Courses-->
         <scene sceneID="lJA-ln-ait">
             <objects>
                 <viewController storyboardIdentifier="UIViewController-dhU-c1-obE" id="dhU-c1-obE" customClass="CoursesViewController" customModule="Course_Wizard" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,8 +31,8 @@
                             <constraint firstItem="8lx-2d-dMT" firstAttribute="top" secondItem="C7e-vM-4D8" secondAttribute="bottom" id="zbs-oU-5R9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="EmL-1l-EAy">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="vsM-lq-Uqt">
+                    <navigationItem key="navigationItem" title="Courses" id="EmL-1l-EAy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vsM-lq-Uqt">
                             <connections>
                                 <action selector="addInfo:" destination="dhU-c1-obE" id="MYf-MD-ILk"/>
                             </connections>
@@ -47,7 +47,7 @@
             </objects>
             <point key="canvasLocation" x="3813" y="217"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Map-->
         <scene sceneID="Zyr-u7-T8h">
             <objects>
                 <viewController id="daK-nI-BRK" customClass="MapViewController" customModule="Course_Wizard" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,7 +72,7 @@
                             <constraint firstItem="mj1-UT-Usu" firstAttribute="top" secondItem="s2x-dq-5d4" secondAttribute="bottom" id="zDU-yr-Ohz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Npx-eG-hmv">
+                    <navigationItem key="navigationItem" title="Map" id="Npx-eG-hmv">
                         <barButtonItem key="leftBarButtonItem" title="Campus" id="OAf-Ng-kFQ">
                             <connections>
                                 <action selector="changeCampus:" destination="daK-nI-BRK" id="kT9-YC-l3u"/>
@@ -457,7 +457,7 @@
             </objects>
             <point key="canvasLocation" x="2186" y="225"/>
         </scene>
-        <!--Setting Table View Controller-->
+        <!--Settings-->
         <scene sceneID="rzI-l1-XRE">
             <objects>
                 <tableViewController id="2kh-GB-iOq" customClass="SettingTableViewController" customModule="Course_Wizard" customModuleProvider="target" sceneMemberID="viewController">
@@ -596,7 +596,7 @@
                             <outlet property="delegate" destination="2kh-GB-iOq" id="Wnq-5C-raj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="c2T-rv-ZSF"/>
+                    <navigationItem key="navigationItem" title="Settings" id="c2T-rv-ZSF"/>
                     <connections>
                         <outlet property="campusLabel" destination="a4o-VS-45B" id="mul-77-jx5"/>
                     </connections>
@@ -673,7 +673,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="" image="calendar_edit" id="37j-tX-63S">
-                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ve5-zo-mPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -702,7 +702,7 @@
         <scene sceneID="X81-qM-qFX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1EF-Nz-oJa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="albums" id="szo-cp-wUe">
+                    <tabBarItem key="tabBarItem" title="" image="notebook" id="szo-cp-wUe">
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="7" vertical="-7"/>
                     </tabBarItem>
@@ -782,10 +782,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="albums" width="32" height="32"/>
         <image name="calendar_edit" width="32" height="32"/>
         <image name="cog" width="32" height="32"/>
         <image name="map_route" width="32" height="32"/>
+        <image name="notebook" width="32" height="32"/>
         <image name="school" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>

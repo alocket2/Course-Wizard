@@ -55,18 +55,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BWWalkthroughViewControll
             self.window?.makeKeyAndVisible()
         }
         
-        UITabBar.appearance().barTintColor = UIColor(red: 55.0/255.0, green: 63.0/255.0, blue: 81.0/255.0, alpha: 1.0)
+        UITabBar.appearance().barTintColor = UIColor.tabBarColor()
         UITabBar.appearance().tintColor = UIColor(red: 255.0/255.0, green: 254.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         UITabBar.appearance().shadowImage = UIImage()
         
         let barAppearace = UIBarButtonItem.appearance()
         barAppearace.setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), forBarMetrics:UIBarMetrics.Default)
         
-        UINavigationBar.appearance().barTintColor = UIColor(red: 55.0/255.0, green: 63.0/255.0, blue: 81.0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().barTintColor = UIColor.whiteColor()
         
-        UINavigationBar.appearance().tintColor = UIColor(red: 255.0/255.0, green: 254.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor.navBarItemColor()
         
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.navBarItemColor()]
         
         if let tab = window?.rootViewController as? UITabBarController {
             for child in tab.viewControllers ?? [] {

@@ -39,7 +39,7 @@ class MapViewController: UIViewController {
             tableView.hidden = true
             setMapLocation()
             getCampusFromCoreData()
-            
+            self.navigationItem.title = currentCampus
             
         } else {
             tableView.hidden = false
@@ -69,12 +69,14 @@ class MapViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
+        getCampusFromCoreData()
+        
         if currentCampus != "" {
             tableView.hidden = true
-            getCampusFromCoreData()
             setMapLocation()
+            self.navigationItem.title = currentCampus
         } else {
-            return
+            tableView.hidden = false
         }
         
     }
@@ -145,6 +147,22 @@ class MapViewController: UIViewController {
         
     }
     
+    func saveCampusToCoreData() {
+        // Check to see if there is currently a campus
+        guard let entity = NSEntityDescription.entityForName("Campus", inManagedObjectContext: coreDataStack.managedObjectContext) else {
+            fatalError("Could not find entity descriptions!")
+        }
+        
+        let campusEntity = Campus(entity: entity, insertIntoManagedObjectContext: coreDataStack.managedObjectContext)
+        campusEntity.location = currentCampus
+        
+        do {
+            try coreDataStack.managedObjectContext.save()
+        } catch {
+            print("Could not save location...")
+        }
+    }
+    
     
     @IBAction func changeCampus(sender: UIBarButtonItem) {
         
@@ -152,26 +170,38 @@ class MapViewController: UIViewController {
         let bocaAciton = UIAlertAction(title: "Boca Raton", style: .Default) { (UIAlertAction) -> Void in
             self.currentCampus = "Boca Raton"
             self.setMapLocation()
+            self.navigationItem.title = self.currentCampus
+            self.saveCampusToCoreData()
         }
         let daniaAction = UIAlertAction(title: "Dania Beach (Sea Tech)", style: .Default) { (UIAlertAction) -> Void in
             self.currentCampus = "Dania Beach (Sea Tech)"
             self.setMapLocation()
+            self.navigationItem.title = self.currentCampus
+            self.saveCampusToCoreData()
         }
         let davieAction = UIAlertAction(title: "Davie", style: .Default) { (UIAlertAction) -> Void in
             self.currentCampus = "Davie"
             self.setMapLocation()
+            self.navigationItem.title = self.currentCampus
+            self.saveCampusToCoreData()
         }
         let fortLaudAction = UIAlertAction(title: "Fort Lauderdale", style: .Default) { (UIAlertAction) -> Void in
             self.currentCampus = "Fort Lauderdale"
             self.setMapLocation()
+            self.navigationItem.title = self.currentCampus
+            self.saveCampusToCoreData()
         }
         let harborAction = UIAlertAction(title: "Harbor Branch", style: .Default) { (UIAlertAction) -> Void in
             self.currentCampus = "Harbor Branch"
             self.setMapLocation()
+            self.navigationItem.title = self.currentCampus
+            self.saveCampusToCoreData()
         }
         let jupiterAction = UIAlertAction(title: "Jupiter", style: .Default) { (UIAlertAction) -> Void in
             self.currentCampus = "Jupiter"
             self.setMapLocation()
+            self.navigationItem.title = self.currentCampus
+            self.saveCampusToCoreData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
@@ -203,6 +233,14 @@ extension MapViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
         let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
         
         return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "map_route")
+    }
+    
+    func imageTintColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
+        return UIColor(red: 153.0/255.0, green: 153.0/255.0, blue: 153.0/255.0, alpha: 1.0)
     }
     
 }
