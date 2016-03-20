@@ -203,6 +203,7 @@
 				928C60351C889DD400147BD2 /* Campus+CoreDataProperties.swift */,
 				928C60361C889DD400147BD2 /* Campus.swift */,
 				92E26AEE1C9A67B100D54ED1 /* SettingTableViewController.swift */,
+				92F97F671C9C97C80079F084 /* CampusTableViewController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -227,7 +228,6 @@
 				92AEECD01C83F1F700372550 /* SemesterTypeTableViewController.swift */,
 				92AEECD21C83F44A00372550 /* SemesterDatePicker.swift */,
 				92AEECD41C83F49F00372550 /* SemesterCampusTableViewController.swift */,
-				92F97F671C9C97C80079F084 /* CampusTableViewController.swift */,
 			);
 			name = Semester;
 			sourceTree = "<group>";
