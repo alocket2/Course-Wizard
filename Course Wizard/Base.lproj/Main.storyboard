@@ -437,10 +437,10 @@
             </objects>
             <point key="canvasLocation" x="3581" y="-563"/>
         </scene>
-        <!--Tab BarUI-->
+        <!--Tab Bar Controller-->
         <scene sceneID="ZDO-yb-VTS">
             <objects>
-                <tabBarController storyboardIdentifier="Overview" id="mHq-Ai-cc6" customClass="TabBarUI" customModule="Course_Wizard" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Overview" id="mHq-Ai-cc6" customClass="CWTabBarController" customModule="Course_Wizard" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="XHL-05-xrG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

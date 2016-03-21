@@ -55,8 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BWWalkthroughViewControll
             self.window?.makeKeyAndVisible()
         }
         
-        UITabBar.appearance().barTintColor = UIColor.tabBarColor()
-        UITabBar.appearance().tintColor = UIColor(red: 255.0/255.0, green: 254.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        UITabBar.appearance().barTintColor = UIColor.tabBarTintColor()
+        UITabBar.appearance().tintColor = UIColor.tabBarItemActiveColor()
         UITabBar.appearance().shadowImage = UIImage()
         
         let barAppearace = UIBarButtonItem.appearance()
@@ -64,9 +64,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BWWalkthroughViewControll
         
         UINavigationBar.appearance().barTintColor = UIColor.whiteColor()
         
-        UINavigationBar.appearance().tintColor = UIColor.navBarItemColor()
+        UINavigationBar.appearance().tintColor = UIColor.navBarItemActiveColor()
         
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.navBarItemColor()]
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.navBarItemActiveColor()]
         
         if let tab = window?.rootViewController as? UITabBarController {
             for child in tab.viewControllers ?? [] {

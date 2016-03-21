@@ -1,5 +1,5 @@
 //
-//  TabBarUI.swift
+//  CTabBarController.swift
 //  Course Wizard
 //
 //  Created by Anthony Lockett on 3/16/16.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class TabBarUI: UITabBarController {
+class CWTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         for item in self.tabBar.items! as [UITabBarItem] {
             if let image = item.image {
-                item.image = image.imageWithColor(UIColor(red: 169.0/255.0, green: 188.0/255.0, blue: 208.0/255.0, alpha: 1.0)).imageWithRenderingMode(.AlwaysOriginal)
+                item.image = image.imageWithColor(UIColor.tabBarItemInactiveColor()).imageWithRenderingMode(.AlwaysOriginal)
             }
         }
     }
