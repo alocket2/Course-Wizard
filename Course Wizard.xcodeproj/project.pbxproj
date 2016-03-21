@@ -39,6 +39,7 @@
 		92F97F751CA069620079F084 /* Degree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F97F741CA069620079F084 /* Degree.swift */; };
 		92F97F771CA069E20079F084 /* DegreeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F97F761CA069E20079F084 /* DegreeTableViewController.swift */; };
 		92F97F7B1CA06E1F0079F084 /* FauDegrees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F97F7A1CA06E1F0079F084 /* FauDegrees.swift */; };
+		92F97F7D1CA07B7B0079F084 /* FlightPlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F97F7C1CA07B7B0079F084 /* FlightPlanTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		92F97F741CA069620079F084 /* Degree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Degree.swift; sourceTree = "<group>"; };
 		92F97F761CA069E20079F084 /* DegreeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DegreeTableViewController.swift; sourceTree = "<group>"; };
 		92F97F7A1CA06E1F0079F084 /* FauDegrees.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FauDegrees.swift; sourceTree = "<group>"; };
+		92F97F7C1CA07B7B0079F084 /* FlightPlanTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlightPlanTableViewController.swift; path = SWRevealViewController/FlightPlanTableViewController.swift; sourceTree = "<group>"; };
 		9B4AFFB680C0C6C6E21CB79E /* Pods-Course Wizard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Course Wizard.release.xcconfig"; path = "Pods/Target Support Files/Pods-Course Wizard/Pods-Course Wizard.release.xcconfig"; sourceTree = "<group>"; };
 		A7EDE33F705FC99F984FDA2D /* Pods_Course_Wizard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Course_Wizard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E975ABAEB98C3F55F0CDED04 /* Pods-Course Wizard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Course Wizard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Course Wizard/Pods-Course Wizard.debug.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				92E26AEE1C9A67B100D54ED1 /* SettingTableViewController.swift */,
 				92F97F671C9C97C80079F084 /* CampusTableViewController.swift */,
 				92F97F761CA069E20079F084 /* DegreeTableViewController.swift */,
+				92F97F7C1CA07B7B0079F084 /* FlightPlanTableViewController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				9212A71F1C83982C006421C6 /* SemesterDetailTableViewController.swift in Sources */,
 				92F97F681C9C97C80079F084 /* CampusTableViewController.swift in Sources */,
 				928C60291C879E2700147BD2 /* CoreDataStack.swift in Sources */,
+				92F97F7D1CA07B7B0079F084 /* FlightPlanTableViewController.swift in Sources */,
 				92F97F771CA069E20079F084 /* DegreeTableViewController.swift in Sources */,
 				928C60381C889DD400147BD2 /* Campus.swift in Sources */,
 				928C602C1C87A7FF00147BD2 /* Semester+CoreDataProperties.swift in Sources */,
