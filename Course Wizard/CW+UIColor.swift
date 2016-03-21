@@ -26,4 +26,8 @@ extension UIColor {
         return UIColor(red: 55.0/255.0, green: 63.0/255.0, blue: 81.0/255.0, alpha: 1.0)
     }
     
+    class func imageTintColor() -> UIColor {
+        return UIColor(red: 153.0/255.0, green: 153.0/255.0, blue: 153.0/255.0, alpha: 1.0)
+    }
+    
 }

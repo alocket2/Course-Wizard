@@ -12,8 +12,6 @@ class Degree {
     
     var type: String
     var degree: String
-    
-    var degrees = [Degree]()
         
     init(degreeType: String, degreeName: String) {
         self.type = degreeType
