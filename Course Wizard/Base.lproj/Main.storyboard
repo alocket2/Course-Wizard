@@ -532,6 +532,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="r0m-Xq-3fV" kind="show" id="aw3-D9-qEI"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="moreItemsIdentifier" textLabel="KoU-Ev-V5f" style="IBUITableViewCellStyleDefault" id="bBW-9m-gsg">
                                         <rect key="frame" x="0.0" y="303" width="600" height="44"/>
@@ -604,6 +607,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wS1-M5-O2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="788" y="736"/>
+        </scene>
+        <!--Degree Table View Controller-->
+        <scene sceneID="vkw-u7-DNN">
+            <objects>
+                <tableViewController id="r0m-Xq-3fV" customClass="DegreeTableViewController" customModule="Course_Wizard" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jmj-VH-oM9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="degreeCell" id="Cpc-x9-DNi">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cpc-x9-DNi" id="OZH-14-3Iv">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="r0m-Xq-3fV" id="MeP-r9-H8m"/>
+                            <outlet property="delegate" destination="r0m-Xq-3fV" id="LnU-rl-7Kc"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GZz-rG-jlr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32" y="1428"/>
         </scene>
         <!--Semesters Table View Controller-->
         <scene sceneID="rFs-M9-NMu">
