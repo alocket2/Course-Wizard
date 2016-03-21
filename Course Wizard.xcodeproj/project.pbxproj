@@ -30,7 +30,7 @@
 		92AEECD11C83F1F700372550 /* SemesterTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AEECD01C83F1F700372550 /* SemesterTypeTableViewController.swift */; };
 		92AEECD31C83F44A00372550 /* SemesterDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AEECD21C83F44A00372550 /* SemesterDatePicker.swift */; };
 		92AEECD51C83F49F00372550 /* SemesterCampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AEECD41C83F49F00372550 /* SemesterCampusTableViewController.swift */; };
-		92BF4EDF1C9A3EF500537E59 /* TabBarUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BF4EDE1C9A3EF500537E59 /* TabBarUI.swift */; };
+		92BF4EDF1C9A3EF500537E59 /* CWTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BF4EDE1C9A3EF500537E59 /* CWTabBarController.swift */; };
 		92BF4EE11C9A3F2200537E59 /* CW+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BF4EE01C9A3F2200537E59 /* CW+UIImage.swift */; };
 		92E26AEF1C9A67B100D54ED1 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E26AEE1C9A67B100D54ED1 /* SettingTableViewController.swift */; };
 		92F97F681C9C97C80079F084 /* CampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F97F671C9C97C80079F084 /* CampusTableViewController.swift */; };
@@ -64,7 +64,7 @@
 		92AEECD01C83F1F700372550 /* SemesterTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterTypeTableViewController.swift; sourceTree = "<group>"; };
 		92AEECD21C83F44A00372550 /* SemesterDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterDatePicker.swift; sourceTree = "<group>"; };
 		92AEECD41C83F49F00372550 /* SemesterCampusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterCampusTableViewController.swift; sourceTree = "<group>"; };
-		92BF4EDE1C9A3EF500537E59 /* TabBarUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarUI.swift; sourceTree = "<group>"; };
+		92BF4EDE1C9A3EF500537E59 /* CWTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWTabBarController.swift; sourceTree = "<group>"; };
 		92BF4EE01C9A3F2200537E59 /* CW+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CW+UIImage.swift"; sourceTree = "<group>"; };
 		92E26AEE1C9A67B100D54ED1 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		92F97F671C9C97C80079F084 /* CampusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusTableViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +182,7 @@
 		927645C91C853B8400D6FD8C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				92BF4EDE1C9A3EF500537E59 /* CWTabBarController.swift */,
 				92F97F6D1C9DBA990079F084 /* UIScrollView+EmptyDataSet.h */,
 				92F97F6E1C9DBA990079F084 /* UIScrollView+EmptyDataSet.m */,
 				926A48DD1C9A7A1D002F8507 /* BWWalkthroughPageViewController.swift */,
@@ -235,7 +236,6 @@
 		92BF4EDB1C9A3C5800537E59 /* UI Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				92BF4EDE1C9A3EF500537E59 /* TabBarUI.swift */,
 				92BF4EE01C9A3F2200537E59 /* CW+UIImage.swift */,
 				92F97F701C9F06F70079F084 /* CW+UIColor.swift */,
 			);
@@ -387,7 +387,7 @@
 				928C602C1C87A7FF00147BD2 /* Semester+CoreDataProperties.swift in Sources */,
 				926A48DF1C9A7A1D002F8507 /* BWWalkthroughPageViewController.swift in Sources */,
 				92F97F6F1C9DBA990079F084 /* UIScrollView+EmptyDataSet.m in Sources */,
-				92BF4EDF1C9A3EF500537E59 /* TabBarUI.swift in Sources */,
+				92BF4EDF1C9A3EF500537E59 /* CWTabBarController.swift in Sources */,
 				92AEECD51C83F49F00372550 /* SemesterCampusTableViewController.swift in Sources */,
 				924DFC281C7D47DB0097E9C2 /* AppDelegate.swift in Sources */,
 				9212A70D1C837633006421C6 /* CoursesViewController.swift in Sources */,
