@@ -108,7 +108,7 @@ extension CoursesViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource 
     }
     
     func imageTintColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
-        return UIColor(red: 153.0/255.0, green: 153.0/255.0, blue: 153.0/255.0, alpha: 1.0)
+        return UIColor.imageTintColor()
     }
     
 }

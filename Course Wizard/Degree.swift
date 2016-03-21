@@ -10,11 +10,9 @@ import Foundation
 
 class Degree {
     
-    var type: String
     var degree: String
         
-    init(degreeType: String, degreeName: String) {
-        self.type = degreeType
+    init(degreeName: String) {
         self.degree = degreeName
     }
     
