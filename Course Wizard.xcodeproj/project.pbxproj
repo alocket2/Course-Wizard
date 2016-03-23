@@ -18,6 +18,7 @@
 		924DFC351C7D47DB0097E9C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 924DFC331C7D47DB0097E9C2 /* LaunchScreen.storyboard */; };
 		9275E7E41CA175DE00B3E803 /* OnboardingContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275E7E11CA175DE00B3E803 /* OnboardingContentViewController.m */; };
 		9275E7E51CA175DE00B3E803 /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9275E7E31CA175DE00B3E803 /* OnboardingViewController.m */; };
+		9275E8281CA228CF00B3E803 /* CW+UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9275E8271CA228CF00B3E803 /* CW+UIDevice.swift */; };
 		927645C51C85318300D6FD8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 927645C41C85318300D6FD8C /* Assets.xcassets */; };
 		928C60291C879E2700147BD2 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C60281C879E2700147BD2 /* CoreDataStack.swift */; };
 		928C602C1C87A7FF00147BD2 /* Semester+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C602A1C87A7FF00147BD2 /* Semester+CoreDataProperties.swift */; };
@@ -61,6 +62,7 @@
 		9275E7E11CA175DE00B3E803 /* OnboardingContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingContentViewController.m; sourceTree = "<group>"; };
 		9275E7E21CA175DE00B3E803 /* OnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingViewController.h; sourceTree = "<group>"; };
 		9275E7E31CA175DE00B3E803 /* OnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingViewController.m; sourceTree = "<group>"; };
+		9275E8271CA228CF00B3E803 /* CW+UIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CW+UIDevice.swift"; sourceTree = "<group>"; };
 		927645C41C85318300D6FD8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		928C60281C879E2700147BD2 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		928C602A1C87A7FF00147BD2 /* Semester+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Semester+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				92BF4EE01C9A3F2200537E59 /* CW+UIImage.swift */,
 				92F97F701C9F06F70079F084 /* CW+UIColor.swift */,
 				92F97F8A1CA0F63D0079F084 /* CW+UIFont.swift */,
+				9275E8271CA228CF00B3E803 /* CW+UIDevice.swift */,
 			);
 			name = "UI Extensions";
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				92F97F771CA069E20079F084 /* DegreeTableViewController.swift in Sources */,
 				928C60381C889DD400147BD2 /* Campus.swift in Sources */,
 				928C602C1C87A7FF00147BD2 /* Semester+CoreDataProperties.swift in Sources */,
+				9275E8281CA228CF00B3E803 /* CW+UIDevice.swift in Sources */,
 				92F97F811CA09AF10079F084 /* DegreeTableViewCell.swift in Sources */,
 				92F97F6F1C9DBA990079F084 /* UIScrollView+EmptyDataSet.m in Sources */,
 				92BF4EDF1C9A3EF500537E59 /* CWTabBarController.swift in Sources */,

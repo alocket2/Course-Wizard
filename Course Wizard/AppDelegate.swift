@@ -75,6 +75,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func generateWalkthroughView() -> OnboardingViewController {
         
+        let model = UIDevice.modelName()
+        
         let firstPage = OnboardingContentViewController(title: "Semester Tracking", body: "Get insight from current & previous semesters like how many courses you've taken and your gpa", image: UIImage(named: "schoolbag"), buttonText: nil, action: nil)
         let secondPage = OnboardingContentViewController(title: "Course Tracking", body: "Know when and where your classes are", image: UIImage(named: "studying"), buttonText: nil, action: nil)
         let thirdPage = OnboardingContentViewController(title: "Assignment Tracking", body: "Never miss a beat by tracking your assignments including due date reminders and grades.", image: UIImage(named: "document"), buttonText: nil, action: nil)
@@ -123,7 +125,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         fifthPage.bodyFontSize = 15.0
         fifthPage.bodyTextColor = UIColor.whiteColor()
         fifthPage.buttonFontSize = 15.0
-        fifthPage.bottomPadding = 100.0
+        
+        if model == "Simulator" {
+            firstPage.underTitlePadding = 50.0
+            secondPage.underTitlePadding = 50.0
+            thirdPage.underTitlePadding = 50.0
+            fourthPage.underTitlePadding = 50.0
+            fifthPage.underTitlePadding = 50.0
+            fifthPage.bottomPadding = -20.0
+        } else if model == "iPhone 6s Plus" {
+        }
+        
         
         let onboardVC = OnboardingViewController(backgroundImage: UIImage.fromColor(UIColor.walkthroughBackgroundColor()), contents: [firstPage, secondPage, thirdPage, fourthPage, fifthPage])
         
@@ -137,6 +149,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         onboardVC.pageControl.currentPageIndicatorTintColor = UIColor.activePageControlColor()
         onboardVC.pageControl.pageIndicatorTintColor = UIColor.inactivePageControlColor()
+        
+        if model == "Simulator" {
+            onboardVC.underPageControlPadding = 25.0
+        } else if model == "iPhone 6" {
+            onboardVC.underPageControlPadding = 50.0
+        }
+        
         return onboardVC
     }
 
