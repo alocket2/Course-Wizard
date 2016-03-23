@@ -32,7 +32,7 @@ class SemesterDetailTableViewController: UITableViewController {
     var campus: String?
     
     weak var delegate: SemesterDelegate!
-    var coreDataStack: CoreDataStack!
+    var coreDataStack = CoreDataStack()
     
     var semesters = [Semester]()
     

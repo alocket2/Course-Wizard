@@ -15,10 +15,12 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, BWWalkthroughViewControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     lazy var coreDataStack = CoreDataStack()
+    
+    var kUserHasOnboardedKey = "user_has_onboarded"
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -26,33 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BWWalkthroughViewControll
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let userHasOnboarded = NSUserDefaults.standardUserDefaults().boolForKey(kUserHasOnboardedKey)
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
-        if defaults.integerForKey("viewedWalkthrough") == 0 {
-            
-            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("Walkthrough") as! BWWalkthroughViewController
-            let page_one = storyboard.instantiateViewControllerWithIdentifier("page1") as UIViewController
-            let page_two = storyboard.instantiateViewControllerWithIdentifier("page2") as UIViewController
-            let page_three = storyboard.instantiateViewControllerWithIdentifier("page3") as UIViewController
-            
-            initialViewController.delegate = self
-            
-            initialViewController.addViewController(page_one)
-            initialViewController.addViewController(page_two)
-            initialViewController.addViewController(page_three)
-            
-            
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
-            
-            defaults.setInteger(1, forKey: "viewedWalkthrough")
-            
+        if userHasOnboarded {
+            self.setupNormalRootViewController()
         } else {
-            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("Overview") as UIViewController!
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
+            UIApplication.sharedApplication().statusBarStyle = .LightContent
+            self.window!.rootViewController = self.generateWalkthroughView()
         }
         
         UITabBar.appearance().barTintColor = UIColor.tabBarTintColor()
@@ -79,6 +61,83 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BWWalkthroughViewControll
         }
                 
         return true
+    }
+    
+    
+    func setupNormalRootViewController() {
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: kUserHasOnboardedKey)
+        UIApplication.sharedApplication().statusBarStyle = .Default
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController = storyboard.instantiateViewControllerWithIdentifier("Overview") as UIViewController!
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+    }
+    
+    func generateWalkthroughView() -> OnboardingViewController {
+        
+        let firstPage = OnboardingContentViewController(title: "Semester Tracking", body: "Get insight from current & previous semesters like how many courses you've taken and your gpa", image: UIImage(named: "schoolbag"), buttonText: nil, action: nil)
+        let secondPage = OnboardingContentViewController(title: "Course Tracking", body: "Know when and where your classes are", image: UIImage(named: "studying"), buttonText: nil, action: nil)
+        let thirdPage = OnboardingContentViewController(title: "Assignment Tracking", body: "Never miss a beat by tracking your assignments including due date reminders and grades.", image: UIImage(named: "document"), buttonText: nil, action: nil)
+        let fourthPage = OnboardingContentViewController(title: "Grades & GPA", body: "Start improving your performance with real time grade & gpa tracking.", image: UIImage(named: "a-grade"), buttonText: nil, action: nil)
+        let fifthPage = OnboardingContentViewController(title: "Flight Plan", body: "Graduate on time by knowing what classes you've taken and which you still need.", image: UIImage(named: "paperplane"), buttonText: "Get Started") { () -> Void in
+            self.setupNormalRootViewController()
+        }
+        
+        //First Page
+        firstPage.topPadding = 125.0
+        firstPage.underIconPadding = 50.0
+        firstPage.titleFontSize = 18.0
+        firstPage.titleTextColor = UIColor.whiteColor()
+        firstPage.bodyFontSize = 15.0
+        firstPage.bodyTextColor = UIColor.whiteColor()
+        
+        //Second Page
+        secondPage.topPadding = 125.0
+        secondPage.underIconPadding = 50.0
+        secondPage.titleFontSize = 18.0
+        secondPage.titleTextColor = UIColor.whiteColor()
+        secondPage.bodyFontSize = 15.0
+        secondPage.bodyTextColor = UIColor.whiteColor()
+        
+        //Third Page
+        thirdPage.topPadding = 125.0
+        thirdPage.underIconPadding = 50.0
+        thirdPage.titleFontSize = 18.0
+        thirdPage.titleTextColor = UIColor.whiteColor()
+        thirdPage.bodyFontSize = 15.0
+        thirdPage.bodyTextColor = UIColor.whiteColor()
+        
+        //Fourth Pages
+        fourthPage.topPadding = 125.0
+        fourthPage.underIconPadding = 50.0
+        fourthPage.titleFontSize = 18.0
+        fourthPage.titleTextColor = UIColor.whiteColor()
+        fourthPage.bodyFontSize = 15.0
+        fourthPage.bodyTextColor = UIColor.whiteColor()
+        
+        //Fifth Page
+        fifthPage.topPadding = 125.0
+        fifthPage.underIconPadding = 50.0
+        fifthPage.titleFontSize = 18.0
+        fifthPage.titleTextColor = UIColor.whiteColor()
+        fifthPage.bodyFontSize = 15.0
+        fifthPage.bodyTextColor = UIColor.whiteColor()
+        fifthPage.buttonFontSize = 15.0
+        fifthPage.bottomPadding = 100.0
+        
+        let onboardVC = OnboardingViewController(backgroundImage: UIImage.fromColor(UIColor.walkthroughBackgroundColor()), contents: [firstPage, secondPage, thirdPage, fourthPage, fifthPage])
+        
+        onboardVC.shouldMaskBackground = false
+        onboardVC.shouldFadeTransitions = true
+        onboardVC.fadeSkipButtonOnLastPage = true
+        onboardVC.fadePageControlOnLastPage = true
+        onboardVC.allowSkipping = true
+        onboardVC.skipHandler = {
+            self.setupNormalRootViewController()
+        }
+        onboardVC.pageControl.currentPageIndicatorTintColor = UIColor.activePageControlColor()
+        onboardVC.pageControl.pageIndicatorTintColor = UIColor.inactivePageControlColor()
+        return onboardVC
     }
 
     func applicationWillResignActive(application: UIApplication) {

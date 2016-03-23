@@ -30,4 +30,20 @@ extension UIColor {
         return UIColor(red: 153.0/255.0, green: 153.0/255.0, blue: 153.0/255.0, alpha: 1.0)
     }
     
+    class func walkthroughFontColor() -> UIColor {
+        return UIColor(red: 55.0/255.0, green: 63.0/255.0, blue: 81.0/255.0, alpha: 1.0)
+    }
+    
+    class func walkthroughBackgroundColor() -> UIColor {
+        return UIColor(red: 55.0/255.0, green: 66.0/255.0, blue: 84.0/255.0, alpha: 1.0)
+    }
+    
+    class func inactivePageControlColor() -> UIColor {
+        return UIColor(red: 118.0/255.0, green: 138.0/255.0, blue: 157.0/255.0, alpha: 1.0)
+    }
+    
+    class func activePageControlColor() -> UIColor {
+        return UIColor(red: 218.0/255.0, green: 230.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+    }
+    
 }

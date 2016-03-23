@@ -25,17 +25,11 @@ class FlightPlanTableViewController: UITableViewController {
 extension FlightPlanTableViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let str = "Flight Plan"
-        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
-        
-        return NSAttributedString(string: str, attributes: attrs)
+        return UIFont.headlineFontWith(headline: "Flight Plan")
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let str = "Choose a degree to view it's flight plan"
-        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
-        
-        return NSAttributedString(string: str, attributes: attrs)
+        return UIFont.taglineFontWith(body: "Choose a degree in the settings to view its flight plan")
     }
     
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {

@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIImage {
+    
     func imageWithColor(tintColor: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         
@@ -26,5 +27,19 @@ extension UIImage {
         UIGraphicsEndImageContext()
         
         return newImage
+    }
+    
+    class func fromColor(color: UIColor) -> UIImage {
+        
+            let screenSize = UIScreen.mainScreen().bounds
+        
+            let rect = CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height)
+            UIGraphicsBeginImageContext(rect.size)
+            let context = UIGraphicsGetCurrentContext()
+            CGContextSetFillColorWithColor(context, color.CGColor)
+            CGContextFillRect(context, rect)
+            let img = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return img
     }
 }
