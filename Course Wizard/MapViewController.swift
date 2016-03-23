@@ -222,17 +222,11 @@ class MapViewController: UIViewController {
 extension MapViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let str = "No campus has been selected"
-        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
-        
-        return NSAttributedString(string: str, attributes: attrs)
+        return UIFont.headlineFontWith(headline: "Campus Map")
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let str = "Please select your campus above or in the settings"
-        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
-        
-        return NSAttributedString(string: str, attributes: attrs)
+        return UIFont.taglineFontWith(body: "No campus has been selected. Please select your campus above or in the settings")
     }
     
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {

@@ -85,7 +85,9 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Course Wizard/DZNEmptyDataSet.framework"
+  install_framework "Pods-Course Wizard/Onboard.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Course Wizard/DZNEmptyDataSet.framework"
+  install_framework "Pods-Course Wizard/Onboard.framework"
 fi

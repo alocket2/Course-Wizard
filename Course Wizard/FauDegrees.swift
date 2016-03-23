@@ -36,6 +36,8 @@ class FauDegrees {
         var degrees = [Degree]()
         
         degrees.append(Degree(degreeName: "Accounting"))
+        degrees.append(Degree(degreeName: "Computer Science"))
+        degrees.append(Degree(degreeName: "Computer Engineering"))
         
         return FauDegrees(degreeType: degreeTypes.Bachelors.rawValue, degrees: degrees)
     }
@@ -48,6 +50,7 @@ class FauDegrees {
         var degrees = [Degree]()
         
         degrees.append(Degree(degreeName: "Accounting"))
+    
         
         return FauDegrees(degreeType: degreeTypes.Masters.rawValue, degrees: degrees)
     }
@@ -62,7 +65,7 @@ class FauDegrees {
         return FauDegrees(degreeType: degreeTypes.Graduate_Cert.rawValue, degrees: degrees)
     }
     
-    
+    //Doctorates
     private class func doctorates() -> FauDegrees {
         var degrees = [Degree]()
         

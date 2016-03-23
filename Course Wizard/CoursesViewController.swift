@@ -90,17 +90,11 @@ extension CoursesViewController: SemesterDelegate {
 extension CoursesViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let str = "Courses"
-        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
-        
-        return NSAttributedString(string: str, attributes: attrs)
+        return UIFont.headlineFontWith(headline: "Courses")
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let str = "Add a course above"
-        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
-        
-        return NSAttributedString(string: str, attributes: attrs)
+        return UIFont.taglineFontWith(body: "Add a course above")
     }
     
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {

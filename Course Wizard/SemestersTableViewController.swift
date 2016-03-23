@@ -66,12 +66,15 @@ class SemestersTableViewController: UITableViewController {
         let yearIndex = semesters[indexPath.row].startDate.endIndex.advancedBy(-4)
         let year = semesters[indexPath.row].startDate.substringFromIndex(yearIndex)
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! SemesterTableViewCell
         
-        cell.textLabel?.text = semesters[indexPath.row].type
-        cell.detailTextLabel?.text = year
+        cell.configureCellWith(semesters[indexPath.row].type, andYear: year)
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 55.0
     }
     
     
@@ -88,17 +91,11 @@ class SemestersTableViewController: UITableViewController {
 extension SemestersTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let str = "Semesters"
-        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
-        
-        return NSAttributedString(string: str, attributes: attrs)
+        return UIFont.headlineFontWith(headline: "Semesters")
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let str = "No semesters have been added, please add some!"
-        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
-        
-        return NSAttributedString(string: str, attributes: attrs)
+        return UIFont.taglineFontWith(body: "No semesters have been added, please add some!")
     }
     
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
