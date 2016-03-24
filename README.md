@@ -8,6 +8,8 @@ Course Wizard is a FAU student planning appliction
  2. Move into the directory where the project is contained. 
  3. In terminal type pod update
  4. Try running the project
+ 
+
 # Updating the project
 Everyday you should update your local version of the project.
 Do not update the project when you are working on a feature,
