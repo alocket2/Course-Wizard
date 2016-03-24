@@ -12,7 +12,7 @@ class DegreeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var degreeLabel: UILabel!
     
-    func configureCellWith(degree: Degree) {
+    func configureCellWith(degree: CWDegree) {
         degreeLabel.text = degree.degree
     }
 }

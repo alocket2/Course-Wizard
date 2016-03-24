@@ -16,23 +16,23 @@ class DegreeTableViewController: UITableViewController {
     }
     
     
-    lazy var fauDegrees: [FauDegrees] = {
-        return FauDegrees.fauDegrees()
+    lazy var cwDegrees: [CWDegrees] = {
+        return CWDegrees.cwDegrees()
     }()
     
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return fauDegrees.count
+        return cwDegrees.count
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let fauDegree = fauDegrees[section]
-        return fauDegree.type
+        let cwDegree = cwDegrees[section]
+        return cwDegree.type
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let fauDegree = fauDegrees[section]
-        return fauDegree.degrees.count
+        let cwDegree = cwDegrees[section]
+        return cwDegree.degrees.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -41,8 +41,8 @@ class DegreeTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DegreeTableViewCell
         
-        let fauDegree = fauDegrees[indexPath.section]
-        let degree = fauDegree.degrees[indexPath.row]
+        let cwDegree = cwDegrees[indexPath.section]
+        let degree = cwDegree.degrees[indexPath.row]
         
         cell.configureCellWith(degree)
         

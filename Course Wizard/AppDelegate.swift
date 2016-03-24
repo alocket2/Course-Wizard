@@ -13,6 +13,7 @@
 
 import UIKit
 import CoreData
+import Canvas
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

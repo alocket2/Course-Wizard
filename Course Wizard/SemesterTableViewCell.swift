@@ -11,11 +11,9 @@ import UIKit
 class SemesterTableViewCell: UITableViewCell {
 
     @IBOutlet weak var semesterNameLabel: UILabel!
-    @IBOutlet weak var semesterYearLabel: UILabel!
 
-    func configureCellWith(semester: String, andYear year: String) {
+    func configureCellWith(semester: String) {
         semesterNameLabel.text = semester
-        semesterYearLabel.text = year
     }
     
 }

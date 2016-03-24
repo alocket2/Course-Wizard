@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Degree {
+class CWDegree {
     
     var degree: String
         

@@ -4,13 +4,23 @@
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Semester" representedClassName=".Semester" syncable="YES">
-        <attribute name="campus" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="endDate" attributeType="String" syncable="YES"/>
         <attribute name="startDate" attributeType="String" syncable="YES"/>
         <attribute name="type" attributeType="String" syncable="YES"/>
+        <relationship name="inYear" maxCount="1" deletionRule="Nullify" destinationEntity="Semester_Year" inverseName="hasSemester" inverseEntity="Semester_Year" syncable="YES"/>
+    </entity>
+    <entity name="Semester_Year" syncable="YES">
+        <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hasSemester" toMany="YES" deletionRule="Nullify" destinationEntity="Semester" inverseName="inYear" inverseEntity="Semester" syncable="YES"/>
+    </entity>
+    <entity name="UserDegree" representedClassName=".Degree" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Semester" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="Campus" positionX="-54" positionY="18" width="128" height="60"/>
+        <element name="Semester" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="UserDegree" positionX="-54" positionY="9" width="128" height="75"/>
+        <element name="Semester_Year" positionX="-54" positionY="9" width="128" height="75"/>
     </elements>
 </model>
