@@ -32,8 +32,16 @@ class SemestersTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         tableView.reloadData()
     }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //
+    }
  
-  
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        //
+    }
+    
+    
     
 }
 
