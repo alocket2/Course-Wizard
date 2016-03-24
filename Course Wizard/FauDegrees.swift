@@ -60,7 +60,7 @@ class FauDegrees {
     private class func certificates() -> FauDegrees {
         var degrees = [Degree]()
         
-        degrees.append(Degree(degreeName: "Adult/ Gerontological Nurse Practitioner"))
+        degrees.append(Degree(degreeName: "Adult / Gerontological Nurse Practitioner"))
         
         return FauDegrees(degreeType: degreeTypes.Graduate_Cert.rawValue, degrees: degrees)
     }
