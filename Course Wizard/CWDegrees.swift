@@ -70,6 +70,7 @@ class CWDegrees {
         var degrees = [CWDegree]()
         
         degrees.append(CWDegree(degreeName: "Business Administration"))
+        //Test
         
         return CWDegrees(degreeType: degreeTypes.Doctorates.rawValue, degrees: degrees)
     }
