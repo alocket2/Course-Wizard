@@ -17,7 +17,7 @@ import CoreData
 class CoursesViewController: UIViewController {
     
     //Access to the core data stack
-    var coreDataStack: CoreDataStack!
+    var coreDataStack = CoreDataStack()
     
     @IBOutlet weak var tableView: UITableView!
 
