@@ -24,7 +24,6 @@ class MapViewController: UIViewController {
 
     var mapView: MGLMapView!
     var currentCampus: String = ""
-    
     var coreDataStack = CoreDataStack()
     
 
@@ -215,8 +214,6 @@ class MapViewController: UIViewController {
         
         self.presentViewController(controller, animated: true, completion: nil)
     }
-
-
 }
 
 extension MapViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {

@@ -103,6 +103,11 @@ class SemesterDetailTableViewController: UITableViewController {
         if !semesterExists {
         
             let semesterEntity = Semester(entity: entity, insertIntoManagedObjectContext: coreDataStack.managedObjectContext)
+            
+            let yearIndex = startDateLabel.text?.endIndex.advancedBy(-4)
+            let year = startDateLabel.text?.substringFromIndex(yearIndex!)
+            
+            semesterEntity.year = year
             semesterEntity.type = chosenSemester!
             semesterEntity.startDate = startDate!
             semesterEntity.endDate = endDate!

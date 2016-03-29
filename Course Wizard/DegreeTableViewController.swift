@@ -8,31 +8,36 @@
 
 import UIKit
 
+protocol DegreeProtocol: class {
+    func userHasSelectedDegree(degree: String)
+}
+
 class DegreeTableViewController: UITableViewController {
     
+    weak var delegate: DegreeProtocol?
     
     override func viewDidLoad() {
         self.navigationItem.title = "Degrees"
     }
     
     
-    lazy var fauDegrees: [FauDegrees] = {
-        return FauDegrees.fauDegrees()
+    lazy var cwDegrees: [CWDegrees] = {
+        return CWDegrees.cwDegrees()
     }()
     
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return fauDegrees.count
+        return cwDegrees.count
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let fauDegree = fauDegrees[section]
-        return fauDegree.type
+        let cwDegree = cwDegrees[section]
+        return cwDegree.type
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let fauDegree = fauDegrees[section]
-        return fauDegree.degrees.count
+        let cwDegree = cwDegrees[section]
+        return cwDegree.degrees.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -41,14 +46,23 @@ class DegreeTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DegreeTableViewCell
         
-        let fauDegree = fauDegrees[indexPath.section]
-        let degree = fauDegree.degrees[indexPath.row]
+        let cwDegree = cwDegrees[indexPath.section]
+        let degree = cwDegree.degrees[indexPath.row]
         
         cell.configureCellWith(degree)
         
         return cell
     }
 
+}
+
+extension DegreeTableViewController {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cwDegree = cwDegrees[indexPath.section]
+        let degree = cwDegree.degrees[indexPath.row]
+        delegate?.userHasSelectedDegree(degree.degree)
+        navigationController?.popViewControllerAnimated(true)
+    }
 }
 
 

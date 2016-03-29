@@ -9,83 +9,78 @@
 import UIKit
 import CoreData
 
-class SemestersTableViewController: UITableViewController {
+class SemestersTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     var coreDataStack = CoreDataStack()
     var semesters = [Semester]()
     
-
-    let cellIdentifier = "semesterCell"
+    lazy var fetchedResultsController: NSFetchedResultsController = {
+        let fetchRequest = NSFetchRequest(entityName: "Semester")
+        let sortDescriptor = NSSortDescriptor(key: "year", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        let fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.coreDataStack.managedObjectContext, sectionNameKeyPath: "year", cacheName: nil)
+        
+        fetchResultsController.delegate = self
+        
+        return fetchResultsController
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        do {
+            try self.fetchedResultsController.performFetch()
+        } catch let error as NSError {
+            print("Error performing fetch \(error.localizedDescription)")
+        }
+        
         title = "Semesters"
         
-        reloadData()
+        
         tableView.reloadData()
         
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
         tableView.tableFooterView = UIView()
         
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
-        
-        reloadData()
         tableView.reloadData()
-        
     }
-    
-    func reloadData(predicate: NSPredicate? = nil) {
-        
-        let fetchRequest = NSFetchRequest(entityName: "Semester")
-        fetchRequest.predicate = predicate
-        
-        do {
-            if let results = try coreDataStack.managedObjectContext.executeFetchRequest(fetchRequest) as? [Semester] {
-                semesters = results
-            }
-        } catch {
-            return
-        }
-    }
-    
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return (fetchedResultsController.sections?.count)!
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return semesters.count
+         return (fetchedResultsController.sections![section].numberOfObjects)
     }
     
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return fetchedResultsController.sections![section].name
+    }
+ 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let yearIndex = semesters[indexPath.row].startDate.endIndex.advancedBy(-4)
-        let year = semesters[indexPath.row].startDate.substringFromIndex(yearIndex)
+        let cellIdentifier = "semesterCell"
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! SemesterTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
         
-        cell.configureCellWith(semesters[indexPath.row].type, andYear: year)
+        let record = fetchedResultsController.objectAtIndexPath(indexPath)
         
-        return cell
-    }
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 55.0
-    }
-    
-    
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-            //Delete the semester from core data here.
+        if let name = record.valueForKey("type") as? String {
+            cell?.textLabel?.text = name
         }
         
+        return cell!
     }
-
+    
+    
+    
 }
 
 extension SemestersTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
