@@ -27,7 +27,7 @@ class CWDegrees {
     
     
     class func cwDegrees() -> [CWDegrees] {
-        return [self.bachelors(), self.masters(), self.certificates(), self.doctorates()]
+        return [self.bachelors(), self.certificates(), self.masters(), self.doctorates()]
     }
     
     
@@ -42,8 +42,14 @@ class CWDegrees {
         return CWDegrees(degreeType: degreeTypes.Bachelors.rawValue, degrees: degrees)
     }
     
-    
-    
+    //Graduate Certificate
+    private class func certificates() -> CWDegrees {
+        var degrees = [CWDegree]()
+        
+        degrees.append(CWDegree(degreeName: "Adult / Gerontological Nurse Practitioner"))
+        
+        return CWDegrees(degreeType: degreeTypes.Graduate_Cert.rawValue, degrees: degrees)
+    }
     
     //Master Degrees
     private class func masters() -> CWDegrees {
@@ -53,16 +59,6 @@ class CWDegrees {
     
         
         return CWDegrees(degreeType: degreeTypes.Masters.rawValue, degrees: degrees)
-    }
-    
-    
-    //Graduate Certificate
-    private class func certificates() -> CWDegrees {
-        var degrees = [CWDegree]()
-        
-        degrees.append(CWDegree(degreeName: "Adult / Gerontological Nurse Practitioner"))
-        
-        return CWDegrees(degreeType: degreeTypes.Graduate_Cert.rawValue, degrees: degrees)
     }
     
     //Doctorates
