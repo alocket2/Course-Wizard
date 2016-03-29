@@ -54,8 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let tab = window?.rootViewController as? UITabBarController {
             for child in tab.viewControllers ?? [] {
                 if let child = child as? UINavigationController, top = child.topViewController {
-                    if top.respondsToSelector("setCoreDataStack:") {
-                        top.performSelector("setCoreDataStack:", withObject: coreDataStack)
+                    if top.respondsToSelector(Selector("setCoreDataStack:")) {
+                        top.performSelector(Selector("setCoreDataStack:"), withObject: coreDataStack)
                     }
                 }
             }

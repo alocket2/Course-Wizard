@@ -19,11 +19,7 @@ class SemestersTableViewController: UITableViewController, NSFetchedResultsContr
     lazy var fetchedResultsController: NSFetchedResultsController = {
         let fetchRequest = NSFetchRequest(entityName: "Semester")
         let sortDescriptor = NSSortDescriptor(key: "year", ascending: true)
-        print(sortDescriptor)
         fetchRequest.sortDescriptors = [sortDescriptor]
-        for desc in fetchRequest.sortDescriptors! {
-            print(desc)
-        }
         
         let fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.coreDataStack.managedObjectContext, sectionNameKeyPath: "year", cacheName: nil)
         
@@ -75,8 +71,8 @@ class SemestersTableViewController: UITableViewController, NSFetchedResultsContr
         
         let record = fetchedResultsController.objectAtIndexPath(indexPath)
         
-        if let name = record.valueForKey("type") {
-            cell?.textLabel?.text = (name as! String)
+        if let name = record.valueForKey("type") as? String {
+            cell?.textLabel?.text = name
         }
         
         return cell!
