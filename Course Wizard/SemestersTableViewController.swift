@@ -13,8 +13,6 @@ class SemestersTableViewController: UITableViewController, NSFetchedResultsContr
 
     var coreDataStack = CoreDataStack()
     var semesters = [Semester]()
-
-    let cellIdentifier = "semesterCell"
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
         let fetchRequest = NSFetchRequest(entityName: "Semester")
@@ -67,6 +65,9 @@ class SemestersTableViewController: UITableViewController, NSFetchedResultsContr
     }
  
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cellIdentifier = "semesterCell"
+        
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
         
         let record = fetchedResultsController.objectAtIndexPath(indexPath)
