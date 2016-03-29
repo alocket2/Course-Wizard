@@ -23,6 +23,8 @@ class SemestersTableViewController: UITableViewController, NSFetchedResultsContr
         
         fetchResultsController.delegate = self
         
+        print("podsssss")
+        
         return fetchResultsController
     }()
     
