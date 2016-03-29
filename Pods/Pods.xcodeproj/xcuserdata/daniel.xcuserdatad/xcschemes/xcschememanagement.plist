@@ -4,12 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>BWWalkthrough-BWWalkthrough.xcscheme</key>
+		<key>Canvas.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>BWWalkthrough.xcscheme</key>
+		<key>DZNEmptyDataSet.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Onboard.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>17664F8F0232329D875EC690EB653867</key>
+		<key>16FB872D0D2D4BA0F378AB34D47CF95F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>69D540ED6B5F982941EC7669FD54C72C</key>
+		<key>73BB50312CA38C6657BF4A56E95CE315</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A371D9F716AF507FF01A593DD0D9DFDF</key>
+		<key>80CBCC225074FD190F9BEA2940592423</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D7FF48F3092783E4E42B336F0DEF2D1A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
