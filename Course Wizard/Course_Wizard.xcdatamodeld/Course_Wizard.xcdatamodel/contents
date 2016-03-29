@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Automatic">
+    <entity name="Assignment" syncable="YES">
+        <attribute name="dueDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="grade" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Campus" syncable="YES">
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -17,5 +23,6 @@
         <element name="Campus" positionX="-54" positionY="18" width="128" height="60"/>
         <element name="Semester" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="UserDegree" positionX="-54" positionY="9" width="128" height="75"/>
+        <element name="Assignment" positionX="-54" positionY="9" width="128" height="105"/>
     </elements>
 </model>

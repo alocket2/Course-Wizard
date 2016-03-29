@@ -15,7 +15,7 @@ import UIKit
 
 class AboutTableViewController: UITableViewController {
 
-    let creators = ["Anthony Lockett", "Daisy McCoy", "Daniel Marquez", "Khalil Millwood", "Evan Liebovitz", "Giselle Mohammed", "Freguens Mildors"]
+    let creators = ["Anthony Lockett", "Daisy McCoy", "Daniel Marquez", "Khalil Millwood", "Evan Liebovitz", "Giselle Mohammed", "Freguens Mildort"]
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
