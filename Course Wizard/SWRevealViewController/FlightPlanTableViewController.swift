@@ -9,6 +9,8 @@
 import UIKit
 
 class FlightPlanTableViewController: UITableViewController {
+    
+    var degree = ""
 
     override func viewDidLoad() {
         
@@ -40,4 +42,10 @@ extension FlightPlanTableViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSe
         return UIColor.imageTintColor()
     }
     
+}
+
+extension FlightPlanTableViewController: DegreeProtocol  {
+    func userHasSelectedDegree(degree: String) {
+        self.degree = degree
+    }
 }

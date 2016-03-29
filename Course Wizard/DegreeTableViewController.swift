@@ -8,8 +8,13 @@
 
 import UIKit
 
+protocol DegreeProtocol: class {
+    func userHasSelectedDegree(degree: String)
+}
+
 class DegreeTableViewController: UITableViewController {
     
+    weak var delegate: DegreeProtocol?
     
     override func viewDidLoad() {
         self.navigationItem.title = "Degrees"
@@ -49,6 +54,15 @@ class DegreeTableViewController: UITableViewController {
         return cell
     }
 
+}
+
+extension DegreeTableViewController {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cwDegree = cwDegrees[indexPath.section]
+        let degree = cwDegree.degrees[indexPath.row]
+        delegate?.userHasSelectedDegree(degree.degree)
+        navigationController?.popViewControllerAnimated(true)
+    }
 }
 
 

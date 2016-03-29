@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Automatic">
     <entity name="Campus" syncable="YES">
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -7,11 +7,7 @@
         <attribute name="endDate" attributeType="String" syncable="YES"/>
         <attribute name="startDate" attributeType="String" syncable="YES"/>
         <attribute name="type" attributeType="String" syncable="YES"/>
-        <relationship name="inYear" maxCount="1" deletionRule="Nullify" destinationEntity="Semester_Year" inverseName="hasSemester" inverseEntity="Semester_Year" syncable="YES"/>
-    </entity>
-    <entity name="Semester_Year" syncable="YES">
         <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="hasSemester" toMany="YES" deletionRule="Nullify" destinationEntity="Semester" inverseName="inYear" inverseEntity="Semester" syncable="YES"/>
     </entity>
     <entity name="UserDegree" representedClassName=".Degree" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
@@ -21,6 +17,5 @@
         <element name="Campus" positionX="-54" positionY="18" width="128" height="60"/>
         <element name="Semester" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="UserDegree" positionX="-54" positionY="9" width="128" height="75"/>
-        <element name="Semester_Year" positionX="-54" positionY="9" width="128" height="75"/>
     </elements>
 </model>
