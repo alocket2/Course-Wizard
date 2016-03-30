@@ -9,16 +9,12 @@
     <entity name="Campus" syncable="YES">
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="CompletedCourses" representedClassName=".CompletedCourses" syncable="YES">
+        <attribute name="courses" optional="YES" attributeType="Transformable" syncable="YES"/>
+    </entity>
     <entity name="Degree" representedClassName=".Degree" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="type" attributeType="String" syncable="YES"/>
-    </entity>
-    <entity name="Flight_Plan" syncable="YES">
-        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="credits" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="isCompleted" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="reqs" optional="YES" attributeType="Transformable" syncable="YES"/>
     </entity>
     <entity name="Semester" representedClassName=".Semester" syncable="YES">
         <attribute name="endDate" attributeType="String" syncable="YES"/>
@@ -31,6 +27,6 @@
         <element name="Campus" positionX="-54" positionY="18" width="128" height="60"/>
         <element name="Degree" positionX="-54" positionY="9" width="128" height="75"/>
         <element name="Semester" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="Flight_Plan" positionX="-54" positionY="27" width="128" height="120"/>
+        <element name="CompletedCourses" positionX="-45" positionY="36" width="128" height="60"/>
     </elements>
 </model>

@@ -82,7 +82,6 @@ extension DegreeTableViewController {
         let cwDegree = cwDegrees[indexPath.section]
         let degree = cwDegree.degrees[indexPath.row]
         let type = cwDegrees[indexPath.section].type
-        
         saveDataToCoreData(type, degreeName: degree.degree)
         
         delegate?.userHasSelectedDegree(degree.degree)

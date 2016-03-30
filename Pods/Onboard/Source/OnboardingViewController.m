@@ -27,9 +27,6 @@ static NSString * const kSkipButtonText = @"Skip";
     OnboardingContentViewController *_upcomingPage;
 }
 
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:UIApplicationWillEnterForegroundNotification];
-}
 
 #pragma mark - Initializing with images
 
@@ -93,7 +90,6 @@ static NSString * const kSkipButtonText = @"Skip";
     self.skipButton = [UIButton new];
     [self.skipButton setTitle:kSkipButtonText forState:UIControlStateNormal];
     [self.skipButton addTarget:self action:@selector(handleSkipButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    self.skipButton.titleLabel.adjustsFontSizeToFitWidth = YES;
 
     // create the movie player controller
     self.moviePlayerController = [MPMoviePlayerController new];

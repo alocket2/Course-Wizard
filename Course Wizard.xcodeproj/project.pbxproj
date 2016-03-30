@@ -12,6 +12,8 @@
 		9212A70F1C837B39006421C6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9212A70E1C837B39006421C6 /* MapViewController.swift */; };
 		9212A7111C837EBF006421C6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9212A7101C837EBF006421C6 /* Settings.bundle */; };
 		9212A71F1C83982C006421C6 /* SemesterDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9212A71E1C83982C006421C6 /* SemesterDetailTableViewController.swift */; };
+		9248E72A1CAC0E68002C8718 /* CompletedCourses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9248E7281CAC0E68002C8718 /* CompletedCourses+CoreDataProperties.swift */; };
+		9248E72B1CAC0E68002C8718 /* CompletedCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9248E7291CAC0E68002C8718 /* CompletedCourses.swift */; };
 		924DFC281C7D47DB0097E9C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924DFC271C7D47DB0097E9C2 /* AppDelegate.swift */; };
 		924DFC2D1C7D47DB0097E9C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 924DFC2B1C7D47DB0097E9C2 /* Main.storyboard */; };
 		924DFC301C7D47DB0097E9C2 /* Course_Wizard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 924DFC2E1C7D47DB0097E9C2 /* Course_Wizard.xcdatamodeld */; };
@@ -56,6 +58,8 @@
 		9212A70E1C837B39006421C6 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9212A7101C837EBF006421C6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9212A71E1C83982C006421C6 /* SemesterDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterDetailTableViewController.swift; sourceTree = "<group>"; };
+		9248E7281CAC0E68002C8718 /* CompletedCourses+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CompletedCourses+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9248E7291CAC0E68002C8718 /* CompletedCourses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedCourses.swift; sourceTree = "<group>"; };
 		924DFC241C7D47DB0097E9C2 /* Course Wizard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Course Wizard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		924DFC271C7D47DB0097E9C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		924DFC2C1C7D47DB0097E9C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 		927645C81C853B6800D6FD8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9248E7281CAC0E68002C8718 /* CompletedCourses+CoreDataProperties.swift */,
+				9248E7291CAC0E68002C8718 /* CompletedCourses.swift */,
 				92E79AF51CAB189800607E9F /* CWCourse.swift */,
 				92F97F741CA069620079F084 /* CWDegree.swift */,
 				92F97F7A1CA06E1F0079F084 /* CWDegrees.swift */,
@@ -480,6 +486,7 @@
 				92AEECD31C83F44A00372550 /* SemesterDatePicker.swift in Sources */,
 				9212A70F1C837B39006421C6 /* MapViewController.swift in Sources */,
 				9212A71F1C83982C006421C6 /* SemesterDetailTableViewController.swift in Sources */,
+				9248E72B1CAC0E68002C8718 /* CompletedCourses.swift in Sources */,
 				92F97F681C9C97C80079F084 /* CampusTableViewController.swift in Sources */,
 				92F97F7F1CA07F770079F084 /* AboutTableViewController.swift in Sources */,
 				928C60291C879E2700147BD2 /* CoreDataStack.swift in Sources */,
@@ -494,6 +501,7 @@
 				92BF4EDF1C9A3EF500537E59 /* CWTabBarController.swift in Sources */,
 				92E79AEA1CAAF56F00607E9F /* Degree.swift in Sources */,
 				92AEECD51C83F49F00372550 /* SemesterCampusTableViewController.swift in Sources */,
+				9248E72A1CAC0E68002C8718 /* CompletedCourses+CoreDataProperties.swift in Sources */,
 				924DFC281C7D47DB0097E9C2 /* AppDelegate.swift in Sources */,
 				92F97F7B1CA06E1F0079F084 /* CWDegrees.swift in Sources */,
 				9212A70D1C837633006421C6 /* CoursesViewController.swift in Sources */,
