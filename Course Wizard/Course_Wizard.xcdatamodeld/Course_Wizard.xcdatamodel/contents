@@ -9,20 +9,20 @@
     <entity name="Campus" syncable="YES">
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Degree" representedClassName=".Degree" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Semester" representedClassName=".Semester" syncable="YES">
         <attribute name="endDate" attributeType="String" syncable="YES"/>
         <attribute name="startDate" attributeType="String" syncable="YES"/>
         <attribute name="type" attributeType="String" syncable="YES"/>
         <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="UserDegree" representedClassName=".Degree" syncable="YES">
-        <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="type" attributeType="String" syncable="YES"/>
-    </entity>
     <elements>
         <element name="Campus" positionX="-54" positionY="18" width="128" height="60"/>
         <element name="Semester" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="UserDegree" positionX="-54" positionY="9" width="128" height="75"/>
+        <element name="Degree" positionX="-54" positionY="9" width="128" height="75"/>
         <element name="Assignment" positionX="-54" positionY="9" width="128" height="105"/>
     </elements>
 </model>
