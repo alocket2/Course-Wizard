@@ -51,7 +51,19 @@ extension UIColor {
     }
     
     class func compeltedCourseCellBackgroundColor() -> UIColor {
-        return UIColor(red: 237.0/255.0, green: 247.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+        return UIColor(red: 235.0/255.0, green: 235.0/255.0, blue: 235.0/255.0, alpha: 1.0)
+    }
+    
+    class func completedCourseTitleTextColor() -> UIColor {
+        return UIColor(red: 119.0/255.0, green: 119.0/255.0, blue: 119.0/255.0, alpha: 1.0)
+    }
+    
+    class func completedCourseDetailTextColor() -> UIColor {
+        return UIColor(red: 153.0/255.0, green: 153.0/255.0, blue: 153.0/255.0, alpha: 1.0)
+    }
+    
+    class func completedCourseIconColor() -> UIColor {
+        return UIColor(red: 167.0/255.0, green: 255.0/255.0, blue: 79.0/255.0, alpha: 0.5)
     }
     
 }

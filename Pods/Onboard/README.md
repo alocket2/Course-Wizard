@@ -57,7 +57,7 @@ OnboardingViewController *onboardingVC = [OnboardingViewController onboardWithBa
 ####Swift
 ```swift
 // Image
-let onboardingVC = OnboardingViewController(backgroundImage: UIImage(named: "background"), contents: [firstPage, secondPage, thirdPage])
+OnboardingViewController *onboardingVC = [OnboardingViewController onboardWithBackgroundImage:[UIImage imageNamed:@"background"] contents:@[firstPage, secondPage, thirdPage]];
 
 // Video
 let bundle = NSBundle.mainBundle()

@@ -617,9 +617,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pub-eA-gnp">
-                                            <rect key="frame" x="560" y="22" width="32" height="32"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Credits: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZO-hi-2MT">
                                             <rect key="frame" x="8" y="43" width="80" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
@@ -644,7 +641,18 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="pub-eA-gnp">
+                                            <rect key="frame" x="548" y="23" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="gI4-yp-U9S"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="pub-eA-gnp" secondAttribute="trailing" constant="20" id="0YA-7U-9qo"/>
+                                        <constraint firstItem="pub-eA-gnp" firstAttribute="top" secondItem="DBH-wa-yNe" secondAttribute="topMargin" constant="15" id="LxA-LH-f4p"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="pub-eA-gnp" secondAttribute="bottom" constant="14.5" id="lQX-yO-Mrg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="completionImage" destination="pub-eA-gnp" id="QNH-zB-c8i"/>
@@ -800,6 +808,7 @@
     </scenes>
     <resources>
         <image name="calendar" width="32" height="32"/>
+        <image name="circle" width="24" height="24"/>
         <image name="cog" width="32" height="32"/>
         <image name="course" width="32" height="32"/>
         <image name="map_route" width="32" height="32"/>

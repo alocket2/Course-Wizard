@@ -22,13 +22,13 @@ class SettingTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         
+        getDataFromCoreData()
+
         if degreeLabel != nil {
-            degreeLabel.text = "Degree:"
+            degreeLabel.text = "\(userDegreeType!) of \(userDegreeName!)"
         } else {
             degreeLabel.text = "Degree"
         }
-        
-        getDataFromCoreData()
         
         if currentCampus != nil {
             campusLabel.text = "Campus: \(currentCampus!)"
