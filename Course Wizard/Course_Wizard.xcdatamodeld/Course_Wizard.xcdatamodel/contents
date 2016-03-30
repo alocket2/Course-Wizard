@@ -20,6 +20,7 @@
         <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Assignment" positionX="-54" positionY="9" width="128" height="105"/>
         <element name="Campus" positionX="-54" positionY="18" width="128" height="60"/>
         <element name="Semester" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="Degree" positionX="-54" positionY="9" width="128" height="75"/>
