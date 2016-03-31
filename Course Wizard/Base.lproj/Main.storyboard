@@ -641,17 +641,17 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="pub-eA-gnp">
-                                            <rect key="frame" x="548" y="23" width="24" height="24"/>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="pub-eA-gnp">
+                                            <rect key="frame" x="543" y="27" width="16" height="16"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="24" id="gI4-yp-U9S"/>
+                                                <constraint firstAttribute="width" constant="16" id="gI4-yp-U9S"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="pub-eA-gnp" secondAttribute="trailing" constant="20" id="0YA-7U-9qo"/>
-                                        <constraint firstItem="pub-eA-gnp" firstAttribute="top" secondItem="DBH-wa-yNe" secondAttribute="topMargin" constant="15" id="LxA-LH-f4p"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="pub-eA-gnp" secondAttribute="bottom" constant="14.5" id="lQX-yO-Mrg"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="pub-eA-gnp" secondAttribute="trailing" constant="33" id="0YA-7U-9qo"/>
+                                        <constraint firstItem="pub-eA-gnp" firstAttribute="top" secondItem="DBH-wa-yNe" secondAttribute="topMargin" constant="19" id="LxA-LH-f4p"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="pub-eA-gnp" secondAttribute="bottom" constant="18.5" id="lQX-yO-Mrg"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -808,7 +808,7 @@
     </scenes>
     <resources>
         <image name="calendar" width="32" height="32"/>
-        <image name="circle" width="24" height="24"/>
+        <image name="check" width="21" height="16"/>
         <image name="cog" width="32" height="32"/>
         <image name="course" width="32" height="32"/>
         <image name="map_route" width="32" height="32"/>
