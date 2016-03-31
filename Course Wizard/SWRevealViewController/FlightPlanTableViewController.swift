@@ -85,6 +85,14 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
         return cwStanding.standing
     }
     
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.contentView.backgroundColor = UIColor.whiteColor()
+        header.textLabel?.textColor = UIColor.darkGrayColor()
+        
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let flightPlan = cwFlightPlan[section]
@@ -122,6 +130,7 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
         if !completedCourses.isEmpty {
             for completedClass in completedCourses {
                 if course == completedClass {
+                    cell.backgroundColor = UIColor.compeltedCourseCellBackgroundColor()
                     cell.courseName.textColor = UIColor.completedCourseDetailTextColor()
                     cell.courseCode.textColor = UIColor.completedCourseDetailTextColor()
                     cell.courseCredits.textColor = UIColor.completedCourseDetailTextColor()
@@ -129,7 +138,7 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
                     cell.completionImage.hidden = false
                     break
                 } else {
-                    cell.backgroundColor = UIColor.whiteColor()
+                    cell.backgroundColor = UIColor.incompletedCourseCellBackgroundColor()
                     cell.courseName.textColor = UIColor.darkGrayColor()
                     cell.courseCode.textColor = UIColor.darkGrayColor()
                     cell.courseCredits.textColor = UIColor.darkGrayColor()
@@ -143,7 +152,7 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
         cell.courseCredits.text = "Credits: \(credits)"
         cell.courseCode.text = code
         cell.coursePreRegs.text = "Pre Reqs: \(courseReq)"
-        cell.completionImage.image = UIImage(named: "circle")?.imageWithColor(UIColor.completedCourseIconColor())
+        cell.completionImage.image = UIImage(named: "check")?.imageWithColor(UIColor.completedCourseIconColor())
         
         return cell
     }

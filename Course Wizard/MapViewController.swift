@@ -19,6 +19,15 @@ import Mapbox
 
 class MapViewController: UIViewController {
     
+    enum Campuses: String {
+        case Boca_Raton = "Boca Raton"
+        case Dania_Beach = "Dania Beach (Sea Tech)"
+        case Davie
+        case Fort_Lauderdale = "Fort Lauderdale"
+        case Harbor_Branch = "Harbor Branch"
+        case Jupiter
+    }
+    
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -46,24 +55,6 @@ class MapViewController: UIViewController {
             tableView.emptyDataSetDelegate = self
             tableView.tableFooterView = UIView()
         }
-        
-        
-       //Check campus location in an switch statement then set coordinate appropriately
-        
-        
-       //Coordinates for campus locations.
-        
-        /*
-        
-        Davie - latitude: 26.082184, longitude: -80.234852
-        Fort Lauderdale - latitude: 26.119693, longitude: -80.141193
-        Dania Beach (Sea Tech) - latitude: 26.055044, longitude: -80.113076
-        Boca Raton - latitude: 26.370038, longitude: -80.102316
-        Jupiter - latitude: 26.887515, longitude: -80.116710
-        Harbor Branch - latitude: 27.535612, longitude: -80.359711
-        
-       */
-        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -90,27 +81,15 @@ class MapViewController: UIViewController {
     
     func setMapLocation() {
         switch currentCampus {
-        case "Boca Raton":
+        case Campuses.Boca_Raton.rawValue:
             mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.370038,
                 longitude: -80.102316),
-                zoomLevel: 13, animated: false)
-        case "Dania Beach (Sea Tech)":
-            mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.055044,
-                longitude: -80.113076),
-                zoomLevel: 13, animated: false)
-        case "Davie":
+                zoomLevel: 13, animated: true)
+        case Campuses.Davie.rawValue:
             mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.082184,
                 longitude: -80.234852),
-                zoomLevel: 13, animated: false)
-        case "Fort Lauderdale":
-            mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.119693,
-                longitude: -80.141193),
-                zoomLevel: 13, animated: false)
-        case "Harbor Branch":
-            mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 27.535612,
-                longitude: -80.359711),
-                zoomLevel: 13, animated: false)
-        case "Jupiter":
+                zoomLevel: 13, animated: true)
+        case Campuses.Jupiter.rawValue:
             mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.887515,
                 longitude: -80.116710),
                 zoomLevel: 13, animated: false)
@@ -172,26 +151,8 @@ class MapViewController: UIViewController {
             self.navigationItem.title = self.currentCampus
             self.saveCampusToCoreData()
         }
-        let daniaAction = UIAlertAction(title: "Dania Beach (Sea Tech)", style: .Default) { (UIAlertAction) -> Void in
-            self.currentCampus = "Dania Beach (Sea Tech)"
-            self.setMapLocation()
-            self.navigationItem.title = self.currentCampus
-            self.saveCampusToCoreData()
-        }
         let davieAction = UIAlertAction(title: "Davie", style: .Default) { (UIAlertAction) -> Void in
             self.currentCampus = "Davie"
-            self.setMapLocation()
-            self.navigationItem.title = self.currentCampus
-            self.saveCampusToCoreData()
-        }
-        let fortLaudAction = UIAlertAction(title: "Fort Lauderdale", style: .Default) { (UIAlertAction) -> Void in
-            self.currentCampus = "Fort Lauderdale"
-            self.setMapLocation()
-            self.navigationItem.title = self.currentCampus
-            self.saveCampusToCoreData()
-        }
-        let harborAction = UIAlertAction(title: "Harbor Branch", style: .Default) { (UIAlertAction) -> Void in
-            self.currentCampus = "Harbor Branch"
             self.setMapLocation()
             self.navigationItem.title = self.currentCampus
             self.saveCampusToCoreData()
@@ -205,10 +166,7 @@ class MapViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
         controller.addAction(bocaAciton)
-        controller.addAction(daniaAction)
         controller.addAction(davieAction)
-        controller.addAction(fortLaudAction)
-        controller.addAction(harborAction)
         controller.addAction(jupiterAction)
         controller.addAction(cancelAction)
         
