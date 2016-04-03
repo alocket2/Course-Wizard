@@ -38,6 +38,14 @@ class DegreeTableViewController: UITableViewController {
         return cwDegree.type
     }
     
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.contentView.backgroundColor = UIColor.whiteColor()
+        header.textLabel?.textColor = UIColor.darkGrayColor()
+        
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let cwDegree = cwDegrees[section]
         return cwDegree.degrees.count
@@ -48,6 +56,8 @@ class DegreeTableViewController: UITableViewController {
         let cellIdentifier = "degreeCell"
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DegreeTableViewCell
+        
+        cell.backgroundColor = UIColor.incompletedCourseCellBackgroundColor()
         
         let cwDegree = cwDegrees[indexPath.section]
         let degree = cwDegree.degrees[indexPath.row]
@@ -83,7 +93,6 @@ extension DegreeTableViewController {
         let degree = cwDegree.degrees[indexPath.row]
         let type = cwDegrees[indexPath.section].type
         saveDataToCoreData(type, degreeName: degree.degree)
-        
         delegate?.userHasSelectedDegree(degree.degree)
         navigationController?.popViewControllerAnimated(true)
     }

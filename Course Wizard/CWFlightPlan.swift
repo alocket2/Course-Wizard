@@ -31,6 +31,7 @@ class CWFlightPlan {
         switch degree {
             case "Computer Science":
                 return [self.computerScienceFreshman(), self.computerScienceSophmore(), self.computerScienceJunior(), self.computerScienceSenior()]
+          
             case "Computer Engineering":
                 return [self.computerEngineeringFreshman(), self.computerEngineeringSophmore(), self.computerEngineeringJunior(), self.computerEngineeringSenior()]
             default: break
@@ -38,8 +39,16 @@ class CWFlightPlan {
         
         return [self.computerScienceSenior()]
     }
-    
-    //Computer Science Flight Plan Courses
+
+}
+
+
+// MARK: Extensions are used for each degree's flight plan
+
+
+// Computer Science Fligt Plan
+
+extension CWFlightPlan {
     
     private class func computerScienceFreshman() -> CWFlightPlan {
         var courses = [CWCourse]()
@@ -104,9 +113,13 @@ class CWFlightPlan {
         
         return CWFlightPlan(classStanding: classStandings.Senior.rawValue, courses: courses)
     }
-    
-    //Computer Engineering Flight Plan Courses
-    
+
+}
+
+
+// Computer Engineering Flight Plan
+
+extension CWFlightPlan {
     private class func computerEngineeringFreshman() -> CWFlightPlan {
         var courses = [CWCourse]()
         
@@ -133,7 +146,5 @@ class CWFlightPlan {
         
         return CWFlightPlan(classStanding: classStandings.Senior.rawValue, courses: courses)
     }
-    
-
 }
 

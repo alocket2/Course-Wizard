@@ -49,8 +49,6 @@ class SettingTableViewController: UITableViewController {
             degreeLabel.text = "\(userDegreeType!) of \(userDegreeName!)"
         }
         
-        
-        
         if currentCampus == nil {
             campusLabel.text = "Campus"
         } else {
