@@ -74,6 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
     }
     
+    
     func generateWalkthroughView() -> OnboardingViewController {
         
         let model = UIDevice.modelName()
@@ -83,7 +84,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let thirdPage = OnboardingContentViewController(title: "Assignment Tracking", body: "Never miss a beat by tracking your assignments including due date reminders and grades.", image: UIImage(named: "document"), buttonText: nil, action: nil)
         let fourthPage = OnboardingContentViewController(title: "Grades & GPA", body: "Start improving your performance with real time grade & gpa tracking.", image: UIImage(named: "a-grade"), buttonText: nil, action: nil)
         let fifthPage = OnboardingContentViewController(title: "Flight Plan", body: "Graduate on time by knowing what classes you've taken and which you still need.", image: UIImage(named: "paperplane"), buttonText: "Get Started") { () -> Void in
-            self.setupNormalRootViewController()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("gettingStarted")
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
         }
         
         //First Page
@@ -146,7 +150,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         onboardVC.fadePageControlOnLastPage = true
         onboardVC.allowSkipping = true
         onboardVC.skipHandler = {
-            self.setupNormalRootViewController()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("gettingStarted")
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
         }
         onboardVC.pageControl.currentPageIndicatorTintColor = UIColor.activePageControlColor()
         onboardVC.pageControl.pageIndicatorTintColor = UIColor.inactivePageControlColor()

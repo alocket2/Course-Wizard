@@ -12,14 +12,13 @@ import CoreData
 class FlightPlanTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     var coreDataStack = CoreDataStack()
-    var courses = [String]()
-    var degree = ""
-    
     var completedCourses = [String]()
     
-
+    var degree = ""
     
     override func viewDidLoad() {
+        
+        
     
         getDegreeFromCoreData()
         
@@ -109,6 +108,8 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
         
         let cellIdentifier = "flightPlanCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! FlightPlanTableViewCell
+        
+        cell.backgroundColor = UIColor.incompletedCourseCellBackgroundColor()
         
         let flightPlan = cwFlightPlan[indexPath.section]
         let course = flightPlan.courses[indexPath.row].name
