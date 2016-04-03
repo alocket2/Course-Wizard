@@ -45,10 +45,9 @@ class CWDegrees {
         degrees.append(CWDegree(degreeName: "Arts and Humanities"))
         degrees.append(CWDegree(degreeName: "Biological Science"))
         degrees.append(CWDegree(degreeName: "Chemistry"))
-        degrees.append(CWDegree(degreeName: "Civil Engineer"))
-        degrees.append(CWDegree(degreeName: "Commercial Music"))
-        degrees.append(CWDegree(degreeName: "Commercial Music Creative Track"))
-        degrees.append(CWDegree(degreeName: "Commercial Music Technology Track"))
+        degrees.append(CWDegree(degreeName: "Civil Engineering"))
+        degrees.append(CWDegree(degreeName: "Commercial Music - Creative Track"))
+        degrees.append(CWDegree(degreeName: "Commercial Music - Technology Track"))
         degrees.append(CWDegree(degreeName: "Communication Studies"))
         degrees.append(CWDegree(degreeName: "Computer Arts in Animation"))
         degrees.append(CWDegree(degreeName: "Computer Engineering"))
@@ -77,7 +76,7 @@ class CWDegrees {
         degrees.append(CWDegree(degreeName: "Italian"))
         degrees.append(CWDegree(degreeName: "Jazz Studies"))
         degrees.append(CWDegree(degreeName: "Jewish Studies"))
-        degrees.append(CWDegree(degreeName: "Liberal Arts And Science (Honors College only)"))
+        degrees.append(CWDegree(degreeName: "Liberal Arts And Science"))
         degrees.append(CWDegree(degreeName: "Linguistics"))
         degrees.append(CWDegree(degreeName: "Management"))
         degrees.append(CWDegree(degreeName: "Management Information Systems"))
@@ -105,14 +104,14 @@ class CWDegrees {
         degrees.append(CWDegree(degreeName: "Secondary Education - Math"))
         degrees.append(CWDegree(degreeName: "Secondary Education - Music"))
         degrees.append(CWDegree(degreeName: "Secondary Education - Social Science"))
-        degrees.append(CWDegree(degreeName: "Science"))
-        degrees.append(CWDegree(degreeName: "Chemistry"))
         degrees.append(CWDegree(degreeName: "Social Work"))
-        degrees.append(CWDegree(degreeName: "Socialogy"))
+        degrees.append(CWDegree(degreeName: "Sociology"))
         degrees.append(CWDegree(degreeName: "Spanish"))
         degrees.append(CWDegree(degreeName: "Theatre"))
         degrees.append(CWDegree(degreeName: "Urban and Regional Planning"))
         degrees.append(CWDegree(degreeName: "Weekend B.B.A (Management)"))
+        
+        sortDegrees(&degrees)
         
         return CWDegrees(degreeType: degreeTypes.Bachelors.rawValue, degrees: degrees)
     }
@@ -129,7 +128,7 @@ class CWDegrees {
         degrees.append(CWDegree(degreeName: "Child Welfare"))
         degrees.append(CWDegree(degreeName: "Clinical Nurse Leader"))
         degrees.append(CWDegree(degreeName: "Economic Development and Tourism"))
-        degrees.append(CWDegree(degreeName: "English as a second Language (ESL) Studies"))
+        degrees.append(CWDegree(degreeName: "English as a second Language"))
         degrees.append(CWDegree(degreeName: "Environmental"))
         degrees.append(CWDegree(degreeName: "Environmental Restoration"))
         degrees.append(CWDegree(degreeName: "Environmental Studies"))
@@ -155,6 +154,8 @@ class CWDegrees {
         degrees.append(CWDegree(degreeName: "Visual Planning Technology"))
         degrees.append(CWDegree(degreeName: "Women, Gender, & Sexuality Studies"))
         
+        sortDegrees(&degrees)
+        
         return CWDegrees(degreeType: degreeTypes.Graduate_Cert.rawValue, degrees: degrees)
     }
     
@@ -168,7 +169,6 @@ class CWDegrees {
         degrees.append(CWDegree(degreeName: "Comparative Literature"))
         degrees.append(CWDegree(degreeName: "Creative Writing"))
         degrees.append(CWDegree(degreeName: "English"))
-        degrees.append(CWDegree(degreeName: "French"))
         degrees.append(CWDegree(degreeName: "History"))
         degrees.append(CWDegree(degreeName: "Linguistics"))
         degrees.append(CWDegree(degreeName: "Media, Technology & Entertainment"))
@@ -188,13 +188,10 @@ class CWDegrees {
         degrees.append(CWDegree(degreeName: "Graphic Design"))
         degrees.append(CWDegree(degreeName: "Women's Studies"))
         degrees.append(CWDegree(degreeName: "Biomedical Science"))
-        degrees.append(CWDegree(degreeName: "Biomedical Science"))
         degrees.append(CWDegree(degreeName: "Executive Forensic Accounting"))
         degrees.append(CWDegree(degreeName: "Business Administration"))
         degrees.append(CWDegree(degreeName: "Entrepreneurship"))
         degrees.append(CWDegree(degreeName: "Executive MBA"))
-        degrees.append(CWDegree(degreeName: "Finance"))
-        degrees.append(CWDegree(degreeName: "Health Administration"))
         degrees.append(CWDegree(degreeName: "Information System"))
         degrees.append(CWDegree(degreeName: "International Business"))
         degrees.append(CWDegree(degreeName: "Marketing"))
@@ -261,7 +258,6 @@ class CWDegrees {
         degrees.append(CWDegree(degreeName: "Applied Math and Statistics"))
         degrees.append(CWDegree(degreeName: "Biological Sciences"))
         degrees.append(CWDegree(degreeName: "Business Biotechnology"))
-        degrees.append(CWDegree(degreeName: "Chemistry"))
         degrees.append(CWDegree(degreeName: "Complex Systems and Brain Sciences"))
         degrees.append(CWDegree(degreeName: "Environmental Science"))
         degrees.append(CWDegree(degreeName: "Experimental Psychology"))
@@ -272,9 +268,9 @@ class CWDegrees {
         degrees.append(CWDegree(degreeName: "Integrative Biology and Neuroscience"))
         degrees.append(CWDegree(degreeName: "Mathematical Science"))
         degrees.append(CWDegree(degreeName: "Medical Physics"))
-        degrees.append(CWDegree(degreeName: "Physics"))
         degrees.append(CWDegree(degreeName: "Psychology"))
-    
+        
+        sortDegrees(&degrees)
         
         return CWDegrees(degreeType: degreeTypes.Masters.rawValue, degrees: degrees)
     }
@@ -306,7 +302,13 @@ class CWDegrees {
         degrees.append(CWDegree(degreeName: "Public Administration"))
         degrees.append(CWDegree(degreeName: "Social Work"))
         
+        sortDegrees(&degrees)
+        
         return CWDegrees(degreeType: degreeTypes.Doctorates.rawValue, degrees: degrees)
+    }
+    
+     class func sortDegrees(inout degrees: [CWDegree]) {
+        degrees.sortInPlace {$0.degree < $1.degree}
     }
         
 
