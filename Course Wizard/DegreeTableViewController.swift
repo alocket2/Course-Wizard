@@ -21,6 +21,7 @@ class DegreeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         self.navigationItem.title = "Degrees"
+
     }
     
     
@@ -30,6 +31,7 @@ class DegreeTableViewController: UITableViewController {
     
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        print(cwDegrees.count)
         return cwDegrees.count
     }
     
@@ -61,7 +63,10 @@ class DegreeTableViewController: UITableViewController {
         
         let cwDegree = cwDegrees[indexPath.section]
         let degree = cwDegree.degrees[indexPath.row]
+        let numDegreesInSection = cwDegree.degrees.count
+        print(numDegreesInSection)
         
+
         cell.configureCellWith(degree)
         
         return cell

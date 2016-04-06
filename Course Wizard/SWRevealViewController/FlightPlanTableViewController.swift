@@ -13,17 +13,28 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
 
     var coreDataStack = CoreDataStack()
     var completedCourses = [String]()
-    
+    var flightPlan = [CWFlightPlan]?()
     var degree = ""
+    
+    var courseTitle: String = ""
+    var courseCode: String = ""
+    var courseCreds: String = ""
+    var courseDesc: String = ""
+    var courseCoReqs: [String] = []
+    var coursePreReqs: [String] = []
     
     override func viewDidLoad() {
         
-        
-    
         getDegreeFromCoreData()
         
-        getCompletedCoursesFromCoreData()
+        flightPlan = CWFlightPlan.getCoursesFor(degree: degree)!
         
+        if flightPlan?.count == 0 {
+            tableView.reloadData()
+            
+        }
+        
+        getCompletedCoursesFromCoreData()
         tableView.reloadData()
         
         self.navigationItem.title = "Flight Plan"
@@ -32,12 +43,10 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
         tableView.emptyDataSetDelegate = self
         tableView.tableFooterView = UIView()
     }
-    
-    
-    
-    lazy var cwFlightPlan: [CWFlightPlan] = {
-        return CWFlightPlan.getCoursesFor(degree: self.degree)
-    }()
+
+    func flightPlan(cwFlightPlan: [CWFlightPlan]) -> [CWFlightPlan]  {
+        return self.flightPlan!
+    }
     
     func getDegreeFromCoreData() {
         let degreeRequest = NSFetchRequest(entityName: "Degree")
@@ -76,11 +85,11 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return cwFlightPlan.count
+        return (flightPlan!.count)
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let cwStanding = cwFlightPlan[section]
+        let cwStanding = flightPlan![section]
         return cwStanding.standing
     }
     
@@ -94,9 +103,9 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let flightPlan = cwFlightPlan[section]
+        let studentFlightPlan = flightPlan![section]
         
-        return flightPlan.courses.count
+        return studentFlightPlan.courses.count
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -111,14 +120,21 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
         
         cell.backgroundColor = UIColor.incompletedCourseCellBackgroundColor()
         
-        let flightPlan = cwFlightPlan[indexPath.section]
-        let course = flightPlan.courses[indexPath.row].name
-        let code = flightPlan.courses[indexPath.row].code
-        let credits = flightPlan.courses[indexPath.row].credits
-        let preReqs = flightPlan.courses[indexPath.row].preRegs
+        let studentFlightPlan = flightPlan![indexPath.section]
+        let course = studentFlightPlan.courses[indexPath.row].name
+        let code = studentFlightPlan.courses[indexPath.row].code
+        let credits = studentFlightPlan.courses[indexPath.row].credits
+        let preReqs = studentFlightPlan.courses[indexPath.row].preregs
         var courseReq = ""
         
         var count = 0
+        
+        courseTitle = studentFlightPlan.courses[indexPath.row].name
+        courseCode = studentFlightPlan.courses[indexPath.row].code
+        courseCreds = "\(studentFlightPlan.courses[indexPath.row].credits)"
+        courseCoReqs = studentFlightPlan.courses[indexPath.row].coreqs
+        coursePreReqs = studentFlightPlan.courses[indexPath.row].preregs
+        courseDesc = studentFlightPlan.courses[indexPath.row].description
         
         for req in preReqs {
             courseReq += req
@@ -135,7 +151,6 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
                     cell.courseName.textColor = UIColor.completedCourseDetailTextColor()
                     cell.courseCode.textColor = UIColor.completedCourseDetailTextColor()
                     cell.courseCredits.textColor = UIColor.completedCourseDetailTextColor()
-                    cell.coursePreRegs.textColor = UIColor.completedCourseDetailTextColor()
                     cell.completionImage.hidden = false
                     break
                 } else {
@@ -143,7 +158,6 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
                     cell.courseName.textColor = UIColor.darkGrayColor()
                     cell.courseCode.textColor = UIColor.darkGrayColor()
                     cell.courseCredits.textColor = UIColor.darkGrayColor()
-                    cell.coursePreRegs.textColor = UIColor.darkGrayColor()
                     cell.completionImage.hidden = true
                 }
             }
@@ -152,7 +166,6 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
         cell.courseName.text = course
         cell.courseCredits.text = "Credits: \(credits)"
         cell.courseCode.text = code
-        cell.coursePreRegs.text = "Pre Reqs: \(courseReq)"
         cell.completionImage.image = UIImage(named: "check")?.imageWithColor(UIColor.completedCourseIconColor())
         
         return cell
@@ -169,7 +182,7 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
         
         let completeAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "\u{2713}\n Complete" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             // 2
-            let flightPlanCourse = self.cwFlightPlan[indexPath.section]
+            let flightPlanCourse = self.flightPlan![indexPath.section]
             self.completedCourses.append(flightPlanCourse.courses[indexPath.row].name)
             
             self.saveCompletedCourses()
@@ -189,7 +202,7 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
                     self.tableView.reloadData()
                 })
                 
-                incompleteAction.backgroundColor = UIColor.redColor()
+                incompleteAction.backgroundColor = UIColor.retakeCourseCellActionColor()
                 
                 return [incompleteAction]
             }
@@ -202,11 +215,31 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
         return [completeAction]
     }
     
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "courseDetailSegue" {
+            let controller = segue.destinationViewController as! CWCourseDetail
+            
+            let indexPath = tableView.indexPathForSelectedRow
+            let cell = flightPlan![(indexPath?.section)!]
+            
+            controller.coursetitle = cell.courses[(indexPath?.row)!].name
+            controller.credits = "\(cell.courses[(indexPath?.row)!].credits)"
+            controller.code = cell.courses[(indexPath?.row)!].code
+            controller.coReqs = cell.courses[(indexPath?.row)!].coreqs
+            controller.preReqs = cell.courses[(indexPath?.row)!].preregs
+            controller.desc = cell.courses[(indexPath?.row)!].description
+            
+            navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+            navigationController!.navigationBar.shadowImage = UIImage()
+            navigationController!.navigationBar.translucent = true
+        }
+    }
+    
     func setCompleteActionAttributes(cell: FlightPlanTableViewCell, indexPath: NSIndexPath) {
         cell.courseName.textColor = UIColor.darkGrayColor()
         cell.courseCode.textColor = UIColor.darkGrayColor()
         cell.courseCredits.textColor = UIColor.darkGrayColor()
-        cell.coursePreRegs.textColor = UIColor.darkGrayColor()
         cell.completionImage.hidden = true
     }
     
@@ -237,7 +270,7 @@ extension FlightPlanTableViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSe
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return UIFont.taglineFontWith(body: "Choose a degree in the settings to view its flight plan")
+        return UIFont.taglineFontWith(body: "The degree you chose does not yet have a flight plan")
     }
     
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
