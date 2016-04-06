@@ -13,15 +13,20 @@ class CWCourse {
     var name: String
     var code: String
     var credits: Int
-    var preRegs: [String]
-    var completed: Bool
+    var coreqs: [String]
+    var preregs: [String]
+    var description: String
+    var gordonRule: Bool
+    var completed: Bool = false
     
-    init(courseName: String, courseCode: String, courseCredits: Int, coursePreRegs: [String], courseCompletion: Bool) {
+    init(courseName: String, courseCode: String, courseCredits: Int, courseCoreqs: [String], coursePreRegs: [String], courseDescription: String, isGordonRule: Bool) {
         self.name = courseName
         self.code = courseCode
         self.credits = courseCredits
-        self.preRegs = coursePreRegs
-        self.completed = courseCompletion
+        self.coreqs = courseCoreqs
+        self.preregs = coursePreRegs
+        self.description = courseDescription
+        self.gordonRule = isGordonRule
     }
     
     

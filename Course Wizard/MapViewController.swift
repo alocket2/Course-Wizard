@@ -15,8 +15,6 @@ import UIKit
 import CoreData
 import Mapbox
 
-
-
 class MapViewController: UIViewController {
     
     enum Campuses: String {
@@ -38,7 +36,6 @@ class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let styleURL = NSURL(string: "mapbox://styles/alockettjr/cik7nnuaw00emnyko48ysfg9c")
         mapView = MGLMapView(frame: view.bounds, styleURL: styleURL)
         mapView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
@@ -84,11 +81,11 @@ class MapViewController: UIViewController {
         case Campuses.Boca_Raton.rawValue:
             mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.370038,
                 longitude: -80.102316),
-                zoomLevel: 13, animated: true)
+                zoomLevel: 13, animated: false)
         case Campuses.Davie.rawValue:
             mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.082184,
                 longitude: -80.234852),
-                zoomLevel: 13, animated: true)
+                zoomLevel: 13, animated: false)
         case Campuses.Jupiter.rawValue:
             mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.887515,
                 longitude: -80.116710),
@@ -101,7 +98,8 @@ class MapViewController: UIViewController {
         
         mapView.zoomEnabled = true
         mapView.zoomLevel = 17
-        
+        mapView.showsUserLocation = true
+        mapView.userLocationVisible
         view.addSubview(mapView)
     }
     
@@ -172,6 +170,43 @@ class MapViewController: UIViewController {
         
         self.presentViewController(controller, animated: true, completion: nil)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "chooseBuildingSegue" {
+            let controller = segue.destinationViewController as! CWBuildingsTableView
+            controller.delegate = self
+        }
+    }
+}
+
+extension MapViewController: BuildingProtocol {
+    func userDidSelect(building building: String, coordinates: (latitude: Double, longitude: Double)) {
+        
+        navigationController?.popViewControllerAnimated(true)
+        
+        // Add annotation to map
+        //MARK: Check for previous points before adding a point if there is and it isnt the same point remove it
+        
+        let point = MGLPointAnnotation()
+        
+        if mapView.annotations?.count > 0 {
+            mapView.removeAnnotation((mapView.annotations?.first)!)
+        }
+        
+        point.coordinate = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
+        point.title = building
+        
+        mapView.addAnnotation(point)
+    
+        //Draws line from user location to annotation of building selected
+        drawPolyLine((coordinates.latitude, coordinates.longitude))
+    }
+    
+    func drawPolyLine(coordinates: (latitude: Double, longitude: Double)) {
+        
+        //Draws line from user location to annotation of building selected
+        
+    }
 }
 
 extension MapViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
@@ -193,3 +228,4 @@ extension MapViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     }
     
 }
+

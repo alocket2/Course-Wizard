@@ -1,5 +1,5 @@
 //
-//  FauDegrees.swift
+//  CWDegrees
 //  Course Wizard
 //
 //  Created by Anthony Lockett on 3/21/16.
