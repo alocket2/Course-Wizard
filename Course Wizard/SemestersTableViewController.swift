@@ -44,8 +44,6 @@ class SemestersTableViewController: UITableViewController, NSFetchedResultsContr
         tableView.emptyDataSetDelegate = self
         tableView.tableFooterView = UIView()
         
-        
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -63,12 +61,22 @@ class SemestersTableViewController: UITableViewController, NSFetchedResultsContr
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return fetchedResultsController.sections![section].name
     }
+    
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.contentView.backgroundColor = UIColor.whiteColor()
+        header.textLabel?.textColor = UIColor.darkGrayColor()
+        
+    }
  
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cellIdentifier = "semesterCell"
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
+        cell?.backgroundColor = UIColor.incompletedCourseCellBackgroundColor()
+        cell?.textLabel?.textColor = UIColor.darkGrayColor()
         
         let record = fetchedResultsController.objectAtIndexPath(indexPath)
         

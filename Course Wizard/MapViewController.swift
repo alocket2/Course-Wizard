@@ -15,9 +15,16 @@ import UIKit
 import CoreData
 import Mapbox
 
-
-
 class MapViewController: UIViewController {
+    
+    enum Campuses: String {
+        case Boca_Raton = "Boca Raton"
+        case Dania_Beach = "Dania Beach (Sea Tech)"
+        case Davie
+        case Fort_Lauderdale = "Fort Lauderdale"
+        case Harbor_Branch = "Harbor Branch"
+        case Jupiter
+    }
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -29,7 +36,6 @@ class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let styleURL = NSURL(string: "mapbox://styles/alockettjr/cik7nnuaw00emnyko48ysfg9c")
         mapView = MGLMapView(frame: view.bounds, styleURL: styleURL)
         mapView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
@@ -46,24 +52,6 @@ class MapViewController: UIViewController {
             tableView.emptyDataSetDelegate = self
             tableView.tableFooterView = UIView()
         }
-        
-        
-       //Check campus location in an switch statement then set coordinate appropriately
-        
-        
-       //Coordinates for campus locations.
-        
-        /*
-        
-        Davie - latitude: 26.082184, longitude: -80.234852
-        Fort Lauderdale - latitude: 26.119693, longitude: -80.141193
-        Dania Beach (Sea Tech) - latitude: 26.055044, longitude: -80.113076
-        Boca Raton - latitude: 26.370038, longitude: -80.102316
-        Jupiter - latitude: 26.887515, longitude: -80.116710
-        Harbor Branch - latitude: 27.535612, longitude: -80.359711
-        
-       */
-        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -90,27 +78,15 @@ class MapViewController: UIViewController {
     
     func setMapLocation() {
         switch currentCampus {
-        case "Boca Raton":
+        case Campuses.Boca_Raton.rawValue:
             mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.370038,
                 longitude: -80.102316),
                 zoomLevel: 13, animated: false)
-        case "Dania Beach (Sea Tech)":
-            mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.055044,
-                longitude: -80.113076),
-                zoomLevel: 13, animated: false)
-        case "Davie":
+        case Campuses.Davie.rawValue:
             mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.082184,
                 longitude: -80.234852),
                 zoomLevel: 13, animated: false)
-        case "Fort Lauderdale":
-            mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.119693,
-                longitude: -80.141193),
-                zoomLevel: 13, animated: false)
-        case "Harbor Branch":
-            mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 27.535612,
-                longitude: -80.359711),
-                zoomLevel: 13, animated: false)
-        case "Jupiter":
+        case Campuses.Jupiter.rawValue:
             mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.887515,
                 longitude: -80.116710),
                 zoomLevel: 13, animated: false)
@@ -122,7 +98,8 @@ class MapViewController: UIViewController {
         
         mapView.zoomEnabled = true
         mapView.zoomLevel = 17
-        
+        mapView.showsUserLocation = true
+        mapView.userLocationVisible
         view.addSubview(mapView)
     }
     
@@ -172,26 +149,8 @@ class MapViewController: UIViewController {
             self.navigationItem.title = self.currentCampus
             self.saveCampusToCoreData()
         }
-        let daniaAction = UIAlertAction(title: "Dania Beach (Sea Tech)", style: .Default) { (UIAlertAction) -> Void in
-            self.currentCampus = "Dania Beach (Sea Tech)"
-            self.setMapLocation()
-            self.navigationItem.title = self.currentCampus
-            self.saveCampusToCoreData()
-        }
         let davieAction = UIAlertAction(title: "Davie", style: .Default) { (UIAlertAction) -> Void in
             self.currentCampus = "Davie"
-            self.setMapLocation()
-            self.navigationItem.title = self.currentCampus
-            self.saveCampusToCoreData()
-        }
-        let fortLaudAction = UIAlertAction(title: "Fort Lauderdale", style: .Default) { (UIAlertAction) -> Void in
-            self.currentCampus = "Fort Lauderdale"
-            self.setMapLocation()
-            self.navigationItem.title = self.currentCampus
-            self.saveCampusToCoreData()
-        }
-        let harborAction = UIAlertAction(title: "Harbor Branch", style: .Default) { (UIAlertAction) -> Void in
-            self.currentCampus = "Harbor Branch"
             self.setMapLocation()
             self.navigationItem.title = self.currentCampus
             self.saveCampusToCoreData()
@@ -205,14 +164,48 @@ class MapViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
         controller.addAction(bocaAciton)
-        controller.addAction(daniaAction)
         controller.addAction(davieAction)
-        controller.addAction(fortLaudAction)
-        controller.addAction(harborAction)
         controller.addAction(jupiterAction)
         controller.addAction(cancelAction)
         
         self.presentViewController(controller, animated: true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "chooseBuildingSegue" {
+            let controller = segue.destinationViewController as! CWBuildingsTableView
+            controller.delegate = self
+        }
+    }
+}
+
+extension MapViewController: BuildingProtocol {
+    func userDidSelect(building building: String, coordinates: (latitude: Double, longitude: Double)) {
+        
+        navigationController?.popViewControllerAnimated(true)
+        
+        // Add annotation to map
+        //MARK: Check for previous points before adding a point if there is and it isnt the same point remove it
+        
+        let point = MGLPointAnnotation()
+        
+        if mapView.annotations?.count > 0 {
+            mapView.removeAnnotation((mapView.annotations?.first)!)
+        }
+        
+        point.coordinate = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
+        point.title = building
+        
+        mapView.addAnnotation(point)
+    
+        //Draws line from user location to annotation of building selected
+        drawPolyLine((coordinates.latitude, coordinates.longitude))
+    }
+    
+    func drawPolyLine(coordinates: (latitude: Double, longitude: Double)) {
+        
+        //Draws line from user location to annotation of building selected
+        
     }
 }
 
@@ -235,3 +228,4 @@ extension MapViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     }
     
 }
+
