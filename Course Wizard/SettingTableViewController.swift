@@ -12,45 +12,77 @@ import CoreData
 class SettingTableViewController: UITableViewController {
     
     @IBOutlet weak var campusLabel: UILabel!
+    @IBOutlet weak var degreeLabel: UILabel!
     
     var coreDataStack = CoreDataStack()
+    
     var currentCampus: String?
+    var userDegreeName: String?
+    var userDegreeType: String?
     
     override func viewDidLoad() {
-        getCampusFromCoreData()
+        
+        getDataFromCoreData()
+
+        if degreeLabel != nil {
+            degreeLabel.text = "\(userDegreeType!) of \(userDegreeName!)"
+        } else {
+            degreeLabel.text = "Degree"
+        }
         
         if currentCampus != nil {
             campusLabel.text = "Campus: \(currentCampus!)"
         } else {
             campusLabel.text = "Campus"
         }
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
-        getCampusFromCoreData()
+        
+        getDataFromCoreData()
+        
+        if degreeLabel == nil {
+            degreeLabel.text = "Degree"
+        } else {
+            degreeLabel.text = "\(userDegreeType!) of \(userDegreeName!)"
+        }
+        
         if currentCampus == nil {
             campusLabel.text = "Campus"
         } else {
             campusLabel.text = "Campus: \(currentCampus!)"
             saveCampusToCoreData()
         }
+        
+        
     }
     
-    func getCampusFromCoreData() {
+    func getDataFromCoreData() {
         
         let campusRequest = NSFetchRequest(entityName: "Campus")
+        let degreeRequest = NSFetchRequest(entityName: "Degree")
         
         do {
-            let results = try coreDataStack.managedObjectContext.executeFetchRequest(campusRequest)
+            let campusResults = try coreDataStack.managedObjectContext.executeFetchRequest(campusRequest)
+            let degreeResults = try coreDataStack.managedObjectContext.executeFetchRequest(degreeRequest)
             
-            for result in results {
+            for result in campusResults {
                 if let campusRetrieved = result.valueForKey("location") as? String {
                     currentCampus = campusRetrieved
                 }
             }
             
+            for result in degreeResults {
+                if let degreeNameRetrieved = result.valueForKey("name") as? String, degreeTypeRetrieved = result.valueForKey("type") as? String {
+                    userDegreeName = degreeNameRetrieved
+                    userDegreeType = degreeTypeRetrieved
+                }
+            }
+            
         } catch {
-            print("Could not fetch the semester entity")
+            print("Could not fetch the degree entity")
         }
         
     }

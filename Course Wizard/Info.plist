@@ -40,5 +40,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We would like to access your location even when the app is not in use.</string>
 </dict>
 </plist>

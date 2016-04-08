@@ -7,12 +7,35 @@
 //
 
 import UIKit
+import CoreData
 
-class FlightPlanTableViewController: UITableViewController {
-    
+class FlightPlanTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+
+    var coreDataStack = CoreDataStack()
+    var completedCourses = [String]()
+    var flightPlan = [CWFlightPlan]?()
     var degree = ""
-
+    
+    var courseTitle: String = ""
+    var courseCode: String = ""
+    var courseCreds: String = ""
+    var courseDesc: String = ""
+    var courseCoReqs: [String] = []
+    var coursePreReqs: [String] = []
+    
     override func viewDidLoad() {
+        
+        getDegreeFromCoreData()
+        
+        flightPlan = CWFlightPlan.getCoursesFor(degree: degree)!
+        
+        if flightPlan?.count == 0 {
+            tableView.reloadData()
+            
+        }
+        
+        getCompletedCoursesFromCoreData()
+        tableView.reloadData()
         
         self.navigationItem.title = "Flight Plan"
         
@@ -20,9 +43,225 @@ class FlightPlanTableViewController: UITableViewController {
         tableView.emptyDataSetDelegate = self
         tableView.tableFooterView = UIView()
     }
-    
-}
 
+    func flightPlan(cwFlightPlan: [CWFlightPlan]) -> [CWFlightPlan]  {
+        return self.flightPlan!
+    }
+    
+    func getDegreeFromCoreData() {
+        let degreeRequest = NSFetchRequest(entityName: "Degree")
+        
+        do {
+            let results = try coreDataStack.managedObjectContext.executeFetchRequest(degreeRequest)
+            
+            for result in results {
+                if let degreeResult = result.valueForKey("name") as? String {
+                    self.degree = degreeResult
+                }
+            }
+            
+        } catch let error as NSError {
+            print("Error fetching: \(error.localizedDescription)")
+        }
+        
+    }
+    
+    func getCompletedCoursesFromCoreData() {
+        let courseRequest = NSFetchRequest(entityName: "CompletedCourses")
+        
+        do {
+            
+            let results = try coreDataStack.managedObjectContext.executeFetchRequest(courseRequest)
+            
+            for result in results {
+                if let courseResults = result.valueForKey("courses") as? [String] {
+                    completedCourses = courseResults
+                }
+            }
+            
+        } catch let error as NSError {
+            print("Could not fetch courses: \(error.localizedDescription)")
+        }
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return (flightPlan!.count)
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let cwStanding = flightPlan![section]
+        return cwStanding.standing
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.contentView.backgroundColor = UIColor.whiteColor()
+        header.textLabel?.textColor = UIColor.darkGrayColor()
+        
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        let studentFlightPlan = flightPlan![section]
+        
+        return studentFlightPlan.courses.count
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 70.0
+    }
+   
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cellIdentifier = "flightPlanCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! FlightPlanTableViewCell
+        
+        cell.backgroundColor = UIColor.incompletedCourseCellBackgroundColor()
+        
+        let studentFlightPlan = flightPlan![indexPath.section]
+        let course = studentFlightPlan.courses[indexPath.row].name
+        let code = studentFlightPlan.courses[indexPath.row].code
+        let credits = studentFlightPlan.courses[indexPath.row].credits
+        let preReqs = studentFlightPlan.courses[indexPath.row].preregs
+        var courseReq = ""
+        
+        var count = 0
+        
+        courseTitle = studentFlightPlan.courses[indexPath.row].name
+        courseCode = studentFlightPlan.courses[indexPath.row].code
+        courseCreds = "\(studentFlightPlan.courses[indexPath.row].credits)"
+        courseCoReqs = studentFlightPlan.courses[indexPath.row].coreqs
+        coursePreReqs = studentFlightPlan.courses[indexPath.row].preregs
+        courseDesc = studentFlightPlan.courses[indexPath.row].description
+        
+        for req in preReqs {
+            courseReq += req
+            count += 1
+            if count < preReqs.count {
+                courseReq += ", "
+            }
+        }
+        
+        if !completedCourses.isEmpty {
+            for completedClass in completedCourses {
+                if course == completedClass {
+                    cell.backgroundColor = UIColor.compeltedCourseCellBackgroundColor()
+                    cell.courseName.textColor = UIColor.completedCourseDetailTextColor()
+                    cell.courseCode.textColor = UIColor.completedCourseDetailTextColor()
+                    cell.courseCredits.textColor = UIColor.completedCourseDetailTextColor()
+                    cell.completionImage.hidden = false
+                    break
+                } else {
+                    cell.backgroundColor = UIColor.incompletedCourseCellBackgroundColor()
+                    cell.courseName.textColor = UIColor.darkGrayColor()
+                    cell.courseCode.textColor = UIColor.darkGrayColor()
+                    cell.courseCredits.textColor = UIColor.darkGrayColor()
+                    cell.completionImage.hidden = true
+                }
+            }
+       }
+        
+        cell.courseName.text = course
+        cell.courseCredits.text = "Credits: \(credits)"
+        cell.courseCode.text = code
+        cell.completionImage.image = UIImage(named: "check")?.imageWithColor(UIColor.completedCourseIconColor())
+        
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+    
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! FlightPlanTableViewCell
+        let cellCourse = cell.courseName.text
+        
+        let completeAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "\u{2713}\n Complete" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            // 2
+            let flightPlanCourse = self.flightPlan![indexPath.section]
+            self.completedCourses.append(flightPlanCourse.courses[indexPath.row].name)
+            
+            self.saveCompletedCourses()
+            
+            self.tableView.reloadData()
+        })
+        
+        for course in completedCourses {
+            if course == cellCourse {
+                let incompleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "\u{00D7}\n Retake" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+                
+                    let index = self.completedCourses.indexOf(course)
+                    self.completedCourses.removeAtIndex(index!)
+                    
+                    self.saveCompletedCourses()
+                    self.setCompleteActionAttributes(cell, indexPath: indexPath)
+                    self.tableView.reloadData()
+                })
+                
+                incompleteAction.backgroundColor = UIColor.retakeCourseCellActionColor()
+                
+                return [incompleteAction]
+            }
+        }
+        
+        
+        
+        completeAction.backgroundColor = UIColor.actionBackgroundColor()
+        
+        return [completeAction]
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "courseDetailSegue" {
+            let controller = segue.destinationViewController as! CWCourseDetail
+            
+            let indexPath = tableView.indexPathForSelectedRow
+            let cell = flightPlan![(indexPath?.section)!]
+            
+            controller.coursetitle = cell.courses[(indexPath?.row)!].name
+            controller.credits = "\(cell.courses[(indexPath?.row)!].credits)"
+            controller.code = cell.courses[(indexPath?.row)!].code
+            controller.coReqs = cell.courses[(indexPath?.row)!].coreqs
+            controller.preReqs = cell.courses[(indexPath?.row)!].preregs
+            controller.desc = cell.courses[(indexPath?.row)!].description
+            
+            navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+            navigationController!.navigationBar.shadowImage = UIImage()
+            navigationController!.navigationBar.translucent = true
+        }
+    }
+    
+    func setCompleteActionAttributes(cell: FlightPlanTableViewCell, indexPath: NSIndexPath) {
+        cell.courseName.textColor = UIColor.darkGrayColor()
+        cell.courseCode.textColor = UIColor.darkGrayColor()
+        cell.courseCredits.textColor = UIColor.darkGrayColor()
+        cell.completionImage.hidden = true
+    }
+    
+    func saveCompletedCourses() {
+        
+        guard let entity = NSEntityDescription.entityForName("CompletedCourses", inManagedObjectContext: coreDataStack.managedObjectContext) else {
+            fatalError("Could not find entity descriptions!")
+        }
+        
+        let courseEntity = CompletedCourses(entity: entity, insertIntoManagedObjectContext: coreDataStack.managedObjectContext)
+        
+        courseEntity.courses = completedCourses
+        
+        do {
+          try coreDataStack.managedObjectContext.save()
+        } catch let error as NSError {
+            print("Could not save: \(error.localizedDescription)")
+        }
+        
+    }
+
+}
 
 extension FlightPlanTableViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
@@ -31,7 +270,7 @@ extension FlightPlanTableViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSe
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return UIFont.taglineFontWith(body: "Choose a degree in the settings to view its flight plan")
+        return UIFont.taglineFontWith(body: "The degree you chose does not yet have a flight plan")
     }
     
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
