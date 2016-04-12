@@ -39,6 +39,7 @@ class SemestersTableViewController: UITableViewController, NSFetchedResultsContr
         
         
         tableView.reloadData()
+        tableView.backgroundColor = UIColor.tableviewCellBackgroundColor()
         
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
@@ -75,7 +76,7 @@ class SemestersTableViewController: UITableViewController, NSFetchedResultsContr
         let cellIdentifier = "semesterCell"
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
-        cell?.backgroundColor = UIColor.incompletedCourseCellBackgroundColor()
+        cell?.backgroundColor = UIColor.tableviewCellBackgroundColor()
         cell?.textLabel?.textColor = UIColor.darkGrayColor()
         
         let record = fetchedResultsController.objectAtIndexPath(indexPath)
@@ -107,6 +108,10 @@ extension SemestersTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDe
     
     func imageTintColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
         return UIColor.imageTintColor()
+    }
+    
+    func verticalOffsetForEmptyDataSet(scrollView: UIScrollView!) -> CGFloat {
+        return -50.0
     }
     
 }

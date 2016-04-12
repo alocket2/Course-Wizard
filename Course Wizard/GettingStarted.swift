@@ -13,7 +13,8 @@ class GettingStarted: UITableViewController {
     var kUserHasOnboardedKey = "user_has_onboarded"
     
     @IBOutlet weak var gpaTextField: UITextField!
-    
+    @IBOutlet weak var campus: UILabel!
+    @IBOutlet weak var degree: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,9 @@ class GettingStarted: UITableViewController {
                                                                attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
     }
     
-    
+    override func viewDidAppear(animated: Bool) {
+        
+    }
     
     func setupNormalRootViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -36,6 +39,18 @@ class GettingStarted: UITableViewController {
     @IBAction func saveSettings(sender: UIBarButtonItem) {
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: kUserHasOnboardedKey)
         setupNormalRootViewController()
+    }
+}
+
+extension GettingStarted: CampusDelegate {
+    func didSelectCampus(campus: String) {
+        self.campus.text = "Campus: \(campus)"
+    }
+}
+
+extension GettingStarted: DegreeProtocol {
+    func userHasSelectedDegree(degree: String) {
+        self.degree.text = degree
     }
 }
 

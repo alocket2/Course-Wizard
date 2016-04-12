@@ -59,7 +59,7 @@ class DegreeTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DegreeTableViewCell
         
-        cell.backgroundColor = UIColor.incompletedCourseCellBackgroundColor()
+        cell.backgroundColor = UIColor.tableviewCellBackgroundColor()
         
         let cwDegree = cwDegrees[indexPath.section]
         let degree = cwDegree.degrees[indexPath.row]

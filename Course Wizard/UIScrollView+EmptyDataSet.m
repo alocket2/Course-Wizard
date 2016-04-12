@@ -748,7 +748,7 @@ NSString *dzn_implementationKey(id target, SEL selector)
         _titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
         _titleLabel.backgroundColor = [UIColor clearColor];
         
-        _titleLabel.font = [UIFont systemFontOfSize:27.0];
+        _titleLabel.font = [UIFont systemFontOfSize:20.0];
         _titleLabel.textColor = [UIColor colorWithWhite:0.6 alpha:1.0];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -768,7 +768,7 @@ NSString *dzn_implementationKey(id target, SEL selector)
         _detailLabel.translatesAutoresizingMaskIntoConstraints = NO;
         _detailLabel.backgroundColor = [UIColor clearColor];
         
-        _detailLabel.font = [UIFont systemFontOfSize:17.0];
+        _detailLabel.font = [UIFont systemFontOfSize:1.0];
         _detailLabel.textColor = [UIColor colorWithWhite:0.6 alpha:1.0];
         _detailLabel.textAlignment = NSTextAlignmentCenter;
         _detailLabel.lineBreakMode = NSLineBreakByWordWrapping;

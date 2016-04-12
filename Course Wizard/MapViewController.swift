@@ -15,14 +15,12 @@ import UIKit
 import CoreData
 import Mapbox
 
+
+
 class MapViewController: UIViewController {
     
     enum Campuses: String {
         case Boca_Raton = "Boca Raton"
-        case Dania_Beach = "Dania Beach (Sea Tech)"
-        case Davie
-        case Fort_Lauderdale = "Fort Lauderdale"
-        case Harbor_Branch = "Harbor Branch"
         case Jupiter
     }
     
@@ -40,32 +38,38 @@ class MapViewController: UIViewController {
         mapView = MGLMapView(frame: view.bounds, styleURL: styleURL)
         mapView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         
-        if currentCampus != "" {
+        if currentCampus == "Boca Raton" || currentCampus == "Jupiter" {
             tableView.hidden = true
+            mapView.hidden = false
             setMapLocation()
             getCampusFromCoreData()
             self.navigationItem.title = currentCampus
             
         } else {
             tableView.hidden = false
+            mapView.hidden = true
             tableView.emptyDataSetSource = self
             tableView.emptyDataSetDelegate = self
             tableView.tableFooterView = UIView()
+            tableView.reloadData()
         }
+        
     }
     
     override func viewDidAppear(animated: Bool) {
         
         getCampusFromCoreData()
         
-        if currentCampus != "" {
+        if currentCampus == "Boca Raton" || currentCampus == "Jupiter" {
             tableView.hidden = true
+            mapView.hidden = false
             setMapLocation()
             self.navigationItem.title = currentCampus
         } else {
             tableView.hidden = false
+            mapView.hidden = true
+            tableView.reloadData()
         }
-        
     }
     
     
@@ -77,14 +81,11 @@ class MapViewController: UIViewController {
     
     
     func setMapLocation() {
+        
         switch currentCampus {
         case Campuses.Boca_Raton.rawValue:
             mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.370038,
                 longitude: -80.102316),
-                zoomLevel: 13, animated: false)
-        case Campuses.Davie.rawValue:
-            mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.082184,
-                longitude: -80.234852),
                 zoomLevel: 13, animated: false)
         case Campuses.Jupiter.rawValue:
             mapView.setCenterCoordinate(CLLocationCoordinate2D(latitude: 26.887515,
@@ -94,14 +95,15 @@ class MapViewController: UIViewController {
             print("Thats not a campus")
         }
         
-        
-        
         mapView.zoomEnabled = true
         mapView.zoomLevel = 17
         mapView.showsUserLocation = true
         mapView.userLocationVisible
+        //mapView.userTrackingMode = .Follow
+        
         view.addSubview(mapView)
     }
+    
     
     
     func getCampusFromCoreData() {
@@ -149,12 +151,6 @@ class MapViewController: UIViewController {
             self.navigationItem.title = self.currentCampus
             self.saveCampusToCoreData()
         }
-        let davieAction = UIAlertAction(title: "Davie", style: .Default) { (UIAlertAction) -> Void in
-            self.currentCampus = "Davie"
-            self.setMapLocation()
-            self.navigationItem.title = self.currentCampus
-            self.saveCampusToCoreData()
-        }
         let jupiterAction = UIAlertAction(title: "Jupiter", style: .Default) { (UIAlertAction) -> Void in
             self.currentCampus = "Jupiter"
             self.setMapLocation()
@@ -164,11 +160,12 @@ class MapViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
         controller.addAction(bocaAciton)
-        controller.addAction(davieAction)
         controller.addAction(jupiterAction)
         controller.addAction(cancelAction)
         
         self.presentViewController(controller, animated: true, completion: nil)
+        
+        controller.view.tintColor = UIColor.actionBackgroundColor()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -179,36 +176,6 @@ class MapViewController: UIViewController {
     }
 }
 
-extension MapViewController: BuildingProtocol {
-    func userDidSelect(building building: String, coordinates: (latitude: Double, longitude: Double)) {
-        
-        navigationController?.popViewControllerAnimated(true)
-        
-        // Add annotation to map
-        //MARK: Check for previous points before adding a point if there is and it isnt the same point remove it
-        
-        let point = MGLPointAnnotation()
-        
-        if mapView.annotations?.count > 0 {
-            mapView.removeAnnotation((mapView.annotations?.first)!)
-        }
-        
-        point.coordinate = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
-        point.title = building
-        
-        mapView.addAnnotation(point)
-    
-        //Draws line from user location to annotation of building selected
-        drawPolyLine((coordinates.latitude, coordinates.longitude))
-    }
-    
-    func drawPolyLine(coordinates: (latitude: Double, longitude: Double)) {
-        
-        //Draws line from user location to annotation of building selected
-        
-    }
-}
-
 extension MapViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
@@ -216,7 +183,7 @@ extension MapViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return UIFont.taglineFontWith(body: "No campus has been selected. Please select your campus above or in the settings")
+        return UIFont.taglineFontWith(body: "Currently the \(currentCampus) campus has no campus map.")
     }
     
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
@@ -225,6 +192,37 @@ extension MapViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
     func imageTintColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
         return UIColor.imageTintColor()
+    }
+    
+    func verticalOffsetForEmptyDataSet(scrollView: UIScrollView!) -> CGFloat {
+        return -50.0
+    }
+    
+}
+
+extension MapViewController: BuildingProtocol, MGLMapViewDelegate {
+    func userDidSelect(building building: String, coordinates: (latitude: CLLocationDegrees, longitude: CLLocationDegrees)) {
+        
+        navigationController?.popViewControllerAnimated(true)
+        
+        var cords = [CLLocationCoordinate2D]()
+        let buildingLocation = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
+        
+        cords.append(buildingLocation)
+        cords.append((mapView.userLocation?.coordinate)!)
+        
+        // Add annotation to map
+        let point = MGLPointAnnotation()
+        
+        if mapView.annotations?.count > 0 {
+            mapView.removeAnnotations(mapView.annotations!)
+        }
+        
+        point.coordinate = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
+        point.title = building
+        
+        mapView.addAnnotation(point)
+        
     }
     
 }
