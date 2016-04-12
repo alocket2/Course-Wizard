@@ -118,7 +118,7 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
         let cellIdentifier = "flightPlanCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! FlightPlanTableViewCell
         
-        cell.backgroundColor = UIColor.incompletedCourseCellBackgroundColor()
+        cell.backgroundColor = UIColor.tableviewCellBackgroundColor()
         
         let studentFlightPlan = flightPlan![indexPath.section]
         let course = studentFlightPlan.courses[indexPath.row].name
@@ -154,7 +154,7 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
                     cell.completionImage.hidden = false
                     break
                 } else {
-                    cell.backgroundColor = UIColor.incompletedCourseCellBackgroundColor()
+                    cell.backgroundColor = UIColor.tableviewCellBackgroundColor()
                     cell.courseName.textColor = UIColor.darkGrayColor()
                     cell.courseCode.textColor = UIColor.darkGrayColor()
                     cell.courseCredits.textColor = UIColor.darkGrayColor()
@@ -280,6 +280,12 @@ extension FlightPlanTableViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSe
     func imageTintColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
         return UIColor.imageTintColor()
     }
+    
+    func verticalOffsetForEmptyDataSet(scrollView: UIScrollView!) -> CGFloat {
+        return -50.0
+    }
+    
+    
     
 }
 

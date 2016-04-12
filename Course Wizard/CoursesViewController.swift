@@ -27,7 +27,7 @@ class CoursesViewController: UIViewController {
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
         tableView.tableFooterView = UIView()
-        
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,8 +56,12 @@ class CoursesViewController: UIViewController {
         addInfoController.addAction(addAssignmentAction)
         addInfoController.addAction(cancelAction)
         
+        
+        
         //Here we present the Alert Action
         self.presentViewController(addInfoController, animated: true, completion: nil)
+        
+        addInfoController.view.tintColor = UIColor.actionBackgroundColor()
     }
 
     /*

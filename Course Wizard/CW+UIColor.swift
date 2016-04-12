@@ -66,7 +66,7 @@ extension UIColor {
         return UIColor(red: 74.0/255.0, green: 207.0/255.0, blue: 154.0/255.0, alpha: 1.0)
     }
     
-    class func incompletedCourseCellBackgroundColor() -> UIColor {
+    class func tableviewCellBackgroundColor() -> UIColor {
         return UIColor(red: 247.0/255.0, green: 247.0/255.0, blue: 249.0/255.0, alpha: 1.0)
     }
     

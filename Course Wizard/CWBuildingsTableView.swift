@@ -38,7 +38,7 @@ class CWBuildingsTableView: UITableViewController {
         
         cell.buildingName.text = building.name
         
-        cell.backgroundColor = UIColor.incompletedCourseCellBackgroundColor()
+        cell.backgroundColor = UIColor.tableviewCellBackgroundColor()
         cell.textLabel?.textColor = UIColor.darkGrayColor()
         
         return cell
