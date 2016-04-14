@@ -173,10 +173,12 @@
         <scene sceneID="OPb-wL-eUq">
             <objects>
                 <tableViewController id="xWu-Ef-bo0" customClass="GettingStarted" customModule="Course_Wizard" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="7qg-UW-g14">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="7qg-UW-g14">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="awI-sK-6OK">
                                 <cells>
@@ -189,14 +191,14 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name:" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kfA-Mr-WOQ">
                                                     <rect key="frame" x="8" y="0.0" width="592" height="43.5"/>
-                                                    <color key="backgroundColor" red="0.26274509800000001" green="0.31764705879999999" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.26274509800000001" green="0.31764705879999999" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vDi-wa-KAP">
                                         <rect key="frame" x="0.0" y="143" width="600" height="44"/>
@@ -207,14 +209,14 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last Name:" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rd2-cw-ByZ">
                                                     <rect key="frame" x="8" y="0.0" width="592" height="43.5"/>
-                                                    <color key="backgroundColor" red="0.26274509800000001" green="0.31764705879999999" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.26274509800000001" green="0.31764705879999999" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -230,12 +232,12 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose your campus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1YE-zZ-g5q">
                                                     <rect key="frame" x="8" y="11" width="162" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.21568627450980393" green="0.25882352941176467" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <segue destination="PMo-N7-6Mc" kind="show" id="bRq-ST-d8I"/>
@@ -251,12 +253,12 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose your degree" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCM-cd-zn3">
                                                     <rect key="frame" x="8" y="11" width="156" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                                    <color key="textColor" red="0.98070549240000005" green="0.98070549240000005" blue="0.98070549240000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.21568627450980393" green="0.25882352941176467" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <segue destination="r0m-Xq-3fV" kind="show" id="vra-Fu-INi"/>
                                         </connections>
@@ -274,14 +276,14 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Previous GPA: " minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ODL-iM-7bN">
                                                     <rect key="frame" x="8" y="0.0" width="592" height="43.5"/>
-                                                    <color key="backgroundColor" red="0.2627450980392157" green="0.31764705882352939" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.2627450980392157" green="0.31764705882352939" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1084,7 +1086,7 @@
         <scene sceneID="X81-qM-qFX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1EF-Nz-oJa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="course" id="szo-cp-wUe">
+                    <tabBarItem key="tabBarItem" title="" image="course" selectedImage="course_filled" id="szo-cp-wUe">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1123,7 +1125,7 @@
         <scene sceneID="dcS-Ea-3Bu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P71-kM-kVO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="cog" id="UUp-y2-QAK">
+                    <tabBarItem key="tabBarItem" title="" image="cog" selectedImage="cog_filled" id="UUp-y2-QAK">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1144,7 +1146,7 @@
         <scene sceneID="43R-jl-NSe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mMQ-Gi-x66" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="map_route" id="WpY-hG-V7f">
+                    <tabBarItem key="tabBarItem" title="" image="map_route" selectedImage="map_route_filled" id="WpY-hG-V7f">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1187,7 +1189,7 @@
         <scene sceneID="ds3-S7-vmW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="poL-hw-tUh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="calendar" id="w70-UV-GJF">
+                    <tabBarItem key="tabBarItem" title="" image="calendar" selectedImage="calendar_filled" id="w70-UV-GJF">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1207,14 +1209,18 @@
     </scenes>
     <resources>
         <image name="calendar" width="32" height="32"/>
+        <image name="calendar_filled" width="32" height="32"/>
         <image name="check" width="21" height="16"/>
         <image name="cog" width="32" height="32"/>
+        <image name="cog_filled" width="32" height="32"/>
         <image name="course" width="32" height="32"/>
+        <image name="course_filled" width="32" height="32"/>
         <image name="map_route" width="32" height="32"/>
+        <image name="map_route_filled" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jjx-DN-hOE"/>
-        <segue reference="Fte-hd-TGQ"/>
-        <segue reference="h5y-Xg-xGM"/>
+        <segue reference="vra-Fu-INi"/>
+        <segue reference="bRq-ST-d8I"/>
     </inferredMetricsTieBreakers>
 </document>

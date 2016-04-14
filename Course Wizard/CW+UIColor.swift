@@ -39,11 +39,11 @@ extension UIColor {
     }
     
     class func inactivePageControlColor() -> UIColor {
-        return UIColor(red: 118.0/255.0, green: 138.0/255.0, blue: 157.0/255.0, alpha: 1.0)
+        return UIColor(red: 170.0/255.0, green: 200.0/255.0, blue: 188.0/255.0, alpha: 1.0)
     }
     
     class func activePageControlColor() -> UIColor {
-        return UIColor(red: 218.0/255.0, green: 230.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+        return UIColor(red: 74.0/255.0, green: 207.0/255.0, blue: 154.0/255.0, alpha: 1.0)
     }
     
     class func actionBackgroundColor() -> UIColor {

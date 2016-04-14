@@ -98,7 +98,7 @@ extension CoursesViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource 
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return UIFont.taglineFontWith(body: "Add a course above")
+        return UIFont.taglineFontWith(body: "Add a semester, course or assignment by pressing the \"+\" button above")
     }
     
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {

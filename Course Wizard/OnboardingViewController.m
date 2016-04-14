@@ -10,14 +10,16 @@
 #import "OnboardingContentViewController.h"
 @import Accelerate;
 
+
+
 static CGFloat const kPageControlHeight = 35;
-static CGFloat const kSkipButtonWidth = 100;
+static CGFloat const kSkipButtonWidth = 600;
 static CGFloat const kSkipButtonHeight = 44;
 static CGFloat const kBackgroundMaskAlpha = 0.6;
 static CGFloat const kDefaultBlurRadius = 20;
 static CGFloat const kDefaultSaturationDeltaFactor = 1.8;
 
-static NSString * const kSkipButtonText = @"skip";
+static NSString * kSkipButtonText = @"skip";
 
 @implementation OnboardingViewController {
     NSURL *_videoURL;
@@ -200,7 +202,9 @@ static NSString * const kSkipButtonText = @"skip";
     
     // if we allow skipping, setup the skip button
     if (self.allowSkipping) {
-        self.skipButton.frame = CGRectMake(CGRectGetMaxX(self.view.frame) - kSkipButtonWidth, CGRectGetMaxY(self.view.frame) - self.underPageControlPadding - kSkipButtonHeight, kSkipButtonWidth, kSkipButtonHeight);
+        self.skipButton.frame = CGRectMake(CGRectGetMaxX(self.view.frame) - kSkipButtonWidth, CGRectGetMaxY(self.view.frame) + 0.0 - kSkipButtonHeight, kSkipButtonWidth, kSkipButtonHeight);
+        //self.skipButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+        
         [self.view addSubview:self.skipButton];
     }
     
@@ -437,10 +441,15 @@ static NSString * const kSkipButtonText = @"skip";
     if (self.fadePageControlOnLastPage) {
         if (transitioningToLastPage) {
             _pageControl.alpha = percentCompleteInverse;
+            kSkipButtonText = @"Get Started";
+            [[self skipButton] setTitle:kSkipButtonText forState:UIControlStateNormal];
+            
         }
 
         else if (transitioningFromLastPage) {
             _pageControl.alpha = percentComplete;
+            kSkipButtonText = @"skip";
+            [[self skipButton] setTitle:kSkipButtonText forState:UIControlStateNormal];
         }
     }
 
