@@ -15,10 +15,8 @@ class CWCourseCatalog {
     
     init() {
         crnCatalog["MAC2311"] = CWCourse(courseName: "Calculus w/ Analytical Geometry 1", courseCode: "MAC 2311", courseCredits: 4, courseCoreqs: ["None"],  coursePreRegs: ["MAC 1114", "MAC 1140"], courseDescription: "Continuity, differentiability, differential approximation, optimization and curve sketching of functions and inverse functions of a single variable, including treatment of trigonometric functions. Mean value theorem and L'Hopital's Rule. Introduction to integration.", isGordonRule: true)
-        courseCatalog["Calculus w/ Analytical Geometry 1"] = "MAC2311"
         
         crnCatalog["ENC1101"] = CWCourse(courseName: "College Writing 1", courseCode:"ENC 1101" , courseCredits: 3, courseCoreqs: ["None"], coursePreRegs: ["None"], courseDescription: "Reading examples of effective expository prose and writing essays practicing the forms of rhetoric.", isGordonRule: true)
-        courseCatalog["College Writing 1"] = "ENC1101"
         
         crnCatalog["COP2220"] = CWCourse(courseName: "Introduction to Programming in C", courseCode: "COP 2220", courseCredits: 3, courseCoreqs: ["CDA 3201C"], coursePreRegs: ["None"], courseDescription: "Introduction to programming in C. Variable types, arithmetic statements, input/output statements, loops, conditional statements, functions, arrays and structures. Programming projects in C.", isGordonRule: false)
         courseCatalog["Introduction to Programming in C"] = "COP2220"

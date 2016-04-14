@@ -13,37 +13,40 @@ protocol CourseDetailDelegate: class {
     func CourseDetailDidCancel(controller: CourseDetailTableViewController)
 }
 
-class CourseDetailTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class CourseDetailTableViewController: UITableViewController{
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var daysLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var dayPicker: UIPickerView!
+    @IBOutlet weak var timePicker: UIDatePicker!
     
     var delegate: CourseDetailDelegate!
     var coreDataStack = CoreDataStack()
     var course: CWCourse?
-    var dayData: [[String]] = [[String]]()
-    var m = ""
-    var t = ""
-    var w = ""
-    var th = ""
-    var f = ""
-    var sa = ""
-    var su = ""
+    var days = [Bool](count: 7, repeatedValue: false)
+    var timeVal = NSDate()
+    let timeFormatter = NSDateFormatter()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Add a Course"
-        dayData = [["", "M"],["","T"],["","W"],["","Th"],["","F"],["","Sa"],["","Su"]]
-        dayPicker.dataSource = self
-        dayPicker.delegate = self
+        
+        timeFormatter.timeStyle = .ShortStyle
+        timePicker.datePickerMode = .Time
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "courseSearchSegue" {
             let navigationController = segue.destinationViewController as! UINavigationController
             let controller = navigationController.topViewController as! CourseSearchTableViewController
+            controller.delegate = self
+        }
+        else if segue.identifier == "chooseDaysSegue" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let controller = navigationController.topViewController as! CourseDaysTableViewController
+            controller.days = self.days
             controller.delegate = self
         }
     }
@@ -54,22 +57,22 @@ class CourseDetailTableViewController: UITableViewController, UIPickerViewDataSo
         let section = indexPath.section
         switch section {
         case 0:
-            dayPicker.hidden = true
+            timePicker.hidden = true
             break
         case 1:
             switch row {
             case 0:
-                dayPicker.hidden = true
+                timePicker.hidden = true
             case 1:
-                if dayPicker.hidden == true {
-                    dayPicker.hidden = false
-                } else {
-                    dayPicker.hidden = true
-                }
+                timePicker.hidden = true
             case 2:
-                dayPicker.hidden = true
+                if timePicker.hidden == true {
+                    timePicker.hidden = false
+                } else {
+                    timePicker.hidden = true
+                }
             case 3:
-                dayPicker.hidden = true
+                timePicker.hidden = true
             default:
                 break
             }
@@ -77,61 +80,37 @@ class CourseDetailTableViewController: UITableViewController, UIPickerViewDataSo
             break
         }
     }
-    
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return dayData.count
-    }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 2
-    }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return dayData[component][row]
-    }
+  
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        switch component {
-        case 0:
-            m = dayData[component][row]
-            checkDaysChosen()
-        case 1:
-            t = dayData[component][row]
-            checkDaysChosen()
-        case 2:
-            w = dayData[component][row]
-            checkDaysChosen()
-        case 3:
-            th = dayData[component][row]
-            checkDaysChosen()
-        case 4:
-            f = dayData[component][row]
-            checkDaysChosen()
-        case 5:
-            sa = dayData[component][row]
-            checkDaysChosen()
-        case 6:
-            su = dayData[component][row]
-            checkDaysChosen()
-        default:
-            break
-        }
+        timeVal = timePicker.date
+        timeLabel.text! = timeFormatter.stringFromDate(timePicker.date)
+        tableView.reloadData()
     }
-    
-    func checkDaysChosen() {
+
+    func checkDaysChosen(daysChosen: [Bool]) {
+        var didChooseDay = false
         var daysLabel = ""
         var days = [String]()
-        if m != "" {days.append("Monday")}
-        if t != "" {days.append("Tuesday")}
-        if w != "" {days.append("Wednesday")}
-        if th != "" {days.append("Thursday")}
-        if f != "" {days.append("Friday")}
-        if sa != "" {days.append("Saturday")}
-        if su != "" {days.append("Sunday")}
-        for day in days {
-            daysLabel += day + " "
+        for index in 0...6 {
+            if daysChosen[index] == true {
+                didChooseDay = true
+                switch index {
+                case 0: days.append("Monday")
+                case 1: days.append("Tuesday")
+                case 2: days.append("Wednesday")
+                case 3: days.append("Thursday")
+                case 4: days.append("Friday")
+                case 5: days.append("Saturday")
+                case 6: days.append("Sunday")
+                default: break
+                }
+            }
         }
-        if daysLabel != "" {
+        if didChooseDay == true {
+            for day in days {
+                daysLabel += day + "  "
+            }
             self.daysLabel.text! = daysLabel
         } else {
             self.daysLabel.text! = "Days"
@@ -140,6 +119,18 @@ class CourseDetailTableViewController: UITableViewController, UIPickerViewDataSo
     
     @IBAction func cancel(sender: UIBarButtonItem) {
         delegate?.CourseDetailDidCancel(self)
+    }
+}
+
+extension CourseDetailTableViewController: CourseDaysDelegate {
+    func CourseDaysDidCancel(controller: CourseDaysTableViewController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func CourseDaysDidFinish(days: [Bool]) {
+        self.days = days
+        checkDaysChosen(days)
+        tableView.reloadData()
     }
 }
 

@@ -15,6 +15,7 @@
 		655F5C321CBFF94500CD0285 /* CWCourseCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F5C311CBFF94500CD0285 /* CWCourseCatalog.swift */; };
 		655F5C361CC0067C00CD0285 /* AttemptedCourse+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F5C341CC0067C00CD0285 /* AttemptedCourse+CoreDataProperties.swift */; };
 		655F5C371CC0067C00CD0285 /* AttemptedCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F5C351CC0067C00CD0285 /* AttemptedCourse.swift */; };
+		655F5C3D1CC02C3400CD0285 /* CourseDaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F5C3C1CC02C3400CD0285 /* CourseDaysTableViewController.swift */; };
 		9212A70D1C837633006421C6 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9212A70C1C837633006421C6 /* CoursesViewController.swift */; };
 		9212A70F1C837B39006421C6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9212A70E1C837B39006421C6 /* MapViewController.swift */; };
 		9212A7111C837EBF006421C6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9212A7101C837EBF006421C6 /* Settings.bundle */; };
@@ -74,6 +75,7 @@
 		655F5C311CBFF94500CD0285 /* CWCourseCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWCourseCatalog.swift; sourceTree = "<group>"; };
 		655F5C341CC0067C00CD0285 /* AttemptedCourse+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttemptedCourse+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		655F5C351CC0067C00CD0285 /* AttemptedCourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttemptedCourse.swift; sourceTree = "<group>"; };
+		655F5C3C1CC02C3400CD0285 /* CourseDaysTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDaysTableViewController.swift; sourceTree = "<group>"; };
 		9212A70C1C837633006421C6 /* CoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
 		9212A70E1C837B39006421C6 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9212A7101C837EBF006421C6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -237,8 +239,9 @@
 				655F5C331CBFFFA200CD0285 /* Custom */,
 				655F5C2B1CBFF90200CD0285 /* CourseDetailTableViewController.swift */,
 				655F5C291CBFF8B800CD0285 /* CourseSearchTableViewController.swift */,
-				92FF24DC1CB3205E008DCC68 /* CWCourseDetail.swift */,
 				9212A70C1C837633006421C6 /* CoursesViewController.swift */,
+				92FF24DC1CB3205E008DCC68 /* CWCourseDetail.swift */,
+				655F5C3C1CC02C3400CD0285 /* CourseDaysTableViewController.swift */,
 			);
 			name = Courses;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				92F97F7B1CA06E1F0079F084 /* CWDegrees.swift in Sources */,
 				9212A70D1C837633006421C6 /* CoursesViewController.swift in Sources */,
 				924DFC301C7D47DB0097E9C2 /* Course_Wizard.xcdatamodeld in Sources */,
+				655F5C3D1CC02C3400CD0285 /* CourseDaysTableViewController.swift in Sources */,
 				92E79AEF1CAB0FB800607E9F /* FlightPlanTableViewCell.swift in Sources */,
 				655F5C321CBFF94500CD0285 /* CWCourseCatalog.swift in Sources */,
 				92F97F751CA069620079F084 /* CWDegree.swift in Sources */,
