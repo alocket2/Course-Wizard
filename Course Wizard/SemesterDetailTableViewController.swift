@@ -118,6 +118,7 @@ class SemesterDetailTableViewController: UITableViewController {
                 print("Could not save...")
             }
             
+            self.navigationController?.popViewControllerAnimated(true)
             dismissViewControllerAnimated(true, completion: nil)
             
         } else {

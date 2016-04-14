@@ -26,7 +26,8 @@ class MapViewController: UIViewController {
     
     
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var buildingsButton: UIBarButtonItem!
+    
     var mapView: MGLMapView!
     var currentCampus: String = ""
     var coreDataStack = CoreDataStack()
@@ -37,22 +38,8 @@ class MapViewController: UIViewController {
         let styleURL = NSURL(string: "mapbox://styles/alockettjr/cik7nnuaw00emnyko48ysfg9c")
         mapView = MGLMapView(frame: view.bounds, styleURL: styleURL)
         mapView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+
         
-        if currentCampus == "Boca Raton" || currentCampus == "Jupiter" {
-            tableView.hidden = true
-            mapView.hidden = false
-            setMapLocation()
-            getCampusFromCoreData()
-            self.navigationItem.title = currentCampus
-            
-        } else {
-            tableView.hidden = false
-            mapView.hidden = true
-            tableView.emptyDataSetSource = self
-            tableView.emptyDataSetDelegate = self
-            tableView.tableFooterView = UIView()
-            tableView.reloadData()
-        }
         
     }
     
@@ -63,11 +50,13 @@ class MapViewController: UIViewController {
         if currentCampus == "Boca Raton" || currentCampus == "Jupiter" {
             tableView.hidden = true
             mapView.hidden = false
+            buildingsButton.enabled = true
             setMapLocation()
             self.navigationItem.title = currentCampus
         } else {
             tableView.hidden = false
             mapView.hidden = true
+            buildingsButton.enabled = false
             tableView.reloadData()
         }
     }
@@ -79,6 +68,9 @@ class MapViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func loadInitialMapView() {
+        
+    }
     
     func setMapLocation() {
         
@@ -148,12 +140,16 @@ class MapViewController: UIViewController {
         let bocaAciton = UIAlertAction(title: "Boca Raton", style: .Default) { (UIAlertAction) -> Void in
             self.currentCampus = "Boca Raton"
             self.setMapLocation()
+            self.mapView.hidden = false
+            self.buildingsButton.enabled = true
             self.navigationItem.title = self.currentCampus
             self.saveCampusToCoreData()
         }
         let jupiterAction = UIAlertAction(title: "Jupiter", style: .Default) { (UIAlertAction) -> Void in
             self.currentCampus = "Jupiter"
             self.setMapLocation()
+            self.mapView.hidden = false
+            self.buildingsButton.enabled = true
             self.navigationItem.title = self.currentCampus
             self.saveCampusToCoreData()
         }
