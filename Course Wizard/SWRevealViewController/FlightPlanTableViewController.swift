@@ -121,20 +121,20 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
         cell.backgroundColor = UIColor.incompletedCourseCellBackgroundColor()
         
         let studentFlightPlan = flightPlan![indexPath.section]
-        let course = studentFlightPlan.courses[indexPath.row].name
-        let code = studentFlightPlan.courses[indexPath.row].code
-        let credits = studentFlightPlan.courses[indexPath.row].credits
-        let preReqs = studentFlightPlan.courses[indexPath.row].preregs
+        let course = studentFlightPlan.courses[indexPath.row].getName()
+        let code = studentFlightPlan.courses[indexPath.row].getCode()
+        let credits = studentFlightPlan.courses[indexPath.row].getCredits()
+        let preReqs = studentFlightPlan.courses[indexPath.row].getPrereqs()
         var courseReq = ""
         
         var count = 0
         
-        courseTitle = studentFlightPlan.courses[indexPath.row].name
-        courseCode = studentFlightPlan.courses[indexPath.row].code
-        courseCreds = "\(studentFlightPlan.courses[indexPath.row].credits)"
-        courseCoReqs = studentFlightPlan.courses[indexPath.row].coreqs
-        coursePreReqs = studentFlightPlan.courses[indexPath.row].preregs
-        courseDesc = studentFlightPlan.courses[indexPath.row].description
+        courseTitle = studentFlightPlan.courses[indexPath.row].getName()
+        courseCode = studentFlightPlan.courses[indexPath.row].getCode()
+        courseCreds = "\(studentFlightPlan.courses[indexPath.row].getCredits())"
+        courseCoReqs = studentFlightPlan.courses[indexPath.row].getCoreqs()
+        coursePreReqs = studentFlightPlan.courses[indexPath.row].getPrereqs()
+        courseDesc = studentFlightPlan.courses[indexPath.row].getDescription()
         
         for req in preReqs {
             courseReq += req
@@ -183,7 +183,7 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
         let completeAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "\u{2713}\n Complete" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             // 2
             let flightPlanCourse = self.flightPlan![indexPath.section]
-            self.completedCourses.append(flightPlanCourse.courses[indexPath.row].name)
+            self.completedCourses.append(flightPlanCourse.courses[indexPath.row].getName())
             
             self.saveCompletedCourses()
             
@@ -223,12 +223,12 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
             let indexPath = tableView.indexPathForSelectedRow
             let cell = flightPlan![(indexPath?.section)!]
             
-            controller.coursetitle = cell.courses[(indexPath?.row)!].name
-            controller.credits = "\(cell.courses[(indexPath?.row)!].credits)"
-            controller.code = cell.courses[(indexPath?.row)!].code
-            controller.coReqs = cell.courses[(indexPath?.row)!].coreqs
-            controller.preReqs = cell.courses[(indexPath?.row)!].preregs
-            controller.desc = cell.courses[(indexPath?.row)!].description
+            controller.coursetitle = cell.courses[(indexPath?.row)!].getName()
+            controller.credits = "\(cell.courses[(indexPath?.row)!].getCredits())"
+            controller.code = cell.courses[(indexPath?.row)!].getCode()
+            controller.coReqs = cell.courses[(indexPath?.row)!].getCoreqs()
+            controller.preReqs = cell.courses[(indexPath?.row)!].getPrereqs()
+            controller.desc = cell.courses[(indexPath?.row)!].getDescription()
             
             navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
             navigationController!.navigationBar.shadowImage = UIImage()

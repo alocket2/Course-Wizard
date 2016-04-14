@@ -6,50 +6,28 @@
 	<dict>
 		<key>Canvas.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>DZNEmptyDataSet.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>Mapbox-iOS-SDK-Mapbox.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Onboard.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-Course Wizard.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>16FB872D0D2D4BA0F378AB34D47CF95F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>17664F8F0232329D875EC690EB653867</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2DB59219DEF5D393F19F0753F2D9C161</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>69D540ED6B5F982941EC7669FD54C72C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -60,16 +38,6 @@
 			<true/>
 		</dict>
 		<key>80CBCC225074FD190F9BEA2940592423</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A371D9F716AF507FF01A593DD0D9DFDF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D54C1F76D626B2C8CF6DE6A2955040CA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
