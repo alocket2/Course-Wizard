@@ -88,7 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let fifthPage = OnboardingContentViewController(title: "Campus Map", body: "Never get lost trying to track down a building with our interactive campus map.", image: UIImage(named: "Map_WT"), buttonText: nil, action: nil)
         let sixthPage = OnboardingContentViewController(title: "Flight Plan", body: "Graduate on time by knowing what classes you've taken and which you still need.", image: UIImage(named: "FlightPlan_WT"), buttonText: nil, action: nil)
         
-        if model == "iPhone 5s" || model == "iPhone SE" || model == "Simulator" {
+        if model == "iPhone 5s" || model == "iPhone SE" {
             
             //First Page
             firstPage.topPadding = 35.0
@@ -145,63 +145,106 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         } else if model == "iPhone 6" || model == "iPhone 6s" {
             
-        } else if model == "iPhone 6 Plus" || model == "iPhone 6s Plus" {
-            //First Page
-            firstPage.topPadding = 85.0
-            firstPage.underIconPadding = 25.0
+            firstPage.topPadding = 65.0
+            firstPage.underIconPadding = 30.0
+            firstPage.underTitlePadding = 25.0
             firstPage.titleFontSize = 18.0
             firstPage.titleTextColor = UIColor.darkGrayColor()
             firstPage.bodyFontSize = 15.0
             firstPage.bodyTextColor = UIColor.darkGrayColor()
             
             //Second Page
-            secondPage.topPadding = 85.0
-            secondPage.underIconPadding = 50.0
+            secondPage.topPadding = 65.0
+            secondPage.underIconPadding = 53.0
+            secondPage.underTitlePadding = 25.0
             secondPage.titleFontSize = 18.0
             secondPage.titleTextColor = UIColor.darkGrayColor()
             secondPage.bodyFontSize = 15.0
             secondPage.bodyTextColor = UIColor.darkGrayColor()
             
             //Third Page
-            thirdPage.topPadding = 85.0
-            thirdPage.underIconPadding = 50.0
+            thirdPage.topPadding = 65.0
+            thirdPage.underIconPadding = 53.0
+            thirdPage.underTitlePadding = 25.0
             thirdPage.titleFontSize = 18.0
             thirdPage.titleTextColor = UIColor.darkGrayColor()
             thirdPage.bodyFontSize = 15.0
             thirdPage.bodyTextColor = UIColor.darkGrayColor()
             
             //Fourth Pages
-            fourthPage.topPadding = 85.0
-            fourthPage.underIconPadding = 28.0
+            fourthPage.topPadding = 65.0
+            fourthPage.underIconPadding = 30.0
+            fourthPage.underTitlePadding = 25.0
             fourthPage.titleFontSize = 18.0
             fourthPage.titleTextColor = UIColor.darkGrayColor()
             fourthPage.bodyFontSize = 15.0
             fourthPage.bodyTextColor = UIColor.darkGrayColor()
             
             //Fifth Page
-            fifthPage.topPadding = 85.0
-            fifthPage.underIconPadding = 28.0
+            fifthPage.topPadding = 65.0
+            fifthPage.underIconPadding = 30.0
+            fifthPage.underTitlePadding = 25.0
+            fifthPage.titleFontSize = 18.0
+            fifthPage.titleTextColor = UIColor.darkGrayColor()
+            fifthPage.bodyFontSize = 15.0
+            fifthPage.bodyTextColor = UIColor.darkGrayColor()
+            
+            sixthPage.topPadding = 65.0
+            sixthPage.underIconPadding = 30.0
+            sixthPage.underTitlePadding = 25.0
+            sixthPage.titleFontSize = 18.0
+            sixthPage.titleTextColor = UIColor.darkGrayColor()
+            sixthPage.bodyFontSize = 15.0
+            sixthPage.bodyTextColor = UIColor.darkGrayColor()
+            
+        } else if model == "iPhone 6 Plus" || model == "iPhone 6s Plus" || model == "Simulator"  {
+            //First Page
+            firstPage.topPadding = 100.0
+            firstPage.underIconPadding = 50.0
+            firstPage.titleFontSize = 18.0
+            firstPage.titleTextColor = UIColor.darkGrayColor()
+            firstPage.bodyFontSize = 15.0
+            firstPage.bodyTextColor = UIColor.darkGrayColor()
+            
+            //Second Page
+            secondPage.topPadding = 100.0
+            secondPage.underIconPadding = 75.0
+            secondPage.titleFontSize = 18.0
+            secondPage.titleTextColor = UIColor.darkGrayColor()
+            secondPage.bodyFontSize = 15.0
+            secondPage.bodyTextColor = UIColor.darkGrayColor()
+            
+            //Third Page
+            thirdPage.topPadding = 100.0
+            thirdPage.underIconPadding = 75.0
+            thirdPage.titleFontSize = 18.0
+            thirdPage.titleTextColor = UIColor.darkGrayColor()
+            thirdPage.bodyFontSize = 15.0
+            thirdPage.bodyTextColor = UIColor.darkGrayColor()
+            
+            //Fourth Pages
+            fourthPage.topPadding = 100.0
+            fourthPage.underIconPadding = 50.0
+            fourthPage.titleFontSize = 18.0
+            fourthPage.titleTextColor = UIColor.darkGrayColor()
+            fourthPage.bodyFontSize = 15.0
+            fourthPage.bodyTextColor = UIColor.darkGrayColor()
+            
+            //Fifth Page
+            fifthPage.topPadding = 100.0
+            fifthPage.underIconPadding = 50.0
             fifthPage.titleFontSize = 18.0
             fifthPage.titleTextColor = UIColor.darkGrayColor()
             fifthPage.bodyFontSize = 15.0
             fifthPage.bodyTextColor = UIColor.darkGrayColor()
             fifthPage.buttonFontSize = 15.0
             
-            sixthPage.topPadding = 85.0
-            sixthPage.underIconPadding = 28.0
+            sixthPage.topPadding = 100.0
+            sixthPage.underIconPadding = 50.0
             sixthPage.titleFontSize = 18.0
             sixthPage.titleTextColor = UIColor.darkGrayColor()
             sixthPage.bodyFontSize = 15.0
             sixthPage.bodyTextColor = UIColor.darkGrayColor()
-            
-            if model == "Simulator" {
-                firstPage.underTitlePadding = 25.0
-                secondPage.underTitlePadding = 25.0
-                thirdPage.underTitlePadding = 25.0
-                fourthPage.underTitlePadding = 25.0
-                fifthPage.underTitlePadding = 25.0
-                fifthPage.bottomPadding = -20.0
-            }
 
         }
         
@@ -229,13 +272,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         onboardVC.pageControl.currentPageIndicatorTintColor = UIColor.activePageControlColor()
         onboardVC.pageControl.pageIndicatorTintColor = UIColor.inactivePageControlColor()
         
-        if model == "iPhone 5s" || model == "Simulator" {
+        if model == "iPhone 5s" {
             onboardVC.underPageControlPadding = 40.0
             onboardVC.skipButton.contentEdgeInsets = UIEdgeInsetsMake(0, 280.0, 0, 0)
-        } else if model == "iPhone 6" || model == "iPhone 6s" || model == "Simulator" {
+        } else if model == "iPhone 6" || model == "iPhone 6s" {
             onboardVC.underPageControlPadding = 50.0
             onboardVC.skipButton.contentEdgeInsets = UIEdgeInsetsMake(0, 220.0, 0, 0)
-        } else if model == "iPhone 6 Plus" || model == "iPhone 6s Plus" || model == "Simulator" {
+        } else if model == "iPhone 6 Plus" || model == "iPhone 6s Plus" || model == "Simulator"  {
             onboardVC.underPageControlPadding = 50.0
             onboardVC.skipButton.contentEdgeInsets = UIEdgeInsetsMake(0, 180.0, 0, 0)
         }
