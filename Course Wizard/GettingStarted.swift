@@ -18,10 +18,10 @@ class GettingStarted: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Setup"
-        view.backgroundColor = UIColor.walkthroughBackgroundColor()
+        self.navigationItem.title = "Get Started"
+        view.backgroundColor = UIColor.tableviewCellBackgroundColor()
         UIApplication.sharedApplication().statusBarStyle = .Default
-        tableView.separatorColor = UIColor.clearColor()
+        tableView.separatorColor = UIColor.darkGrayColor()
         gpaTextField.attributedPlaceholder = NSAttributedString(string:"Previous GPA:",
                                                                attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
     }
