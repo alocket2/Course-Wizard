@@ -48,6 +48,13 @@ class SemestersTableViewController: UITableViewController, NSFetchedResultsContr
     }
     
     override func viewWillAppear(animated: Bool) {
+        do {
+            try self.fetchedResultsController.performFetch()
+        } catch let error as NSError {
+            print("Error performing fetch \(error.localizedDescription)")
+        }
+        
+        
         tableView.reloadData()
     }
     
@@ -89,6 +96,13 @@ class SemestersTableViewController: UITableViewController, NSFetchedResultsContr
     }
     
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+         if segue.identifier == "addSemester" {
+            let controller = segue.destinationViewController as! SemesterDetailTableViewController
+            controller.delegate = self
+        }
+    }
+    
     
 }
 
@@ -99,7 +113,7 @@ extension SemestersTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDe
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return UIFont.taglineFontWith(body: "No semesters have been added, please add some!")
+        return UIFont.taglineFontWith(body: "No semesters have been added, add some by pressing the \"+\" button above.")
     }
     
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
@@ -116,6 +130,12 @@ extension SemestersTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDe
     
 }
 
+
+extension SemestersTableViewController: SemesterDelegate {
+    func SemesterDetailDidCancel(controller: SemesterDetailTableViewController) {
+        navigationController?.popViewControllerAnimated(true)
+    }
+}
     
 
 

@@ -21,7 +21,6 @@ class GettingStarted: UITableViewController {
         self.navigationItem.title = "Get Started"
         view.backgroundColor = UIColor.tableviewCellBackgroundColor()
         UIApplication.sharedApplication().statusBarStyle = .Default
-        tableView.separatorColor = UIColor.darkGrayColor()
         gpaTextField.attributedPlaceholder = NSAttributedString(string:"Previous GPA:",
                                                                attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
     }
@@ -39,6 +38,16 @@ class GettingStarted: UITableViewController {
     @IBAction func saveSettings(sender: UIBarButtonItem) {
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: kUserHasOnboardedKey)
         setupNormalRootViewController()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showCampuses" {
+            let controller = segue.destinationViewController as! CampusTableViewController
+            controller.delegate = self
+        } else if segue.identifier == "showDegrees" {
+            let controller = segue.destinationViewController as! DegreeTableViewController
+            controller.delegate = self
+        }
     }
 }
 
