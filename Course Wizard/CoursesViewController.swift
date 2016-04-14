@@ -46,7 +46,10 @@ class CoursesViewController: UIViewController {
             self.performSegueWithIdentifier("addSemesterSegue", sender: self)
         }
         
-        let addCourseAction =     UIAlertAction(title: "Add Course", style: .Default, handler: nil)
+        let addCourseAction =     UIAlertAction(title: "Add Course", style: .Default) { (UIAlertAction) -> Void in
+            self.performSegueWithIdentifier("addCourseSegue", sender: self)
+        }
+        
         let addAssignmentAction = UIAlertAction(title: "Add Assignment", style: .Default, handler: nil)
         let cancelAction =        UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
@@ -75,8 +78,20 @@ class CoursesViewController: UIViewController {
             controller.coreDataStack = coreDataStack
             controller.delegate = self
         }
+        if segue.identifier == "addCourseSegue" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let controller = navigationController.topViewController as! CourseDetailTableViewController
+            controller.coreDataStack = coreDataStack
+            controller.delegate = self
+        }
     }
 
+}
+
+extension CoursesViewController: CourseDetailDelegate {
+    func CourseDetailDidCancel(controller: CourseDetailTableViewController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }
 
 extension CoursesViewController: SemesterDelegate {
@@ -86,6 +101,7 @@ extension CoursesViewController: SemesterDelegate {
     }
     
 }
+
 
 extension CoursesViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
