@@ -11,7 +11,7 @@ import CoreData
 
 protocol CourseSearchDelegate: class {
     func CourseSearchDidCancel(controller: CourseSearchTableViewController)
-    func CourseSearchDidFinish(course: CWCourse?)
+    func CourseSearchDidFinish(controller: CourseSearchTableViewController, course: CWCourse?)
 }
 
 class CourseSearchTableViewController: UITableViewController {
@@ -63,6 +63,17 @@ class CourseSearchTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let course: CWCourse
+        if searchController.active && searchController.searchBar.text != "" {
+            course = filteredCourses[indexPath.row]
+            delegate?.CourseSearchDidFinish(self, course: course)
+        } else {
+            course = courses[indexPath.row]
+            delegate?.CourseSearchDidFinish(self, course: course)
+        }
+    }
+    
     func filterCoursesForSearch(searchText: String, scope: String) {
         if scope == "Course Title" {
             filteredCourses = courses.filter({( course: CWCourse) -> Bool in
@@ -74,6 +85,9 @@ class CourseSearchTableViewController: UITableViewController {
             })
         }
         tableView.reloadData()
+    }
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        delegate?.CourseSearchDidCancel(self)
     }
 }
 

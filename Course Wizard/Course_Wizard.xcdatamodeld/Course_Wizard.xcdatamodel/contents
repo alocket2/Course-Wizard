@@ -6,6 +6,14 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="AttemptedCourse" representedClassName=".AttemptedCourse" syncable="YES">
+        <attribute name="course" attributeType="Transformable" syncable="YES"/>
+        <attribute name="days" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="grade" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="professor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
     <entity name="Campus" syncable="YES">
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -34,5 +42,6 @@
         <element name="Degree" positionX="-54" positionY="9" width="128" height="75"/>
         <element name="Semester" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="Student" positionX="-54" positionY="27" width="128" height="90"/>
+        <element name="AttemptedCourse" positionX="-54" positionY="27" width="128" height="135"/>
     </elements>
 </model>

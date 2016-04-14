@@ -8,16 +8,17 @@
 
 import Foundation
 
-class CWCourse {
+class CWCourse: NSObject {
  
     private var name: String
     private var code: String
     private var credits: Int
     private var coreqs: [String]
     private var preregs: [String]
-    private var description: String
+    private var courseDescription: String
     private var gordonRule: Bool
     private var completed: Bool = false
+    
     
     init(courseName: String, courseCode: String, courseCredits: Int, courseCoreqs: [String], coursePreRegs: [String], courseDescription: String, isGordonRule: Bool) {
         self.name = courseName
@@ -25,7 +26,7 @@ class CWCourse {
         self.credits = courseCredits
         self.coreqs = courseCoreqs
         self.preregs = coursePreRegs
-        self.description = courseDescription
+        self.courseDescription = courseDescription
         self.gordonRule = isGordonRule
     }
     

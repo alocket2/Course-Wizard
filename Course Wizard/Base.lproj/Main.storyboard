@@ -188,8 +188,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="XL9-Xk-bMF">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="9Qo-Wt-eA7"/>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="kW2-Vs-vyl"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="9Qo-Wt-eA7">
+                            <connections>
+                                <action selector="cancel:" destination="HBD-mU-XH7" id="XAy-6M-LoE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="yeH-A1-CvP" id="1Vk-cF-2bo"/>
@@ -1129,16 +1132,19 @@
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="dRe-Dj-TEf" style="IBUITableViewCellStyleDefault" id="nlE-Sh-hQe">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="nxS-hW-WPY" style="IBUITableViewCellStyleDefault" id="Xvp-Vr-AeW">
                                         <rect key="frame" x="0.0" y="311" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nlE-Sh-hQe" id="PdT-6l-wZW">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xvp-Vr-AeW" id="W5e-V0-Ahf">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Professor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dRe-Dj-TEf">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Professor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nxS-hW-WPY">
                                                     <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" none="YES"/>
+                                                    </accessibility>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1155,10 +1161,21 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="qv3-r8-fTb">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ZSd-cx-RrG"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ZSd-cx-RrG">
+                            <connections>
+                                <action selector="cancel:" destination="QUI-3p-eDs" id="OW0-oP-Y3D"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="HCj-gc-Utk"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="dayPicker" destination="036-pg-N6G" id="VyX-Y5-EMg"/>
+                        <outlet property="daysLabel" destination="mA8-g3-4md" id="4B4-1M-jIg"/>
+                        <outlet property="locationLabel" destination="9PT-Ww-8kv" id="83y-Av-Sb8"/>
+                        <outlet property="nameLabel" destination="8nX-G9-vtW" id="Mal-q9-UWZ"/>
+                        <outlet property="timeLabel" destination="U1T-p4-Zwh" id="jic-pr-04z"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bMP-Im-7kY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

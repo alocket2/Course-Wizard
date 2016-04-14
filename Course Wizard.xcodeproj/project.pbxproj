@@ -13,6 +13,8 @@
 		655F5C2E1CBFF91100CD0285 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F5C2D1CBFF91100CD0285 /* CustomSearchBar.swift */; };
 		655F5C301CBFF91900CD0285 /* CustomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F5C2F1CBFF91900CD0285 /* CustomSearchController.swift */; };
 		655F5C321CBFF94500CD0285 /* CWCourseCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F5C311CBFF94500CD0285 /* CWCourseCatalog.swift */; };
+		655F5C361CC0067C00CD0285 /* AttemptedCourse+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F5C341CC0067C00CD0285 /* AttemptedCourse+CoreDataProperties.swift */; };
+		655F5C371CC0067C00CD0285 /* AttemptedCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F5C351CC0067C00CD0285 /* AttemptedCourse.swift */; };
 		9212A70D1C837633006421C6 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9212A70C1C837633006421C6 /* CoursesViewController.swift */; };
 		9212A70F1C837B39006421C6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9212A70E1C837B39006421C6 /* MapViewController.swift */; };
 		9212A7111C837EBF006421C6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9212A7101C837EBF006421C6 /* Settings.bundle */; };
@@ -70,6 +72,8 @@
 		655F5C2D1CBFF91100CD0285 /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		655F5C2F1CBFF91900CD0285 /* CustomSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchController.swift; sourceTree = "<group>"; };
 		655F5C311CBFF94500CD0285 /* CWCourseCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWCourseCatalog.swift; sourceTree = "<group>"; };
+		655F5C341CC0067C00CD0285 /* AttemptedCourse+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttemptedCourse+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		655F5C351CC0067C00CD0285 /* AttemptedCourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttemptedCourse.swift; sourceTree = "<group>"; };
 		9212A70C1C837633006421C6 /* CoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
 		9212A70E1C837B39006421C6 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9212A7101C837EBF006421C6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -151,6 +155,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		655F5C331CBFFFA200CD0285 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				655F5C2F1CBFF91900CD0285 /* CustomSearchController.swift */,
+				655F5C2D1CBFF91100CD0285 /* CustomSearchBar.swift */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
 		81F45947FFED37F982F42E49 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,8 +234,7 @@
 		927645C71C853B1400D6FD8C /* Courses */ = {
 			isa = PBXGroup;
 			children = (
-				655F5C2F1CBFF91900CD0285 /* CustomSearchController.swift */,
-				655F5C2D1CBFF91100CD0285 /* CustomSearchBar.swift */,
+				655F5C331CBFFFA200CD0285 /* Custom */,
 				655F5C2B1CBFF90200CD0285 /* CourseDetailTableViewController.swift */,
 				655F5C291CBFF8B800CD0285 /* CourseSearchTableViewController.swift */,
 				92FF24DC1CB3205E008DCC68 /* CWCourseDetail.swift */,
@@ -234,6 +246,8 @@
 		927645C81C853B6800D6FD8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				655F5C341CC0067C00CD0285 /* AttemptedCourse+CoreDataProperties.swift */,
+				655F5C351CC0067C00CD0285 /* AttemptedCourse.swift */,
 				655F5C311CBFF94500CD0285 /* CWCourseCatalog.swift */,
 				92E805681CB57A3100294DE9 /* CWBuilding.swift */,
 				92E8056A1CB57FD200294DE9 /* CWBuildings.swift */,
@@ -543,6 +557,7 @@
 				928C602C1C87A7FF00147BD2 /* Semester+CoreDataProperties.swift in Sources */,
 				9275E8281CA228CF00B3E803 /* CW+UIDevice.swift in Sources */,
 				92F97F811CA09AF10079F084 /* DegreeTableViewCell.swift in Sources */,
+				655F5C361CC0067C00CD0285 /* AttemptedCourse+CoreDataProperties.swift in Sources */,
 				92E805671CB410CA00294DE9 /* CWBuildingsTableView.swift in Sources */,
 				929F26291CAE05090088616E /* GettingStarted.swift in Sources */,
 				92F97F6F1C9DBA990079F084 /* UIScrollView+EmptyDataSet.m in Sources */,
@@ -559,6 +574,7 @@
 				92E79AEF1CAB0FB800607E9F /* FlightPlanTableViewCell.swift in Sources */,
 				655F5C321CBFF94500CD0285 /* CWCourseCatalog.swift in Sources */,
 				92F97F751CA069620079F084 /* CWDegree.swift in Sources */,
+				655F5C371CC0067C00CD0285 /* AttemptedCourse.swift in Sources */,
 				92F97F8B1CA0F63D0079F084 /* CW+UIFont.swift in Sources */,
 				655F5C2C1CBFF90200CD0285 /* CourseDetailTableViewController.swift in Sources */,
 				92F97F891CA0EDCD0079F084 /* SemesterTableViewCell.swift in Sources */,
