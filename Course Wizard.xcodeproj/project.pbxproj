@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		62E918B2ED1DBFD82A89A287 /* Pods_Course_Wizard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EDE33F705FC99F984FDA2D /* Pods_Course_Wizard.framework */; };
+		65998AE61CC07DD0008E9E16 /* CWCourseCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65998AE51CC07DD0008E9E16 /* CWCourseCatalog.swift */; };
+		65998AE81CC07DFC008E9E16 /* CWCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65998AE71CC07DFC008E9E16 /* CWCourse.swift */; };
+		65998AEA1CC07E2D008E9E16 /* CWFlightPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65998AE91CC07E2D008E9E16 /* CWFlightPlan.swift */; };
 		9212A70D1C837633006421C6 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9212A70C1C837633006421C6 /* CoursesViewController.swift */; };
 		9212A70F1C837B39006421C6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9212A70E1C837B39006421C6 /* MapViewController.swift */; };
 		9212A7111C837EBF006421C6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9212A7101C837EBF006421C6 /* Settings.bundle */; };
@@ -37,9 +40,7 @@
 		92E26AEF1C9A67B100D54ED1 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E26AEE1C9A67B100D54ED1 /* SettingTableViewController.swift */; };
 		92E79AE91CAAF56F00607E9F /* Degree+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E79AE71CAAF56F00607E9F /* Degree+CoreDataProperties.swift */; };
 		92E79AEA1CAAF56F00607E9F /* Degree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E79AE81CAAF56F00607E9F /* Degree.swift */; };
-		92E79AEC1CAB055D00607E9F /* CWFlightPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E79AEB1CAB055D00607E9F /* CWFlightPlan.swift */; };
 		92E79AEF1CAB0FB800607E9F /* FlightPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E79AEE1CAB0FB800607E9F /* FlightPlanTableViewCell.swift */; };
-		92E79AF61CAB189800607E9F /* CWCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E79AF51CAB189800607E9F /* CWCourse.swift */; };
 		92E805671CB410CA00294DE9 /* CWBuildingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E805661CB410CA00294DE9 /* CWBuildingsTableView.swift */; };
 		92E805691CB57A3100294DE9 /* CWBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E805681CB57A3100294DE9 /* CWBuilding.swift */; };
 		92E8056B1CB57FD200294DE9 /* CWBuildings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8056A1CB57FD200294DE9 /* CWBuildings.swift */; };
@@ -61,6 +62,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65998AE51CC07DD0008E9E16 /* CWCourseCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWCourseCatalog.swift; sourceTree = "<group>"; };
+		65998AE71CC07DFC008E9E16 /* CWCourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWCourse.swift; sourceTree = "<group>"; };
+		65998AE91CC07E2D008E9E16 /* CWFlightPlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWFlightPlan.swift; sourceTree = "<group>"; };
 		9212A70C1C837633006421C6 /* CoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
 		9212A70E1C837B39006421C6 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9212A7101C837EBF006421C6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -95,9 +99,7 @@
 		92E26AEE1C9A67B100D54ED1 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		92E79AE71CAAF56F00607E9F /* Degree+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Degree+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		92E79AE81CAAF56F00607E9F /* Degree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Degree.swift; sourceTree = "<group>"; };
-		92E79AEB1CAB055D00607E9F /* CWFlightPlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWFlightPlan.swift; sourceTree = "<group>"; };
 		92E79AEE1CAB0FB800607E9F /* FlightPlanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightPlanTableViewCell.swift; sourceTree = "<group>"; };
-		92E79AF51CAB189800607E9F /* CWCourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWCourse.swift; sourceTree = "<group>"; };
 		92E805661CB410CA00294DE9 /* CWBuildingsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWBuildingsTableView.swift; sourceTree = "<group>"; };
 		92E805681CB57A3100294DE9 /* CWBuilding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWBuilding.swift; sourceTree = "<group>"; };
 		92E8056A1CB57FD200294DE9 /* CWBuildings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWBuildings.swift; sourceTree = "<group>"; };
@@ -222,12 +224,13 @@
 		927645C81C853B6800D6FD8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				65998AE91CC07E2D008E9E16 /* CWFlightPlan.swift */,
+				65998AE71CC07DFC008E9E16 /* CWCourse.swift */,
+				65998AE51CC07DD0008E9E16 /* CWCourseCatalog.swift */,
 				92E805681CB57A3100294DE9 /* CWBuilding.swift */,
 				92E8056A1CB57FD200294DE9 /* CWBuildings.swift */,
-				92E79AF51CAB189800607E9F /* CWCourse.swift */,
 				92F97F741CA069620079F084 /* CWDegree.swift */,
 				92F97F7A1CA06E1F0079F084 /* CWDegrees.swift */,
-				92E79AEB1CAB055D00607E9F /* CWFlightPlan.swift */,
 				9248E7281CAC0E68002C8718 /* CompletedCourses+CoreDataProperties.swift */,
 				9248E7291CAC0E68002C8718 /* CompletedCourses.swift */,
 			);
@@ -514,14 +517,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92E79AF61CAB189800607E9F /* CWCourse.swift in Sources */,
 				9275E7E51CA175DE00B3E803 /* OnboardingViewController.m in Sources */,
 				92E79AE91CAAF56F00607E9F /* Degree+CoreDataProperties.swift in Sources */,
 				92F97F711C9F06F70079F084 /* CW+UIColor.swift in Sources */,
 				92F97F871CA0ED620079F084 /* Semester.swift in Sources */,
 				92AEECD11C83F1F700372550 /* SemesterTypeTableViewController.swift in Sources */,
 				92AEECD31C83F44A00372550 /* SemesterDatePicker.swift in Sources */,
+				65998AEA1CC07E2D008E9E16 /* CWFlightPlan.swift in Sources */,
 				9212A70F1C837B39006421C6 /* MapViewController.swift in Sources */,
+				65998AE61CC07DD0008E9E16 /* CWCourseCatalog.swift in Sources */,
 				9212A71F1C83982C006421C6 /* SemesterDetailTableViewController.swift in Sources */,
 				9248E72B1CAC0E68002C8718 /* CompletedCourses.swift in Sources */,
 				92F97F681C9C97C80079F084 /* CampusTableViewController.swift in Sources */,
@@ -529,9 +533,9 @@
 				92F97F7F1CA07F770079F084 /* AboutTableViewController.swift in Sources */,
 				928C60291C879E2700147BD2 /* CoreDataStack.swift in Sources */,
 				92F97F7D1CA07B7B0079F084 /* FlightPlanTableViewController.swift in Sources */,
-				92E79AEC1CAB055D00607E9F /* CWFlightPlan.swift in Sources */,
 				92E805691CB57A3100294DE9 /* CWBuilding.swift in Sources */,
 				92F97F771CA069E20079F084 /* DegreeTableViewController.swift in Sources */,
+				65998AE81CC07DFC008E9E16 /* CWCourse.swift in Sources */,
 				928C60381C889DD400147BD2 /* Campus.swift in Sources */,
 				928C602C1C87A7FF00147BD2 /* Semester+CoreDataProperties.swift in Sources */,
 				9275E8281CA228CF00B3E803 /* CW+UIDevice.swift in Sources */,
