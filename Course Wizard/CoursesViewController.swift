@@ -20,16 +20,16 @@ class CoursesViewController: UIViewController {
     var coreDataStack = CoreDataStack()
     
     @IBOutlet weak var tableView: UITableView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
         tableView.tableFooterView = UIView()
-    
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,7 +46,10 @@ class CoursesViewController: UIViewController {
             self.performSegueWithIdentifier("addSemesterSegue", sender: self)
         }
         
-        let addCourseAction =     UIAlertAction(title: "Add Course", style: .Default, handler: nil)
+        let addCourseAction =     UIAlertAction(title: "Add Course", style: .Default) { (UIAlertAction) -> Void in
+            self.performSegueWithIdentifier("addCourseSegue", sender: self)
+        }
+        
         let addAssignmentAction = UIAlertAction(title: "Add Assignment", style: .Default, handler: nil)
         let cancelAction =        UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
@@ -56,22 +59,18 @@ class CoursesViewController: UIViewController {
         addInfoController.addAction(addAssignmentAction)
         addInfoController.addAction(cancelAction)
         
-        
-        
         //Here we present the Alert Action
         self.presentViewController(addInfoController, animated: true, completion: nil)
-        
-        addInfoController.view.tintColor = UIColor.actionBackgroundColor()
     }
-
+    
     /*
-        The prepare for segue method is where you want to prepare all the information you want to send to the controller you want to transition to.
-        segue.identifier - here we are making sure we are transitioning to the right view, since we have seveal segues.
-        When we have a navigation controller aded to a view controller we need to refernce that when transitioning. Since its in our view heirarchy. This is why we first say segue.destinationViewController as! UINavigationController.
-        We know that we need to transition to some view. That view has a navigation controlle rattached to it, so we need to transition to the first. Then we use that to transition to our final view with navigationController.topViewController as! SemesterDetailTableViewController.
-        controller.coreDataStack = coreDataStack, here we are just passing the coreDataStack down the chain to the proper view we want to access it from.
-        controller.delegate = self. Here we are taking control of the delegate methods we are implementing from whichever protocol.
-    */
+     The prepare for segue method is where you want to prepare all the information you want to send to the controller you want to transition to.
+     segue.identifier - here we are making sure we are transitioning to the right view, since we have seveal segues.
+     When we have a navigation controller aded to a view controller we need to refernce that when transitioning. Since its in our view heirarchy. This is why we first say segue.destinationViewController as! UINavigationController.
+     We know that we need to transition to some view. That view has a navigation controlle rattached to it, so we need to transition to the first. Then we use that to transition to our final view with navigationController.topViewController as! SemesterDetailTableViewController.
+     controller.coreDataStack = coreDataStack, here we are just passing the coreDataStack down the chain to the proper view we want to access it from.
+     controller.delegate = self. Here we are taking control of the delegate methods we are implementing from whichever protocol.
+     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "addSemesterSegue" {
             let navigationController = segue.destinationViewController as! UINavigationController
@@ -79,8 +78,20 @@ class CoursesViewController: UIViewController {
             controller.coreDataStack = coreDataStack
             controller.delegate = self
         }
+        if segue.identifier == "addCourseSegue" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let controller = navigationController.topViewController as! CourseDetailTableViewController
+            controller.coreDataStack = coreDataStack
+            controller.delegate = self
+        }
     }
+    
+}
 
+extension CoursesViewController: CourseDetailDelegate {
+    func CourseDetailDidCancel(controller: CourseDetailTableViewController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }
 
 extension CoursesViewController: SemesterDelegate {
@@ -91,6 +102,7 @@ extension CoursesViewController: SemesterDelegate {
     
 }
 
+
 extension CoursesViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
@@ -98,7 +110,7 @@ extension CoursesViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource 
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return UIFont.taglineFontWith(body: "Add a semester, course or assignment by pressing the \"+\" button above")
+        return UIFont.taglineFontWith(body: "Add a course above")
     }
     
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
@@ -110,4 +122,6 @@ extension CoursesViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource 
     }
     
 }
+
+
 
