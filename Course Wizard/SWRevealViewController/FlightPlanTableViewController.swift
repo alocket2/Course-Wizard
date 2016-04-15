@@ -208,8 +208,6 @@ class FlightPlanTableViewController: UITableViewController, NSFetchedResultsCont
             }
         }
         
-        
-        
         completeAction.backgroundColor = UIColor.actionBackgroundColor()
         
         return [completeAction]

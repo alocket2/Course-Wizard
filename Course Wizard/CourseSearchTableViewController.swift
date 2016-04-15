@@ -28,18 +28,32 @@ class CourseSearchTableViewController: UITableViewController {
         title = "Search for a Course"
         courses = courseCatalog.getAllCourses()
         courseTitles = courseCatalog.getAllTitles()
-        
+        sortCourses(&courses)
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         definesPresentationContext = true
         searchController.dimsBackgroundDuringPresentation = false
         
-        searchController.searchBar.scopeButtonTitles = ["Course Title", "CRN Code"]
+        searchController.searchBar.scopeButtonTitles = ["Course Title", "Course Code"]
         tableView.tableHeaderView = searchController.searchBar
+        
+        searchController.searchBar.barTintColor = UIColor.whiteColor()
+        searchController.searchBar.tintColor = UIColor.actionBackgroundColor()
+        tableView.backgroundColor = UIColor.tableviewCellBackgroundColor()
+        
+        UITextField.appearanceWhenContainedInInstancesOfClasses([UISearchBar.self]).backgroundColor = UIColor(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, alpha: 1.0)
+    }
+    
+    func sortCourses(inout courses: [CWCourse]) {
+        courses.sortInPlace {$0.getName() < $1.getName()}
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 70.0
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,6 +66,9 @@ class CourseSearchTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("courseCell", forIndexPath: indexPath)
+        cell.backgroundColor = UIColor.tableviewCellBackgroundColor()
+        cell.textLabel?.textColor = UIColor.darkGrayColor()
+        cell.detailTextLabel?.textColor = UIColor.darkGrayColor()
         let course: CWCourse
         if searchController.active && searchController.searchBar.text != "" {
             course = filteredCourses[indexPath.row]

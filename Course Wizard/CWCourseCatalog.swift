@@ -44,6 +44,7 @@ class CWCourseCatalog {
         
         crnCatalog["MAD2104"] = CWCourse(courseName: "Discrete Mathematics", courseCode: "MAD 2104", courseCredits: 3, courseCoreqs: ["None"], coursePreRegs: ["MAC 1105 or higher"], courseDescription: "A proof-oriented approach to and applications of propositional logic, sets, functions, relations, combinatorics, graphs and trees.", isGordonRule: false)
         courseCatalog["Discrete Mathematics"] = "MAD2104"
+        
     }
     
     func getCourse(courseCode: String) -> CWCourse? {
