@@ -67,7 +67,6 @@ class CourseDetailTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let row = indexPath.row
         let section = indexPath.section
         switch section {
@@ -77,6 +76,7 @@ class CourseDetailTableViewController: UITableViewController {
             endTimeChosen = false
             break
         case 1:
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
             switch row {
             case 0:
                 timePicker.hidden = true
@@ -133,48 +133,6 @@ class CourseDetailTableViewController: UITableViewController {
             break
         }
     }
-
-    
-//
-//    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-//        return dayData.count
-//    }
-//    
-//    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        return 2
-//    }
-//    
-//    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return dayData[component][row]
-//    }
-//    
-//    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        switch component {
-//        case 0:
-//            m = dayData[component][row]
-//            checkDaysChosen()
-//        case 1:
-//            t = dayData[component][row]
-//            checkDaysChosen()
-//        case 2:
-//            w = dayData[component][row]
-//            checkDaysChosen()
-//        case 3:
-//            th = dayData[component][row]
-//            checkDaysChosen()
-//        case 4:
-//            f = dayData[component][row]
-//            checkDaysChosen()
-//        case 5:
-//            sa = dayData[component][row]
-//            checkDaysChosen()
-//        case 6:
-//            su = dayData[component][row]
-//            checkDaysChosen()
-//        default:
-//            break
-//        }
-//    }
     
     func checkDaysChosen() {
         var daysLabel = ""
