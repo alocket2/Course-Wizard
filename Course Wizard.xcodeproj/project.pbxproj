@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		62E918B2ED1DBFD82A89A287 /* Pods_Course_Wizard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EDE33F705FC99F984FDA2D /* Pods_Course_Wizard.framework */; };
+		6576B8271CC0B696004D23EB /* CourseDaysSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576B8261CC0B696004D23EB /* CourseDaysSelectionTableViewController.swift */; };
 		65998AE61CC07DD0008E9E16 /* CWCourseCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65998AE51CC07DD0008E9E16 /* CWCourseCatalog.swift */; };
 		65998AE81CC07DFC008E9E16 /* CWCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65998AE71CC07DFC008E9E16 /* CWCourse.swift */; };
 		65998AEA1CC07E2D008E9E16 /* CWFlightPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65998AE91CC07E2D008E9E16 /* CWFlightPlan.swift */; };
@@ -64,6 +65,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6576B8261CC0B696004D23EB /* CourseDaysSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDaysSelectionTableViewController.swift; sourceTree = "<group>"; };
 		65998AE51CC07DD0008E9E16 /* CWCourseCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWCourseCatalog.swift; sourceTree = "<group>"; };
 		65998AE71CC07DFC008E9E16 /* CWCourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWCourse.swift; sourceTree = "<group>"; };
 		65998AE91CC07E2D008E9E16 /* CWFlightPlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWFlightPlan.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				65998AEB1CC085E4008E9E16 /* CourseDetailTableViewController.swift */,
 				92FF24DC1CB3205E008DCC68 /* CWCourseDetail.swift */,
 				9212A70C1C837633006421C6 /* CoursesViewController.swift */,
+				6576B8261CC0B696004D23EB /* CourseDaysSelectionTableViewController.swift */,
 			);
 			name = Courses;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				92F97F811CA09AF10079F084 /* DegreeTableViewCell.swift in Sources */,
 				92E805671CB410CA00294DE9 /* CWBuildingsTableView.swift in Sources */,
 				929F26291CAE05090088616E /* GettingStarted.swift in Sources */,
+				6576B8271CC0B696004D23EB /* CourseDaysSelectionTableViewController.swift in Sources */,
 				92F97F6F1C9DBA990079F084 /* UIScrollView+EmptyDataSet.m in Sources */,
 				92BF4EDF1C9A3EF500537E59 /* CWTabBarController.swift in Sources */,
 				92E8058D1CBC261D00294DE9 /* CWCalendar.swift in Sources */,
