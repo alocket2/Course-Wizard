@@ -35,13 +35,13 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vsM-lq-Uqt">
                             <connections>
                                 <action selector="addInfo:" destination="dhU-c1-obE" id="MYf-MD-ILk"/>
-                                <segue destination="3K7-du-VXf" kind="show" identifier="addCourseSegue" id="w4i-KG-PSM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="C7e-vM-4D8" id="FyT-GU-3Dm"/>
                         <segue destination="1nE-6g-ffO" kind="show" identifier="addSemesterSegue" id="Bkj-ga-eIj"/>
+                        <segue destination="3K7-du-VXf" kind="show" identifier="addCourseSegue" id="c9P-O3-Kg0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98P-sg-XEM" userLabel="First Responder" sceneMemberID="firstResponder"/>
