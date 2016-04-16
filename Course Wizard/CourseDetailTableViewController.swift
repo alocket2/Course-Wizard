@@ -71,10 +71,10 @@ class CourseDetailTableViewController: UITableViewController {
         let section = indexPath.section
         switch section {
         case 0:
+            professor.editing
             timePicker.hidden = true
             startTimeChosen = false
             endTimeChosen = false
-            break
         case 1:
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             switch row {

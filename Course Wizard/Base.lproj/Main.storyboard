@@ -41,7 +41,7 @@
                     <connections>
                         <outlet property="tableView" destination="C7e-vM-4D8" id="FyT-GU-3Dm"/>
                         <segue destination="1nE-6g-ffO" kind="show" identifier="addSemesterSegue" id="Bkj-ga-eIj"/>
-                        <segue destination="3K7-du-VXf" kind="show" identifier="addCourseSegue" id="S3h-U8-bUK"/>
+                        <segue destination="3K7-du-VXf" kind="show" identifier="addCourseSegue" id="c9P-O3-Kg0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98P-sg-XEM" userLabel="First Responder" sceneMemberID="firstResponder"/>
