@@ -50,7 +50,10 @@ class CoursesViewController: UIViewController {
             self.performSegueWithIdentifier("addCourseSegue", sender: self)
         }
         
-        let addAssignmentAction = UIAlertAction(title: "Add Assignment", style: .Default, handler: nil)
+        let addAssignmentAction = UIAlertAction(title: "Add Assignment", style: .Default) { (UIAlertAction) -> Void in
+            self.performSegueWithIdentifier("addAssignmentSegue", sender: self)
+        }
+
         let cancelAction =        UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
         //Here we add all the actions to the controller.
@@ -77,11 +80,14 @@ class CoursesViewController: UIViewController {
             let controller = navigationController.topViewController as! SemesterDetailTableViewController
             controller.coreDataStack = coreDataStack
             controller.delegate = self
-        }
-        if segue.identifier == "addCourseSegue" {
+        } else if segue.identifier == "addCourseSegue" {
             let navigationController = segue.destinationViewController as! UINavigationController
             let controller = navigationController.topViewController as! CourseDetailTableViewController
             controller.coreDataStack = coreDataStack
+            controller.delegate = self
+        } else if segue.identifier == "addAssignmentSegue" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let controller = navigationController.topViewController as! AddAssigmentsTableViewController
             controller.delegate = self
         }
     }
@@ -102,7 +108,6 @@ extension CoursesViewController: SemesterDelegate {
     
 }
 
-
 extension CoursesViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
@@ -121,6 +126,12 @@ extension CoursesViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource 
         return UIColor.imageTintColor()
     }
     
+}
+
+extension CoursesViewController: AddAssignmentDelegate {
+    func userDidCancel(controller: AddAssigmentsTableViewController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }
 
 
