@@ -49,6 +49,7 @@
 		92E8056B1CB57FD200294DE9 /* CWBuildings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8056A1CB57FD200294DE9 /* CWBuildings.swift */; };
 		92E8056D1CB5893600294DE9 /* BuildingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8056C1CB5893600294DE9 /* BuildingTableViewCell.swift */; };
 		92E8058D1CBC261D00294DE9 /* CWCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8058C1CBC261D00294DE9 /* CWCalendar.swift */; };
+		92F7A4851CC2C33D00233BD9 /* AddAssigmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F7A4841CC2C33D00233BD9 /* AddAssigmentsTableViewController.swift */; };
 		92F97F681C9C97C80079F084 /* CampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F97F671C9C97C80079F084 /* CampusTableViewController.swift */; };
 		92F97F6F1C9DBA990079F084 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F97F6E1C9DBA990079F084 /* UIScrollView+EmptyDataSet.m */; };
 		92F97F711C9F06F70079F084 /* CW+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F97F701C9F06F70079F084 /* CW+UIColor.swift */; };
@@ -111,6 +112,7 @@
 		92E8056A1CB57FD200294DE9 /* CWBuildings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWBuildings.swift; sourceTree = "<group>"; };
 		92E8056C1CB5893600294DE9 /* BuildingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingTableViewCell.swift; sourceTree = "<group>"; };
 		92E8058C1CBC261D00294DE9 /* CWCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWCalendar.swift; sourceTree = "<group>"; };
+		92F7A4841CC2C33D00233BD9 /* AddAssigmentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAssigmentsTableViewController.swift; sourceTree = "<group>"; };
 		92F97F671C9C97C80079F084 /* CampusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusTableViewController.swift; sourceTree = "<group>"; };
 		92F97F6D1C9DBA990079F084 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
 		92F97F6E1C9DBA990079F084 /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 		92AEECCE1C83F1B000372550 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				92F7A4831CC2C30400233BD9 /* Assignment */,
 				92E8058B1CBC260F00294DE9 /* Calendar */,
 				927645C71C853B1400D6FD8C /* Courses */,
 				927645C61C853B0800D6FD8C /* Map */,
@@ -385,6 +388,14 @@
 				92E8058C1CBC261D00294DE9 /* CWCalendar.swift */,
 			);
 			name = Calendar;
+			sourceTree = "<group>";
+		};
+		92F7A4831CC2C30400233BD9 /* Assignment */ = {
+			isa = PBXGroup;
+			children = (
+				92F7A4841CC2C33D00233BD9 /* AddAssigmentsTableViewController.swift */,
+			);
+			name = Assignment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -575,6 +586,7 @@
 				9275E7E41CA175DE00B3E803 /* OnboardingContentViewController.m in Sources */,
 				928C60321C87CE8400147BD2 /* SemestersTableViewController.swift in Sources */,
 				92BF4EE11C9A3F2200537E59 /* CW+UIImage.swift in Sources */,
+				92F7A4851CC2C33D00233BD9 /* AddAssigmentsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
