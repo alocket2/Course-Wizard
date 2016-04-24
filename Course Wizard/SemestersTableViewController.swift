@@ -94,12 +94,24 @@ class SemestersTableViewController: UITableViewController, NSFetchedResultsContr
         
         return cell!
     }
-    
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
          if segue.identifier == "addSemester" {
             let controller = segue.destinationViewController as! SemesterDetailTableViewController
             controller.delegate = self
+         } else if segue.identifier == "semesterDetailSegue" {
+            let selectedIndex = self.tableView.indexPathForCell(sender as! UITableViewCell)
+            var selectedType: String = ""
+            var selectedYear: String = ""
+            let record = fetchedResultsController.objectAtIndexPath(selectedIndex!)
+            
+            if let recordType = record.valueForKey("type") as? String, recordYear = record.valueForKey("year") as? String {
+                selectedType = recordType
+                selectedYear = recordYear
+            }
+            let controller = segue.destinationViewController as! SemesterCourseDetail
+            controller.semesterType = selectedType
+            controller.semesterYear = selectedYear
         }
     }
     

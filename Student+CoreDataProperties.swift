@@ -1,8 +1,8 @@
 //
-//  Semester+CoreDataProperties.swift
+//  Student+CoreDataProperties.swift
 //  
 //
-//  Created by Anthony Lockett on 3/21/16.
+//  Created by Anthony Lockett on 4/22/16.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -12,11 +12,10 @@
 import Foundation
 import CoreData
 
-extension Semester {
+extension Student {
 
     @NSManaged var campus: String?
-    @NSManaged var endDate: String?
-    @NSManaged var startDate: String?
-    @NSManaged var type: String?
+    @NSManaged var degree: String?
+    @NSManaged var gpa: String?
 
 }

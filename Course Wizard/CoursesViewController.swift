@@ -24,15 +24,16 @@ class CoursesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getCoursesFromCurrentSemester()
+        
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
         tableView.tableFooterView = UIView()
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func getCoursesFromCurrentSemester() {
+        
     }
     
     //Alert controller that shows when a + button is selected
@@ -115,7 +116,7 @@ extension CoursesViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource 
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return UIFont.taglineFontWith(body: "Add a course above")
+        return UIFont.taglineFontWith(body: "Add a semester, course or assignment by pressing the \"+\" button above")
     }
     
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
