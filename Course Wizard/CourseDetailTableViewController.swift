@@ -14,6 +14,7 @@ protocol CourseDetailDelegate: class {
 }
 
 class CourseDetailTableViewController: UITableViewController {
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var daysLabel: UILabel!
@@ -21,20 +22,37 @@ class CourseDetailTableViewController: UITableViewController {
     @IBOutlet weak var endLabel: UILabel!
     @IBOutlet weak var professor: UITextField!
     @IBOutlet weak var timePicker: UIDatePicker!
+    @IBOutlet weak var semesterLabel: UILabel!
+    
     
     var delegate: CourseDetailDelegate!
     var coreDataStack = CoreDataStack()
     var course: CWCourse?
+    var courseCode: String?
     var startTime: NSDate?
     var startTimeChosen = false
     var endTime: NSDate?
     var endTimeChosen = false
     var daysChosen = [Bool](count:7, repeatedValue: false)
     
+    var semesterType: String?
+    var semesterYear: String?
+    var semester: Semester?
+    
+    var days = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Add a Course"
+        
         timePicker.addTarget(self, action: #selector(CourseDetailTableViewController.datePickerDidChange(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        
+        if semesterType == nil && semesterYear == nil {
+            semesterLabel.text = "Semester"
+        } else {
+            semesterLabel.text = "\(semesterType!)" + " " + "\(semesterYear!)"
+        }
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -136,19 +154,18 @@ class CourseDetailTableViewController: UITableViewController {
     
     func checkDaysChosen() {
         var daysLabel = ""
-        var days = [String]()
         var didChoose = false
         for index in 0...6 {
             if daysChosen[index] == true {
                 didChoose = true
                 switch index {
-                case 0: days.append("Mon")
-                case 1: days.append("Tue")
-                case 2: days.append("Wed")
-                case 3: days.append("Thu")
-                case 4: days.append("Fri")
-                case 5: days.append("Sat")
-                case 6: days.append("Sun")
+                case 0: days.append("M")
+                case 1: days.append("T")
+                case 2: days.append("W")
+                case 3: days.append("TR")
+                case 4: days.append("F")
+                case 5: days.append("S")
+                case 6: days.append("SU")
                 default: break
                 }
             }
@@ -157,15 +174,65 @@ class CourseDetailTableViewController: UITableViewController {
             daysLabel += day + "  "
         }
         if didChoose == true {
-            self.daysLabel.text! = daysLabel
+            self.daysLabel.text! = "Days: \(daysLabel)"
         } else {
             self.daysLabel.text! = "Days"
+        }
+    }
+    
+    func getSemesterFromCoreData() {
+        
+        let semesterFetchRequest = NSFetchRequest(entityName: "Semester")
+        
+        do {
+            
+            let results = try coreDataStack.managedObjectContext.executeFetchRequest(semesterFetchRequest) as! [Semester]
+            
+            for result in results {
+                if result.valueForKey("type") as? String == semesterType && result.valueForKey("year") as? String == semesterYear {
+                    semester = result
+                } else {
+                    continue
+                }
+            }
+            
+        } catch let error as NSError {
+            print("Could not find the correct semester: \(error)")
         }
     }
     
     @IBAction func cancel(sender: UIBarButtonItem) {
         delegate?.CourseDetailDidCancel(self)
     }
+    
+    
+    @IBAction func save(sender: UIBarButtonItem) {
+        
+        getSemesterFromCoreData()
+        
+        guard let entity = NSEntityDescription.entityForName("Course", inManagedObjectContext: coreDataStack.managedObjectContext) else {
+            fatalError("Could not find entity descriptions!")
+        }
+        
+        let courseEntity = Course(entity: entity, insertIntoManagedObjectContext: coreDataStack.managedObjectContext)
+        
+        courseEntity.name = nameLabel.text
+        courseEntity.crn = courseCode
+        courseEntity.location = locationLabel.text
+        courseEntity.days = days
+        courseEntity.professor = professor.text
+        courseEntity.startTime = startLabel.text
+        courseEntity.endTime = endLabel.text
+        courseEntity.semester = semester
+        
+        do {
+            try coreDataStack.managedObjectContext.save()
+        } catch {
+            print("Could not save...")
+        }
+
+    }
+    
 }
 
 extension CourseDetailTableViewController: CourseDaysSelectionDelegate {
@@ -182,6 +249,7 @@ extension CourseDetailTableViewController: CourseSearchDelegate {
     func CourseSearchDidFinish(controller: CourseSearchTableViewController, course: CWCourse?) {
         self.course = course
         nameLabel.text = course!.getName()
+        courseCode = course!.getCode()
         tableView.reloadData()
         dismissViewControllerAnimated(true, completion: nil)
     }

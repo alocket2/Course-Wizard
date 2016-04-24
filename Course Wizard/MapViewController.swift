@@ -15,32 +15,31 @@ import UIKit
 import CoreData
 import Mapbox
 
-
-
 class MapViewController: UIViewController {
     
     enum Campuses: String {
         case Boca_Raton = "Boca Raton"
         case Jupiter
     }
-    
-    
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var buildingsButton: UIBarButtonItem!
     
     var mapView: MGLMapView!
     var currentCampus: String = ""
     var coreDataStack = CoreDataStack()
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let styleURL = NSURL(string: "mapbox://styles/alockettjr/cik7nnuaw00emnyko48ysfg9c")
         mapView = MGLMapView(frame: view.bounds, styleURL: styleURL)
         mapView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-
-        
-        
+        mapView.userLocation
+        mapView.showsUserLocation = true
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.tableFooterView = UIView()
+        tableView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -61,15 +60,12 @@ class MapViewController: UIViewController {
         }
     }
     
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func loadInitialMapView() {
-        
+    @IBAction func setCurrentLocation(sender: UIBarButtonItem) {
+        if mapView.showsUserLocation == true {
+            mapView.showsUserLocation = false
+        } else {
+            mapView.showsUserLocation = true
+        }
     }
     
     func setMapLocation() {

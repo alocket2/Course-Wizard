@@ -25,6 +25,7 @@ class SemesterDetailTableViewController: UITableViewController {
     @IBOutlet weak var startDateLabel: UILabel!
     @IBOutlet weak var endDateLabel: UILabel!
     @IBOutlet weak var campusLabel: UILabel!
+    @IBOutlet weak var currentSemester: UISwitch!
     
     var chosenSemester: String?
     var startDate: String?
@@ -44,6 +45,7 @@ class SemesterDetailTableViewController: UITableViewController {
         semesterType.text = "Semester"
         startDateLabel.text = "Start Date"
         endDateLabel.text = "End Date"
+    
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -82,6 +84,15 @@ class SemesterDetailTableViewController: UITableViewController {
         
     }
     
+    @IBAction func currentSemesterStatus(sender: UISwitch) {
+        if sender.on {
+            currentSemester.tintColor = UIColor.actionBackgroundColor()
+            currentSemester.onTintColor = UIColor.actionBackgroundColor()
+            currentSemester.thumbTintColor = UIColor.tableviewCellBackgroundColor()
+        }
+    }
+    
+    
     @IBAction func cancel(sender: UIBarButtonItem) {
         
         delegate?.SemesterDetailDidCancel(self)
@@ -111,6 +122,12 @@ class SemesterDetailTableViewController: UITableViewController {
             semesterEntity.type = chosenSemester!
             semesterEntity.startDate = startDate!
             semesterEntity.endDate = endDate!
+            
+            if currentSemester.on {
+                semesterEntity.currentSemester = true
+            } else {
+                semesterEntity.currentSemester = false
+            }
             
             do {
                 try coreDataStack.managedObjectContext.save()

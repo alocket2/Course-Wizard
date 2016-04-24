@@ -12,27 +12,40 @@
     <entity name="CompletedCourses" representedClassName=".CompletedCourses" syncable="YES">
         <attribute name="courses" optional="YES" attributeType="Transformable" syncable="YES"/>
     </entity>
+    <entity name="Course" representedClassName=".Course" syncable="YES">
+        <attribute name="crn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="days" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="endTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="professor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="semester" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Semester" inverseName="course" inverseEntity="Semester" syncable="YES"/>
+    </entity>
     <entity name="Degree" representedClassName=".Degree" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="type" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Semester" representedClassName=".Semester" syncable="YES">
+        <attribute name="currentSemester" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="endDate" attributeType="String" syncable="YES"/>
         <attribute name="startDate" attributeType="String" syncable="YES"/>
         <attribute name="type" attributeType="String" syncable="YES"/>
         <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="course" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="semester" inverseEntity="Course" syncable="YES"/>
     </entity>
-    <entity name="Student" syncable="YES">
+    <entity name="Student" representedClassName=".Student" syncable="YES">
         <attribute name="campus" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="degree" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gpa" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Assignment" positionX="-54" positionY="9" width="128" height="105"/>
-        <element name="Campus" positionX="-54" positionY="18" width="128" height="60"/>
-        <element name="CompletedCourses" positionX="-45" positionY="36" width="128" height="60"/>
-        <element name="Degree" positionX="-54" positionY="9" width="128" height="75"/>
-        <element name="Semester" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="Student" positionX="-54" positionY="27" width="128" height="90"/>
+        <element name="Assignment" positionX="-108" positionY="-81" width="128" height="105"/>
+        <element name="Campus" positionX="34" positionY="-168" width="128" height="60"/>
+        <element name="CompletedCourses" positionX="34" positionY="-78" width="128" height="60"/>
+        <element name="Degree" positionX="-108" positionY="-171" width="128" height="75"/>
+        <element name="Semester" positionX="-360" positionY="18" width="128" height="133"/>
+        <element name="Student" positionX="36" positionY="-0" width="128" height="88"/>
+        <element name="Course" positionX="-146" positionY="156" width="128" height="163"/>
     </elements>
 </model>

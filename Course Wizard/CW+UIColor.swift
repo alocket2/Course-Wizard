@@ -73,4 +73,17 @@ extension UIColor {
     class func retakeCourseCellActionColor() -> UIColor {
         return UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
     }
+    
+    class func lowPriorityIconColor() -> UIColor {
+        return UIColor(red: 237.0/255.0, green: 195.0/255.0, blue: 81.0/255.0, alpha: 1.0)
+    }
+    
+    class func mediumPriorityIconColor() -> UIColor {
+        return UIColor(red: 255.0/255.0, green: 117.0/255.0, blue: 58.0/255.0, alpha: 1.0)
+    }
+    
+    class func highPriorityIconColor() -> UIColor {
+        return UIColor(red: 255.0/255.0, green: 69.0/255.0, blue: 68.0/255.0, alpha: 1.0)
+    }
+    
 }

@@ -36,6 +36,10 @@ class SemesterDatePickerController: UIViewController {
             title = "End Date"
         }
         
+        if typeOfSegue == "assignmentDueDateSegue" {
+            title = "Due Date"
+        }
+        
         datePicker.datePickerMode = .Date
     }
 
