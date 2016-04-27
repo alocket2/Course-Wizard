@@ -16,11 +16,10 @@ import CoreData
 
 class CoursesViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
-    //Access to the core data stack
-    var coreDataStack = CoreDataStack()
-    
     @IBOutlet weak var coursesTableView: UITableView!
     
+    //Access to the core data stack
+    var coreDataStack = CoreDataStack()
     var currentSemester: [Semester] = []
     var courseTitle: String?
     var courseDays: String?
@@ -153,7 +152,15 @@ class CoursesViewController: UIViewController, NSFetchedResultsControllerDelegat
             let controller = navigationController.topViewController as! CourseDetailTableViewController
             controller.coreDataStack = coreDataStack
             controller.delegate = self
-            controller.semester = currentSemester[0]
+            
+            if currentSemester.count == 0 {
+                let alertController = UIAlertController(title: nil, message: "Please add a current semester before adding a course", preferredStyle: .Alert)
+                let alertAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+                alertController.addAction(alertAction)
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                controller.semester = currentSemester[0]
+            }
         } else if segue.identifier == "courseAssignmentsSegue" {
             let currentIndexPath = coursesTableView.indexPathForSelectedRow
             let record = currentSemester
