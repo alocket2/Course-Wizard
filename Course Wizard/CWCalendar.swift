@@ -21,8 +21,8 @@ class CWCalendar: UIViewController {
     var selectedDate: String!
     
     //To test out
-    var assignments: [String] = ["Study for the final exam", "Homework #3", "Study for Operating Systems", "Finish Course Wizard"]
-    var courseAssignments: [String] = ["Discrete Mathematics", "Introduction to Database Structures", "Computer Operating Systems", "Principals of Software Engineering"]
+    var assignments: [String] = []
+    var courseAssignments: [String] = []
     
     override func viewDidLoad() {
 

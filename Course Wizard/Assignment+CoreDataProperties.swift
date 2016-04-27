@@ -1,5 +1,5 @@
 //
-//  Course+CoreDataProperties.swift
+//  Assignment+CoreDataProperties.swift
 //  Course Wizard
 //
 //  Created by Anthony Lockett on 4/25/16.
@@ -12,16 +12,13 @@
 import Foundation
 import CoreData
 
-extension Course {
+extension Assignment {
 
-    @NSManaged var crn: String?
-    @NSManaged var days: NSObject?
-    @NSManaged var endTime: String?
-    @NSManaged var location: String?
+    @NSManaged var dueDate: String?
+    @NSManaged var grade: String?
     @NSManaged var name: String?
-    @NSManaged var professor: String?
-    @NSManaged var startTime: String?
-    @NSManaged var semester: Semester?
-    @NSManaged var assignment: NSSet?
+    @NSManaged var type: String?
+    @NSManaged var priority: String?
+    @NSManaged var course: Course?
 
 }
