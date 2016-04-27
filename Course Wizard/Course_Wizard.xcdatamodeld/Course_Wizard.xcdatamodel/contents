@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Automatic">
-    <entity name="Assignment" syncable="YES">
-        <attribute name="dueDate" optional="YES" attributeType="Date" syncable="YES"/>
+    <entity name="Assignment" representedClassName=".Assignment" syncable="YES">
+        <attribute name="dueDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="grade" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priority" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="assignment" inverseEntity="Course" syncable="YES"/>
     </entity>
     <entity name="Campus" syncable="YES">
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,6 +22,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="professor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startTime" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="assignment" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Assignment" inverseName="course" inverseEntity="Assignment" syncable="YES"/>
         <relationship name="semester" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Semester" inverseName="course" inverseEntity="Semester" syncable="YES"/>
     </entity>
     <entity name="Degree" representedClassName=".Degree" syncable="YES">
@@ -40,12 +43,12 @@
         <attribute name="gpa" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Assignment" positionX="-108" positionY="-81" width="128" height="105"/>
+        <element name="Assignment" positionX="-108" positionY="-81" width="128" height="135"/>
         <element name="Campus" positionX="34" positionY="-168" width="128" height="60"/>
         <element name="CompletedCourses" positionX="34" positionY="-78" width="128" height="60"/>
+        <element name="Course" positionX="-146" positionY="156" width="128" height="180"/>
         <element name="Degree" positionX="-108" positionY="-171" width="128" height="75"/>
         <element name="Semester" positionX="-360" positionY="18" width="128" height="133"/>
         <element name="Student" positionX="36" positionY="-0" width="128" height="88"/>
-        <element name="Course" positionX="-146" positionY="156" width="128" height="163"/>
     </elements>
 </model>

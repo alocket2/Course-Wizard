@@ -29,6 +29,7 @@ class CourseDetailTableViewController: UITableViewController {
     var coreDataStack = CoreDataStack()
     var course: CWCourse?
     var courseCode: String?
+    var locationName: String?
     var startTime: NSDate?
     var startTimeChosen = false
     var endTime: NSDate?
@@ -47,12 +48,24 @@ class CourseDetailTableViewController: UITableViewController {
         
         timePicker.addTarget(self, action: #selector(CourseDetailTableViewController.datePickerDidChange(_:)), forControlEvents: UIControlEvents.ValueChanged)
         
-        if semesterType == nil && semesterYear == nil {
+        if semester == nil && semesterType == nil && semesterYear == nil {
             semesterLabel.text = "Semester"
-        } else {
-            semesterLabel.text = "\(semesterType!)" + " " + "\(semesterYear!)"
+        } else if semester != nil && semesterType == nil && semesterYear == nil {
+            semesterLabel.text = "\(semester!.type!)" + " " + "\(semester!.year!)"
+        } else if semester == nil && semesterType != nil && semesterYear != nil {
+            semesterLabel.text = semesterType! + " " + semesterYear!
         }
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if locationName == nil {
+            locationLabel.text = "Location"
+        } else {
+            locationLabel.text = "\(locationName!)"
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -67,6 +80,10 @@ class CourseDetailTableViewController: UITableViewController {
             controller.daysChosen = daysChosen
             controller.delegate = self
         }
+        if segue.identifier == "choseBuildingSegue" {
+            let controller = segue.destinationViewController as! CWBuildingsTableView
+            controller.delegate = self
+        }
     }
     
     func datePickerDidChange(timePicker: UIDatePicker) {
@@ -76,7 +93,7 @@ class CourseDetailTableViewController: UITableViewController {
         let time = timeFormatter.stringFromDate(timePicker.date)
         
         if startTimeChosen == true {
-            startTime = timeValue
+            startTime = (timeValue)
             startLabel.text! = time
         } else {
             endTime = timeValue
@@ -108,7 +125,14 @@ class CourseDetailTableViewController: UITableViewController {
                 timePicker.hidden = true
                 startTimeChosen = false
                 endTimeChosen = false
-            case 3:
+            default:
+                break
+            }
+        case 2:
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            switch row {
+                case 0:
+                    timePicker.hidden = false
                 if startTimeChosen == false && timePicker.hidden == true  {
                     startTimeChosen = true
                     if startTime != nil {
@@ -126,8 +150,8 @@ class CourseDetailTableViewController: UITableViewController {
                         timePicker.setDate(NSDate(), animated: false)
                     }
                 }
-            case 4:
-                if endTimeChosen == false && timePicker.hidden == true {
+                case 1:
+                    if endTimeChosen == false && timePicker.hidden == true {
                     endTimeChosen = true
                     if endTime != nil {
                         timePicker.setDate(endTime!, animated: false)
@@ -208,7 +232,9 @@ class CourseDetailTableViewController: UITableViewController {
     
     @IBAction func save(sender: UIBarButtonItem) {
         
-        getSemesterFromCoreData()
+        if semester == nil && semesterType != nil && semesterYear != nil {
+            getSemesterFromCoreData()
+        }
         
         guard let entity = NSEntityDescription.entityForName("Course", inManagedObjectContext: coreDataStack.managedObjectContext) else {
             fatalError("Could not find entity descriptions!")
@@ -227,6 +253,7 @@ class CourseDetailTableViewController: UITableViewController {
         
         do {
             try coreDataStack.managedObjectContext.save()
+            self.dismissViewControllerAnimated(true, completion: nil)
         } catch {
             print("Could not save...")
         }
@@ -256,5 +283,12 @@ extension CourseDetailTableViewController: CourseSearchDelegate {
     
     func CourseSearchDidCancel(controller: CourseSearchTableViewController) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+extension CourseDetailTableViewController: BuildingProtocol {
+    func userDidSelect(building building: String, coordinates: (latitude: Double, longitude: Double)) {
+        locationName = building
+        navigationController?.popViewControllerAnimated(true)
     }
 }

@@ -29,6 +29,7 @@ class SemestersTableViewController: UITableViewController, NSFetchedResultsContr
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         do {
             try self.fetchedResultsController.performFetch()
         } catch let error as NSError {
@@ -56,6 +57,10 @@ class SemestersTableViewController: UITableViewController, NSFetchedResultsContr
         
         
         tableView.reloadData()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

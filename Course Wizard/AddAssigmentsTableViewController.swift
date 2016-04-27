@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 protocol AddAssignmentDelegate: class {
     func userDidCancel(controller: AddAssigmentsTableViewController)
@@ -18,10 +19,13 @@ class AddAssigmentsTableViewController: UITableViewController {
     @IBOutlet weak var priorityLabel: UILabel!
     @IBOutlet weak var priorityImage: UIImageView!
     @IBOutlet weak var dueDateLabel: UILabel!
+    @IBOutlet weak var courseLabel: UILabel!
+    @IBOutlet weak var assignmentNameTextField: UITextField!
     
     weak var delegate: AddAssignmentDelegate!
     
-    var userSelectedCourse: CWCourse?
+    var userSelectedCourse: Course?
+    var coreDataStack: CoreDataStack!
     var userSelectedAssignmentType: String?
     var userSelectedPriority: String?
     var userSelectedDueDate: String?
@@ -38,6 +42,12 @@ class AddAssigmentsTableViewController: UITableViewController {
         } else {
             assignmentTypeLabel.text = "Type: \(userSelectedAssignmentType!)"
             priorityLabel.text = "Priority: \(userSelectedPriority!)"
+        }
+        
+        if userSelectedCourse == nil {
+            courseLabel.text = "Course"
+        } else {
+            courseLabel.text = "Course: \(userSelectedCourse!.name!)"
         }
     }
     
@@ -77,10 +87,7 @@ class AddAssigmentsTableViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "addCourseSegue" {
-            let controller = segue.destinationViewController as! CourseSearchTableViewController
-            controller.delegate = self
-        } else if segue.identifier == "assignmentTypeSegue" {
+        if segue.identifier == "assignmentTypeSegue" {
             let controller = segue.destinationViewController as! AssignmentTypeTableViewController
             controller.delegate = self
         } else if segue.identifier == "prioritySegue" {
@@ -92,16 +99,32 @@ class AddAssigmentsTableViewController: UITableViewController {
         }
     }
     
-}
+    @IBAction func save(sender: UIBarButtonItem) {
+        
+        guard let entity = NSEntityDescription.entityForName("Assignment", inManagedObjectContext: coreDataStack.managedObjectContext) else {
+            fatalError("Could not find entity descriptions!")
+        }
+        
+        let assignmentEntity = Assignment(entity: entity, insertIntoManagedObjectContext: coreDataStack.managedObjectContext)
+        
+        assignmentEntity.name = assignmentNameTextField.text
+        assignmentEntity.type = assignmentTypeLabel.text
+        assignmentEntity.priority = priorityLabel.text
+        assignmentEntity.dueDate = dueDateLabel.text
+        assignmentEntity.course = userSelectedCourse
+        
+        do {
+            try coreDataStack.managedObjectContext.save()
+            self.navigationController?.popViewControllerAnimated(true)
+        } catch {
+            print("Could not save...")
+        }
+        
+    }
+        
+    }
+    
 
-extension AddAssigmentsTableViewController: CourseSearchDelegate {
-    func CourseSearchDidCancel(controller: CourseSearchTableViewController) {
-        navigationController?.popViewControllerAnimated(true)
-    }
-    func CourseSearchDidFinish(controller: CourseSearchTableViewController, course: CWCourse?) {
-        userSelectedCourse = course
-    }
-}
 
 extension AddAssigmentsTableViewController: AssignmentTypeDelegate {
     func userDidSelectAssignment(type: String) {

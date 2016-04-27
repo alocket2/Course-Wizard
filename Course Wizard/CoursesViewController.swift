@@ -14,26 +14,95 @@
 import UIKit
 import CoreData
 
-class CoursesViewController: UIViewController {
+class CoursesViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
     //Access to the core data stack
     var coreDataStack = CoreDataStack()
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var coursesTableView: UITableView!
+    
+    var currentSemester: [Semester] = []
+    var courseTitle: String?
+    var courseDays: String?
+    
+    lazy var fetchedResultsController: NSFetchedResultsController = {
+        let fetchRequest = NSFetchRequest(entityName: "Semester")
+        let sortDescriptor = NSSortDescriptor(key: "type", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        let fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.coreDataStack.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        
+        fetchResultsController.delegate = self
+        
+        return fetchResultsController
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getCoursesFromCurrentSemester()
+//        moc.parentContext = self.coreDataStack.managedObjectContext
+//        
+       let coursePredicate = NSPredicate(format: "currentSemester == %@", true)
+       fetchedResultsController.fetchRequest.predicate = coursePredicate
         
-        tableView.emptyDataSetSource = self
-        tableView.emptyDataSetDelegate = self
-        tableView.tableFooterView = UIView()
+        do {
+            try self.fetchedResultsController.performFetch()
+        } catch let error as NSError {
+            print("Error performing fetch \(error.localizedDescription)")
+        }
         
+        coursesTableView.emptyDataSetSource = self
+        coursesTableView.emptyDataSetDelegate = self
+        coursesTableView.tableFooterView = UIView()
+    
+        coursesTableView.dataSource = self
+        coursesTableView.delegate = self
+        
+        if fetchedResultsController.fetchedObjects?.count > 0 {
+            currentSemester = (fetchedResultsController.fetchedObjects as? [Semester])!
+            coursesTableView.reloadData()
+            coursesTableView.backgroundColor = UIColor.tableviewCellBackgroundColor()
+        }
+        
+        if currentSemester.count == 0 {
+            coursesTableView.reloadData()
+            
+        }
+    
     }
     
-    func getCoursesFromCurrentSemester() {
+    override func viewWillAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
+//        let predicate = NSPredicate(format: "ANY currentSemester == %@", true)
+//        
+//        fetchedResultsController.fetchRequest.predicate = predicate
+        
+        do {
+            currentSemester.removeAll()
+            try self.fetchedResultsController.performFetch()
+            let semester = fetchedResultsController.fetchedObjects as? [Semester]
+            for sem in semester! {
+                print(sem.course!.count)
+            }
+        } catch let error as NSError {
+            print("Error performing fetch \(error.localizedDescription)")
+        }
+        
+        if fetchedResultsController.fetchedObjects?.count > 0 {
+            currentSemester = (fetchedResultsController.fetchedObjects as? [Semester])!
+            coursesTableView.backgroundColor = UIColor.tableviewCellBackgroundColor()
+        }
+        
+        if currentSemester.count == 0 {
+            coursesTableView.reloadData()
+        }
+        
+        coursesTableView.reloadData()
+    }
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        coursesTableView.reloadData()
     }
     
     //Alert controller that shows when a + button is selected
@@ -50,21 +119,19 @@ class CoursesViewController: UIViewController {
         let addCourseAction =     UIAlertAction(title: "Add Course", style: .Default) { (UIAlertAction) -> Void in
             self.performSegueWithIdentifier("addCourseSegue", sender: self)
         }
-        
-        let addAssignmentAction = UIAlertAction(title: "Add Assignment", style: .Default) { (UIAlertAction) -> Void in
-            self.performSegueWithIdentifier("addAssignmentSegue", sender: self)
-        }
 
         let cancelAction =        UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
         //Here we add all the actions to the controller.
         addInfoController.addAction(addSemesterAction)
         addInfoController.addAction(addCourseAction)
-        addInfoController.addAction(addAssignmentAction)
         addInfoController.addAction(cancelAction)
         
         //Here we present the Alert Action
         self.presentViewController(addInfoController, animated: true, completion: nil)
+        
+        addInfoController.view.tintColor = UIColor.actionBackgroundColor()
+
     }
     
     /*
@@ -86,10 +153,16 @@ class CoursesViewController: UIViewController {
             let controller = navigationController.topViewController as! CourseDetailTableViewController
             controller.coreDataStack = coreDataStack
             controller.delegate = self
-        } else if segue.identifier == "addAssignmentSegue" {
-            let navigationController = segue.destinationViewController as! UINavigationController
-            let controller = navigationController.topViewController as! AddAssigmentsTableViewController
-            controller.delegate = self
+            controller.semester = currentSemester[0]
+        } else if segue.identifier == "courseAssignmentsSegue" {
+            let currentIndexPath = coursesTableView.indexPathForSelectedRow
+            let record = currentSemester
+            let controller = segue.destinationViewController as! CourseAssignmentsTableView
+            for rec in record {
+                controller.courseTitle = rec.course?.allObjects[currentIndexPath!.row].name
+                controller.course = rec.course?.allObjects[currentIndexPath!.row] as? Course
+            }
+            controller.coreDataStack = coreDataStack
         }
     }
     
@@ -125,6 +198,88 @@ extension CoursesViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource 
     
     func imageTintColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
         return UIColor.imageTintColor()
+    }
+    
+}
+
+extension CoursesViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let record = currentSemester
+        print(record.count)
+        
+        for rec in record {
+            print(rec.course?.count)
+            return (rec.course?.count)!
+        }
+        
+        return 0
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 75.0
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        let record = currentSemester
+    
+        
+        for rec in record {
+            if rec.course?.count > 0 {
+                return rec.type! + " " + rec.year!
+            }
+        }
+        
+        return nil
+    }
+    
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.contentView.backgroundColor = UIColor.whiteColor()
+        header.textLabel?.textColor = UIColor.darkGrayColor()
+        
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cellIdentifier = "courseCell"
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! CourseViewControllerCell
+        
+        let record = currentSemester
+        
+        for rec in record {
+                let course = rec.course?.allObjects[indexPath.row] as? Course
+                let title = course?.name
+                let code = course?.crn
+                let location = course?.location
+                var days = course?.days as? [String]
+                let time = (course?.startTime)! + " " +  "-" + " " + (course?.endTime)!
+            
+                getCourseDays(&days!)
+            
+                cell.configureCell(title!, courseCode: code!, courseLocation: location!, courseDays: courseDays!, courseTime: time)
+            
+            }
+        
+        cell.backgroundColor = UIColor.tableviewCellBackgroundColor()
+        cell.textLabel?.textColor = UIColor.darkGrayColor()
+        
+        return cell
+    }
+    
+    func getCourseDays(inout days: [String]) {
+        
+        var courseDay: String = ""
+        
+        for day in days {
+            var str: String = ""
+            str += day + " "
+            courseDay += str
+        }
+        
+        courseDays = courseDay
     }
     
 }
